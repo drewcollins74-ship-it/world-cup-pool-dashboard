@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World Cup Pool Standings</title>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="dashboard">
+      <header class="hero">
+        <div class="trophy" aria-hidden="true">🏆</div>
+        <div>
+          <h1>World Cup Pool Standings</h1>
+          <p id="asOfLine">Ready for live World Cup updates</p>
+        </div>
+        <button class="icon-button" id="refreshButton" title="Refresh live data" type="button">↻</button>
+      </header>
+      <a class="view-switch" href="mobile.html">Mobile version</a>
+
+      <div class="layout">
+        <section class="standings-panel" aria-label="Pool standings">
+          <div class="table-shell">
+            <table>
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Player</th>
+                  <th>Points <span>(Including Advancement Bonus)</span></th>
+                  <th>Teams & Records <span>(W-D-L)</span></th>
+                  <th>Points Available Before Round of 32 <span>(Group Matches Remaining + Advancement Bonus)</span></th>
+                </tr>
+              </thead>
+              <tbody id="standingsBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <aside class="sidebar" aria-label="Pool notes">
+          <section class="info-card matches-card">
+            <h2 id="matchTickerTitle">Next Group Matches</h2>
+            <div id="todayMatches" class="match-list">Loading schedule...</div>
+            <p>All times Eastern</p>
+          </section>
+
+          <section class="info-card">
+            <h2>Key</h2>
+            <ul class="key-list">
+              <li><span class="qualified">✓</span> Qualified for Knockout</li>
+              <li><span class="eliminated">×</span> Eliminated</li>
+              <li><span class="tiebreak">✓</span> In Tiebreak Position</li>
+              <li><b>(W-D-L)</b> Win-Draw-Loss</li>
+            </ul>
+          </section>
+
+          <section class="info-card strong">
+            <h2>Strong Position</h2>
+            <ul id="strongList" class="team-list"></ul>
+          </section>
+
+          <section class="info-card green">
+            <h2>How Points Work</h2>
+            <div class="rule-block">
+              <strong>Group Stage Win</strong>
+              <b id="groupWinPoints">1 point</b>
+              <p>for each group stage win. Draws and losses are worth 0.</p>
+            </div>
+            <div class="rule-block">
+              <strong>Advancement Bonus</strong>
+              <b id="advancePoints">3 points</b>
+              <p>for each team that qualifies for the knockout stage.</p>
+            </div>
+          </section>
+
+          <section class="info-card blue note">
+            <h2>Note</h2>
+            <p>“Points Available Before Round of 32” shows the maximum points each player can still earn through the end of the group stage, including advancement bonuses.</p>
+            <p>Knockout round points will be tracked starting with the Round of 32.</p>
+          </section>
+        </aside>
+      </div>
+    </main>
+
+    <script src="src/latest-results.js"></script>
+    <script src="src/app.js"></script>
+  </body>
+</html>

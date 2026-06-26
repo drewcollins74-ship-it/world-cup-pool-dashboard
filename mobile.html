@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World Cup Pool Standings - Mobile</title>
+    <link rel="stylesheet" href="mobile.css">
+  </head>
+  <body>
+    <main class="mobile-dashboard">
+      <header class="mobile-hero">
+        <div class="trophy" aria-hidden="true">🏆</div>
+        <div>
+          <h1>World Cup Pool</h1>
+          <p id="asOfLine">Loading standings</p>
+        </div>
+        <button id="refreshButton" title="Refresh" type="button">↻</button>
+      </header>
+      <a class="view-switch" href="index.html">Desktop version</a>
+
+      <section class="mobile-panel standings-panel">
+        <h2>Standings</h2>
+        <div id="standingsCards" class="standings-cards"></div>
+      </section>
+
+      <section class="mobile-panel matches-panel">
+        <h2 id="matchTickerTitle">Next Group Matches</h2>
+        <div id="todayMatches" class="match-list">Loading schedule...</div>
+        <p>All times Eastern</p>
+      </section>
+
+      <section class="mobile-grid">
+        <article class="mobile-panel">
+          <h2>Key</h2>
+          <ul class="key-list">
+            <li><span class="qualified">✓</span> Qualified</li>
+            <li><span class="eliminated">×</span> Eliminated</li>
+            <li><b>(W-D-L)</b> Wins-Draws-Losses</li>
+          </ul>
+        </article>
+
+        <article class="mobile-panel">
+          <h2>How Points Work</h2>
+          <p><strong id="groupWinPoints">1 point</strong> for each group-stage win.</p>
+          <p><strong id="advancePoints">3 points</strong> for each team that reaches the Round of 32.</p>
+        </article>
+      </section>
+
+      <section class="mobile-panel note">
+        <h2>Note</h2>
+        <p>Available points show the maximum each player can still earn before the Round of 32 from remaining group matches and advancement bonuses.</p>
+      </section>
+    </main>
+
+    <script src="src/latest-results.js"></script>
+    <script src="src/mobile.js"></script>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+pool_rules:
+  group_stage_win: 1
+  group_stage_draw: 0
+  group_stage_loss: 0
+  knockout_qualification: 3
+  round_of_16_win: 4
+  quarterfinal_win: 5
+  semifinal_win: 6
+  third_place_win: 1
+  world_cup_final_win: 10
