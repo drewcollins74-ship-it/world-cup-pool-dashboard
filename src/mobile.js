@@ -222,7 +222,7 @@ function availablePointsForTeam(team) {
 }
 
 function render() {
-  elements.asOfLine.textContent = `Through ${formatThroughDate()} - Updated ${formatUpdatedAt()}`;
+  elements.asOfLine.innerHTML = `<span>Through ${formatThroughDate()}</span><span>Updated ${formatUpdatedAt()}</span>`;
   elements.groupWinPoints.textContent = `${rules.group_stage_win} point`;
   elements.advancePoints.textContent = `${rules.knockout_qualification} points`;
   elements.standingsCards.innerHTML = standings().map(renderPlayerCard).join("");
