@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T21:03:10.807165+00:00",
+  "generatedAt": "2026-06-26T21:36:00.743745+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -1465,7 +1465,7 @@
       "fixture": {
         "date": "2026-06-26T19:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group I",
         "source": "Wikipedia"
@@ -1485,8 +1485,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 5,
+        "away": 0
       }
     },
     {
