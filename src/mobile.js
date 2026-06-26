@@ -96,6 +96,7 @@ const elements = {
 let participants = [];
 let fixtures = [];
 let teamState = { ...sampleTeams };
+let dataGeneratedAt = null;
 
 function boot() {
   participants = parseParticipants(participantsCsv);
@@ -104,6 +105,7 @@ function boot() {
     fixtures = generated.fixtures;
     teamState = buildStateFromFixtures(fixtures);
     applyGeneratedTeamStatus(teamState, generated.teamStatus);
+    dataGeneratedAt = generated.generatedAt || null;
   }
 
   render();
@@ -220,7 +222,7 @@ function availablePointsForTeam(team) {
 }
 
 function render() {
-  elements.asOfLine.textContent = `Through ${formatThroughDate()} - Mobile standings`;
+  elements.asOfLine.textContent = `Through ${formatThroughDate()} - Updated ${formatUpdatedAt()}`;
   elements.groupWinPoints.textContent = `${rules.group_stage_win} point`;
   elements.advancePoints.textContent = `${rules.knockout_qualification} points`;
   elements.standingsCards.innerHTML = standings().map(renderPlayerCard).join("");
@@ -331,6 +333,20 @@ function formatThroughDate() {
   const completedDates = fixtures.filter((item) => ["FT", "AET", "PEN"].includes(item.fixture?.status?.short)).map((item) => new Date(item.fixture?.date)).filter((date) => !Number.isNaN(date.getTime()));
   const date = completedDates.length ? new Date(Math.max(...completedDates)) : new Date();
   return new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", month: "long", day: "numeric", year: "numeric" }).format(date);
+}
+
+function formatUpdatedAt() {
+  if (!dataGeneratedAt) return "time unavailable";
+  const date = new Date(dataGeneratedAt);
+  if (Number.isNaN(date.getTime())) return "time unavailable";
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short"
+  }).format(date);
 }
 
 function formatEasternTime(value) {
