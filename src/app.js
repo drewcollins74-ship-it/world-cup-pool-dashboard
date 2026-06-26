@@ -312,7 +312,7 @@ function standings() {
 function render() {
   elements.groupWinPoints.textContent = `${rules.group_stage_win || 1} point`;
   elements.advancePoints.textContent = `${rules.knockout_qualification || 3} points`;
-  elements.asOfLine.textContent = `Through ${formatThroughDate()} - ${dataSourceLabel()}`;
+  elements.asOfLine.textContent = `Through ${formatThroughDate()} - ${dataSourceLabel()} - Updated ${formatUpdatedAt()}`;
 
   const rows = standings();
   elements.standingsBody.innerHTML = rows.map(renderStandingRow).join("");
@@ -465,6 +465,20 @@ function formatThroughDate() {
     .filter((date) => !Number.isNaN(date.getTime()));
   const date = completedDates.length ? new Date(Math.max(...completedDates)) : dataGeneratedAt ? new Date(dataGeneratedAt) : new Date();
   return new Intl.DateTimeFormat("en-US", { timeZone: "America/New_York", month: "long", day: "numeric", year: "numeric" }).format(date);
+}
+
+function formatUpdatedAt() {
+  if (!dataGeneratedAt) return "time unavailable";
+  const date = new Date(dataGeneratedAt);
+  if (Number.isNaN(date.getTime())) return "time unavailable";
+  return new Intl.DateTimeFormat("en-US", {
+    timeZone: "America/New_York",
+    month: "short",
+    day: "numeric",
+    hour: "numeric",
+    minute: "2-digit",
+    timeZoneName: "short"
+  }).format(date);
 }
 
 function formatEasternMatchTime(value) {
