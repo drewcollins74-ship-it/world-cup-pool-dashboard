@@ -519,7 +519,10 @@ def main():
 
     knockout_wikitext = pages.get(KNOCKOUT_TITLE, "")
     if knockout_wikitext:
-        fixtures.extend(parse_knockout_matches(knockout_wikitext))
+        knockout_fixtures = parse_knockout_matches(knockout_wikitext)
+        fixtures.extend(knockout_fixtures)
+        if not knockout_fixtures:
+            print(f"Warning: no knockout fixtures parsed from {KNOCKOUT_TITLE}")
     else:
         print(f"Warning: no Wikipedia content found for {KNOCKOUT_TITLE}")
 

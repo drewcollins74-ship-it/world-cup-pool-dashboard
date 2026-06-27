@@ -51,6 +51,7 @@ Patrick,Uruguay`;
 const rules = {
   group_stage_win: 1,
   knockout_qualification: 3,
+  round_of_32_win: 0,
   round_of_16_win: 4,
   quarterfinal_win: 5,
   semifinal_win: 6,
@@ -78,6 +79,7 @@ const aliases = new Map([
 ]);
 
 const roundDefinitions = [
+  { key:"r32", label:"Round of 32", short:"R32", icon:"⇥", points:rules.round_of_32_win },
   { key:"r16", label:"Round of 16", short:"R16", icon:"⇥", points:rules.round_of_16_win },
   { key:"qf", label:"Quarterfinals", short:"QF", icon:"♕", points:rules.quarterfinal_win },
   { key:"sf", label:"Semifinals", short:"SF", icon:"☆", points:rules.semifinal_win },
@@ -247,9 +249,10 @@ function renderProgress() {
   elements.progressStrip.innerHTML = items.map((item) => {
     const fixturesForRound = item.key === "qualified" ? [] : knockoutFixtures.filter((fixture) => getRoundKey(fixture) === item.key);
     const complete = item.key === "qualified" ? qualifiedCount : fixturesForRound.filter(isComplete).length;
-    const expected = item.key === "qualified" ? 32 : ({ r16:8, qf:4, sf:2, third:1, final:1 }[item.key] || fixturesForRound.length);
+    const expected = item.key === "qualified" ? 32 : ({ r32:16, r16:8, qf:4, sf:2, third:1, final:1 }[item.key] || fixturesForRound.length);
     const done = expected > 0 && complete >= expected;
-    return `<article class="progress-item"><span class="progress-icon">${item.icon}</span><div class="progress-copy"><b>${item.label}</b><strong>+${item.points}</strong><small>${done ? "Complete" : "In progress"}</small></div><div class="progress-count">${complete} / ${expected}<span class="${done ? "" : "pending"}">${done ? "●" : "○"}</span></div></article>`;
+    const pointsLabel = item.points ? `+${item.points}` : "No points";
+    return `<article class="progress-item"><span class="progress-icon">${item.icon}</span><div class="progress-copy"><b>${item.label}</b><strong>${pointsLabel}</strong><small>${done ? "Complete" : "In progress"}</small></div><div class="progress-count">${complete} / ${expected}<span class="${done ? "" : "pending"}">${done ? "●" : "○"}</span></div></article>`;
   }).join("");
 }
 
@@ -270,7 +273,7 @@ function bestPositionedMarkup(row) {
 function renderBestPositioned(row) { if (elements.bestPositioned) elements.bestPositioned.innerHTML = bestPositionedMarkup(row); }
 
 function renderBracket(bestRow) {
-  const bracketRounds = roundDefinitions.filter((round) => ["r16","qf","sf","final"].includes(round.key));
+  const bracketRounds = roundDefinitions.filter((round) => ["r32","r16","qf","sf","final"].includes(round.key));
   const columns = bracketRounds.map((round) => {
     const matches = knockoutFixtures.filter((fixture) => getRoundKey(fixture) === round.key).sort(sortByDate);
     return `<section class="bracket-round"><div class="round-title">${round.label}<span>(+${round.points})</span></div>${matches.length ? matches.map(renderBracketMatch).join("") : `<div class="empty-round">Awaiting ${round.label} matchups</div>`}${round.key === "final" ? renderThirdPlace() : ""}</section>`;
@@ -299,9 +302,9 @@ function renderUpcoming() {
 }
 
 function renderScoring() {
-  const rows = [{label:"Qualified (from groups)", points:rules.knockout_qualification}, ...roundDefinitions.map((round) => ({label:`${round.label} win`, points:round.points}))];
+  const rows = [{label:"Qualified (from groups)", points:rules.knockout_qualification}, ...roundDefinitions.filter((round) => round.points > 0).map((round) => ({label:`${round.label} win`, points:round.points}))];
   elements.scoringKey.innerHTML = rows.map((row) => `<div class="score-row"><span>${row.label}</span><b>+${row.points}</b></div>`).join("");
-  if (elements.remainingByRound) elements.remainingByRound.innerHTML = `${roundDefinitions.map((round) => `<div class="score-row"><span>${round.label} win</span><b>+${round.points}</b></div>`).join("")}<div class="score-row score-total"><span>Maximum path</span><b>+${rules.round_of_16_win + rules.quarterfinal_win + rules.semifinal_win + rules.world_cup_final_win}</b></div>`;
+  if (elements.remainingByRound) elements.remainingByRound.innerHTML = `${roundDefinitions.filter((round) => round.points > 0).map((round) => `<div class="score-row"><span>${round.label} win</span><b>+${round.points}</b></div>`).join("")}<div class="score-row score-total"><span>Maximum path</span><b>+${rules.round_of_16_win + rules.quarterfinal_win + rules.semifinal_win + rules.world_cup_final_win}</b></div>`;
 }
 
 function renderSwingMatches() {
