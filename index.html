@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>World Cup Pool Standings</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css?v=20260627-2">
   </head>
   <body>
     <main class="dashboard">
@@ -16,7 +16,11 @@
         </div>
         <button class="icon-button" id="refreshButton" title="Refresh live data" type="button">↻</button>
       </header>
-      <a class="view-switch" href="mobile.html">Mobile version</a>
+      <nav class="stage-nav" aria-label="Dashboard stage">
+        <a class="active" href="index.html">Group Stage</a>
+        <a href="knockout.html">Knockout Stage</a>
+        <a class="mobile-link" href="mobile.html">Mobile Version</a>
+      </nav>
 
       <div class="layout">
         <section class="standings-panel" aria-label="Pool standings">
@@ -81,7 +85,7 @@
       </div>
     </main>
 
-    <script src="src/latest-results.js?v=20260626-1"></script>
-    <script src="src/app.js?v=20260626-1"></script>
+    <script src="src/latest-results.js?v=20260627-1"></script>
+    <script src="src/app.js?v=20260627-1"></script>
   </body>
 </html>

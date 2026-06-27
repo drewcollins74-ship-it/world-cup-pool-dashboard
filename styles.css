@@ -98,17 +98,34 @@ button:hover {
   background: #154d9f;
 }
 
-.view-switch {
-  background: #ffffff;
+.stage-nav {
+  display: inline-flex;
+  margin-top: 8px;
+}
+
+.stage-nav a {
+  background: var(--white);
   border: 1px solid var(--line);
   color: #0b2473;
-  display: none;
-  font-size: 14px;
+  font-size: 12px;
   font-weight: 900;
-  padding: 9px 12px;
+  padding: 8px 12px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.stage-nav a + a {
+  border-left: 0;
+}
+
+.stage-nav a.active {
+  background: var(--blue);
+  color: var(--white);
+}
+
+.stage-nav .mobile-link {
+  display: inline-block;
 }
 
 .layout {
@@ -490,8 +507,8 @@ tr.rank-red td.rank {
     padding: 12px;
   }
 
-  .view-switch {
-    display: block;
+  .stage-nav .mobile-link {
+    display: inline-block;
   }
 
   .trophy {

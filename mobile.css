@@ -79,17 +79,30 @@ button {
   font-size: 24px;
 }
 
-.view-switch {
+.stage-nav {
   background: var(--white);
   border: 1px solid #95accd;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto;
+}
+
+.stage-nav a {
   color: #0b2473;
-  display: block;
   font-size: 13px;
   font-weight: 900;
   padding: 9px 12px;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+.stage-nav a + a {
+  border-left: 1px solid #95accd;
+}
+
+.stage-nav a.active {
+  background: var(--blue);
+  color: var(--white);
 }
 
 .mobile-panel {

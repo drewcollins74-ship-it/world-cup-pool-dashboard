@@ -15,6 +15,7 @@ RESULTS_JSON = ROOT / "data" / "results.json"
 RESULTS_JS = ROOT / "src" / "latest-results.js"
 WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
 GROUPS = "ABCDEFGHIJKL"
+KNOCKOUT_TITLE = "2026 FIFA World Cup knockout stage"
 
 TEAM_CODES = {
     "ALG": "Algeria",
@@ -75,8 +76,8 @@ NAME_ALIASES = {
 }
 
 
-def fetch_group_wikitexts():
-    titles = "|".join(f"2026 FIFA World Cup Group {group}" for group in GROUPS)
+def fetch_wikitexts():
+    titles = "|".join([*(f"2026 FIFA World Cup Group {group}" for group in GROUPS), KNOCKOUT_TITLE])
     params = urlencode({
         "action": "query",
         "titles": titles,
@@ -111,39 +112,92 @@ def fetch_group_wikitexts():
 
 def parse_matches(wikitext, group_letter):
     fixtures = []
-    for block in re.findall(r"\{\{#invoke:football box\|main(?P<body>.*?)\n\}\}", wikitext, flags=re.S):
-        team1 = team_from_field(block, "team1")
-        team2 = team_from_field(block, "team2")
-        if not team1 or not team2:
-            continue
-
-        home_goals, away_goals = parse_score(field_value(block, "score"))
-        date = parse_datetime(field_value(block, "date"), field_value(block, "time"))
-        status = "FT" if home_goals is not None and away_goals is not None else "NS"
-
-        fixtures.append({
-            "fixture": {
-                "date": date,
-                "status": {"short": status},
-                "round": f"Group {group_letter}",
-                "source": "Wikipedia",
-            },
-            "league": {
-                "id": "wikipedia",
-                "name": "FIFA World Cup",
-                "season": 2026,
-                "round": f"Group {group_letter}",
-            },
-            "teams": {
-                "home": {"name": team1},
-                "away": {"name": team2},
-            },
-            "goals": {
-                "home": home_goals,
-                "away": away_goals,
-            },
-        })
+    for block in football_box_blocks(wikitext):
+        fixture = parse_fixture_block(block, f"Group {group_letter}")
+        if fixture:
+            fixtures.append(fixture)
     return fixtures
+
+
+def parse_knockout_matches(wikitext):
+    fixtures = []
+    headings = list(re.finditer(
+        r"^==\s*(Round of 32|Round of 16|Quarterfinals|Semifinals|Match for third place|Final)\s*==\s*$",
+        wikitext,
+        flags=re.M | re.I,
+    ))
+    round_names = {
+        "round of 32": "Round of 32",
+        "round of 16": "Round of 16",
+        "quarterfinals": "Quarterfinals",
+        "semifinals": "Semifinals",
+        "match for third place": "Third Place",
+        "final": "Final",
+    }
+
+    for index, heading in enumerate(headings):
+        start = heading.end()
+        end = headings[index + 1].start() if index + 1 < len(headings) else len(wikitext)
+        round_name = round_names[heading.group(1).strip().lower()]
+        for block in football_box_blocks(wikitext[start:end]):
+            fixture = parse_fixture_block(block, round_name)
+            if fixture:
+                fixtures.append(fixture)
+    return fixtures
+
+
+def football_box_blocks(wikitext):
+    return re.findall(r"\{\{#invoke:\s*football box\|main(?P<body>.*?)\n\}\}", wikitext, flags=re.S | re.I)
+
+
+def parse_fixture_block(block, round_name):
+    team1 = team_from_field(block, "team1")
+    team2 = team_from_field(block, "team2")
+    if not team1 or not team2:
+        return None
+
+    home_goals, away_goals = parse_score(field_value(block, "score"))
+    date = parse_datetime(field_value(block, "date"), field_value(block, "time"))
+    status = "FT" if home_goals is not None and away_goals is not None else "NS"
+    winner = parse_winner(block, team1, team2, home_goals, away_goals)
+
+    return {
+        "fixture": {
+            "date": date,
+            "status": {"short": status},
+            "round": round_name,
+            "source": "Wikipedia",
+            "winner": winner,
+        },
+        "league": {
+            "id": "wikipedia",
+            "name": "FIFA World Cup",
+            "season": 2026,
+            "round": round_name,
+        },
+        "teams": {
+            "home": {"name": team1},
+            "away": {"name": team2},
+        },
+        "goals": {
+            "home": home_goals,
+            "away": away_goals,
+        },
+    }
+
+
+def parse_winner(block, team1, team2, home_goals, away_goals):
+    if home_goals is None or away_goals is None:
+        return None
+    if home_goals > away_goals:
+        return team1
+    if away_goals > home_goals:
+        return team2
+
+    penalty_home, penalty_away = parse_score(field_value(block, "penaltyscore"))
+    if penalty_home is None or penalty_away is None:
+        return None
+    return team1 if penalty_home > penalty_away else team2
 
 
 def field_value(block, field):
@@ -153,7 +207,7 @@ def field_value(block, field):
 
 def team_from_field(block, field):
     value = field_value(block, field)
-    code_match = re.search(r"\|fb(?:-rt)?\|([A-Z0-9]{3})", value)
+    code_match = re.search(r"(?:\{\{|\|)fb(?:-rt)?\|([A-Z0-9]{3})", value, flags=re.I)
     if code_match:
         return TEAM_CODES.get(code_match.group(1), code_match.group(1))
 
@@ -276,7 +330,7 @@ def main():
     fixtures = []
     team_status = {}
 
-    pages = fetch_group_wikitexts()
+    pages = fetch_wikitexts()
 
     for group in GROUPS:
         title = f"2026 FIFA World Cup Group {group}"
@@ -286,6 +340,12 @@ def main():
             continue
         fixtures.extend(parse_matches(wikitext, group))
         team_status.update(parse_team_status(wikitext))
+
+    knockout_wikitext = pages.get(KNOCKOUT_TITLE, "")
+    if knockout_wikitext:
+        fixtures.extend(parse_knockout_matches(knockout_wikitext))
+    else:
+        print(f"Warning: no Wikipedia content found for {KNOCKOUT_TITLE}")
 
     output = write_outputs(fixtures, team_status)
     completed = sum(1 for fixture in fixtures if fixture["fixture"]["status"]["short"] == "FT")

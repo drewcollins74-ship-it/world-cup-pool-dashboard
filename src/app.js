@@ -195,7 +195,7 @@ function loadGeneratedResults() {
     return false;
   }
 
-  fixtures = generated.fixtures;
+  fixtures = generated.fixtures.filter((item) => `${item.fixture?.round || item.league?.round || ""}`.toLowerCase().includes("group"));
   teamState = buildStateFromFixtures(fixtures);
   applyGeneratedTeamStatus(teamState, generated.teamStatus);
   dataSource = "generated";

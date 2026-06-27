@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World Cup Pool - Knockout Stage Mobile</title>
+    <link rel="stylesheet" href="knockout-mobile.css?v=20260627-2">
+  </head>
+  <body data-layout="mobile">
+    <main class="ko-mobile">
+      <header class="ko-hero">
+        <div class="hero-mark" aria-hidden="true">🏆</div>
+        <div><h1>World Cup Pool</h1><p id="asOfLine">Knockout stage dashboard</p></div>
+        <button id="refreshButton" title="Refresh results" type="button">↻</button>
+      </header>
+
+      <nav class="stage-nav" aria-label="Dashboard stage">
+        <a href="mobile.html">Group Stage</a><a class="active" href="knockout-mobile.html">Knockout</a><a href="knockout.html">Desktop</a>
+      </nav>
+      <div class="progress-scroll"><section class="progress-strip" id="progressStrip"></section></div>
+
+      <section class="summary-grid" id="summary">
+        <article class="mobile-panel leaderboard-card" id="players">
+          <h2>Top 5 Leaderboard</h2>
+          <div class="mobile-leader-head"><span>Rank</span><span>Player</span><span>Total Pts</span><span>Teams Alive</span><span>Max Remaining</span></div>
+          <div id="leaderboardCards"></div>
+        </article>
+        <article class="mobile-panel best-card"><h2>Best Positioned</h2><div id="bestPositioned"></div></article>
+      </section>
+
+      <section class="mobile-panel bracket-panel" id="bracketSection">
+        <div class="panel-title"><h2>Knockout Bracket</h2><span>Swipe to explore →</span></div>
+        <div class="bracket-scroll"><div class="bracket" id="bracket"></div></div>
+      </section>
+
+      <section class="info-grid">
+        <article class="mobile-panel"><h2>Upcoming Matches</h2><div id="upcomingMatches" class="compact-list"></div></article>
+        <article class="mobile-panel"><h2>Scoring Key</h2><div id="scoringKey" class="score-list"></div></article>
+        <article class="mobile-panel"><h2>Swing Matches</h2><div id="swingMatches" class="compact-list"></div></article>
+        <article class="mobile-panel"><h2>Most Teams Alive</h2><ol id="mostAlive" class="alive-list"></ol></article>
+        <article class="mobile-panel about-card"><h2>About This Pool</h2><p>Points are earned when your assigned teams qualify and win in the scored knockout rounds. Later rounds are worth more.</p><a href="#scoringKey">Scoring details</a></article>
+      </section>
+
+      <nav class="bottom-nav" aria-label="Mobile dashboard navigation">
+        <a href="#summary">⌂<span>Home</span></a><a href="#bracketSection">⇥<span>Bracket</span></a><a href="#upcomingMatches">▣<span>Matches</span></a><a href="#players">♙<span>Leaders</span></a>
+      </nav>
+    </main>
+    <script src="src/latest-results.js?v=20260627-1"></script>
+    <script src="src/knockout.js?v=20260627-4"></script>
+  </body>
+</html>

@@ -102,7 +102,7 @@ function boot() {
   participants = parseParticipants(participantsCsv);
   const generated = window.__WORLD_CUP_RESULTS__;
   if (generated?.fixtures?.length) {
-    fixtures = generated.fixtures;
+    fixtures = generated.fixtures.filter((item) => `${item.fixture?.round || item.league?.round || ""}`.toLowerCase().includes("group"));
     teamState = buildStateFromFixtures(fixtures);
     applyGeneratedTeamStatus(teamState, generated.teamStatus);
     dataGeneratedAt = generated.generatedAt || null;

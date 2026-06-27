@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>World Cup Pool Standings - Knockout Stage</title>
+    <link rel="stylesheet" href="knockout.css?v=20260627-2">
+  </head>
+  <body data-layout="desktop">
+    <main class="ko-dashboard">
+      <header class="ko-hero">
+        <div class="hero-mark" aria-hidden="true">🏆</div>
+        <div>
+          <h1>World Cup Pool Standings</h1>
+          <p id="asOfLine">Knockout stage dashboard</p>
+        </div>
+        <button class="refresh-button" id="refreshButton" title="Refresh results" type="button">↻</button>
+      </header>
+
+      <nav class="stage-nav" aria-label="Dashboard stage">
+        <a href="index.html">Group Stage</a>
+        <a class="active" href="knockout.html">Knockout Stage</a>
+        <a href="knockout-mobile.html">Mobile Version</a>
+      </nav>
+
+      <section class="progress-strip" id="progressStrip" aria-label="Tournament scoring progress"></section>
+
+      <div class="ko-layout">
+        <div class="left-column">
+          <section class="panel leaderboard-panel">
+            <h2>Pool Leaderboard</h2>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr><th>Rank</th><th>Player</th><th>Total Pts</th><th>Group</th><th>KO</th><th>Teams Alive</th><th>Max Remaining</th></tr>
+                </thead>
+                <tbody id="leaderboardBody"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel about-panel">
+            <h2>About The Leaderboard</h2>
+            <dl>
+              <div><dt>Total Pts</dt><dd>Group points plus knockout points earned</dd></div>
+              <div><dt>Group</dt><dd>Group-stage wins</dd></div>
+              <div><dt>KO</dt><dd>Qualification bonuses and knockout wins</dd></div>
+              <div><dt>Teams Alive</dt><dd>Assigned teams still able to earn points</dd></div>
+              <div><dt>Max Remaining</dt><dd>Most points still available from live teams</dd></div>
+            </dl>
+          </section>
+        </div>
+
+        <section class="panel bracket-panel" id="bracketSection">
+          <h2>Knockout Bracket</h2>
+          <div class="bracket-scroll"><div class="bracket" id="bracket"></div></div>
+          <div class="bracket-note">ⓘ Bracket matchups and results update automatically as Wikipedia posts them.</div>
+        </section>
+
+        <aside class="right-column">
+          <section class="panel"><h2>Upcoming Matches</h2><div id="upcomingMatches" class="compact-list"></div></section>
+          <section class="panel"><h2>Scoring Key</h2><div id="scoringKey" class="score-list"></div></section>
+          <section class="panel"><h2>Swing Matches (Assignments)</h2><div id="swingMatches" class="compact-list"></div></section>
+          <section class="panel"><h2>Most Teams Alive</h2><ol id="mostAlive" class="alive-list"></ol></section>
+        </aside>
+      </div>
+
+      <footer class="dashboard-note">ⓘ <b>Note:</b> Group-stage pages remain available from the stage switch above. Knockout totals use the scoring rules for this pool.</footer>
+    </main>
+
+    <script src="src/latest-results.js?v=20260627-1"></script>
+    <script src="src/knockout.js?v=20260627-4"></script>
+  </body>
+</html>
