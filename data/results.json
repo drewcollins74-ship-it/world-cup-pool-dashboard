@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T16:19:31.462646+00:00",
+  "generatedAt": "2026-06-27T17:47:10.388694+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2021,6 +2021,486 @@
         "home": null,
         "away": null
       }
+    },
+    {
+      "fixture": {
+        "date": "2026-06-28T19:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 73
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "South Africa"
+        },
+        "away": {
+          "name": "Canada"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-06-29T17:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 76
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Brazil"
+        },
+        "away": {
+          "name": "Japan"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-06-29T20:30:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 74
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Germany"
+        },
+        "away": {
+          "name": "Paraguay"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-06-30T01:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 75
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Netherlands"
+        },
+        "away": {
+          "name": "Morocco"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-06-30T17:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 78
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Ivory Coast"
+        },
+        "away": {
+          "name": "Norway"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-06-30T21:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 77
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "France"
+        },
+        "away": {
+          "name": "Sweden"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-01T01:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 79
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Mexico"
+        },
+        "away": {
+          "name": "Third-place Group C/E"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-01T16:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 80
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Winner Group L"
+        },
+        "away": {
+          "name": "Third-place Group I/J/K"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-01T20:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 82
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Belgium"
+        },
+        "away": {
+          "name": "Third-place Group A/I/J"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-02T00:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 81
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "United States"
+        },
+        "away": {
+          "name": "Bosnia & Herzegovina"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-02T19:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 84
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Spain"
+        },
+        "away": {
+          "name": "Runner-up Group J"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-02T23:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 83
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Runner-up Group K"
+        },
+        "away": {
+          "name": "Runner-up Group L"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-03T03:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 85
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Switzerland"
+        },
+        "away": {
+          "name": "Third-place Group G/J"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-03T18:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 88
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Australia"
+        },
+        "away": {
+          "name": "Egypt"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-03T22:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 86
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Argentina"
+        },
+        "away": {
+          "name": "Cape Verde"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-04T01:30:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Round of 32",
+        "source": "Wikipedia",
+        "winner": null,
+        "matchNumber": 87
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Round of 32"
+      },
+      "teams": {
+        "home": {
+          "name": "Winner Group K"
+        },
+        "away": {
+          "name": "Third-place Group E/I/L"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
     }
   ],
   "teamStatus": {
@@ -2032,14 +2512,14 @@
     "Canada": "qualified",
     "Bosnia & Herzegovina": "qualified",
     "Qatar": "eliminated",
-    "United States": "qualified",
-    "Australia": "qualified",
-    "Paraguay": "qualified",
-    "Türkiye": "eliminated",
     "Brazil": "qualified",
     "Morocco": "qualified",
     "Scotland": "pending",
     "Haiti": "eliminated",
+    "United States": "qualified",
+    "Australia": "qualified",
+    "Paraguay": "qualified",
+    "Türkiye": "eliminated",
     "Germany": "qualified",
     "Ivory Coast": "qualified",
     "Ecuador": "qualified",
@@ -2048,21 +2528,22 @@
     "Japan": "qualified",
     "Sweden": "qualified",
     "Tunisia": "eliminated",
-    "Spain": "qualified",
-    "Cape Verde": "qualified",
-    "Uruguay": "eliminated",
-    "Saudi Arabia": "eliminated",
     "Belgium": "qualified",
     "Egypt": "qualified",
     "Iran": "pending",
     "New Zealand": "eliminated",
+    "Spain": "qualified",
+    "Cape Verde": "qualified",
+    "Uruguay": "eliminated",
+    "Saudi Arabia": "eliminated",
     "France": "qualified",
     "Norway": "qualified",
     "Senegal": "qualified",
-    "Iraq": "eliminated"
+    "Iraq": "eliminated",
+    "Argentina": "qualified"
   },
   "api": {
-    "results": 72,
+    "results": 88,
     "errors": null
   }
 }
