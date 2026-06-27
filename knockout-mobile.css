@@ -71,7 +71,6 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .alive-list li { padding:3px 0; }
 .alive-list span { float:right; font-weight:900; }
 .about-card p { font-size: 13px; line-height: 1.45; padding: 0 14px 8px; }
-.about-card a { color:#0642bb; display:inline-block; font-size:13px; font-weight:900; padding:0 14px 14px; }
 .empty-message { color:#6d7889; line-height:1.35; padding:10px 0; text-align:center; }
 .bottom-nav { background:#fff; border:1px solid var(--line); bottom:0; display:grid; grid-template-columns:repeat(4,1fr); position:sticky; z-index:3; }
 .bottom-nav a { color:#5e6878; font-size:20px; padding:8px 4px 6px; text-align:center; text-decoration:none; }
