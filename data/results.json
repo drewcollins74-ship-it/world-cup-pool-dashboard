@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T19:42:11.437403+00:00",
+  "generatedAt": "2026-06-27T16:19:31.462646+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -1101,7 +1101,7 @@
       "fixture": {
         "date": "2026-06-27T03:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group G",
         "source": "Wikipedia"
@@ -1121,15 +1121,15 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       }
     },
     {
       "fixture": {
         "date": "2026-06-27T03:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group G",
         "source": "Wikipedia"
@@ -1149,8 +1149,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 5
       }
     },
     {
@@ -1269,7 +1269,7 @@
       "fixture": {
         "date": "2026-06-27T00:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group H",
         "source": "Wikipedia"
@@ -1289,15 +1289,15 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       }
     },
     {
       "fixture": {
         "date": "2026-06-27T00:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group H",
         "source": "Wikipedia"
@@ -1317,8 +1317,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       }
     },
     {
@@ -1437,7 +1437,7 @@
       "fixture": {
         "date": "2026-06-26T19:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group I",
         "source": "Wikipedia"
@@ -1457,15 +1457,15 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 4
       }
     },
     {
       "fixture": {
         "date": "2026-06-26T19:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group I",
         "source": "Wikipedia"
@@ -1485,8 +1485,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 5,
+        "away": 0
       }
     },
     {
