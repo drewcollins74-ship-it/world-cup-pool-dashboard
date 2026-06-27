@@ -85,7 +85,6 @@ const rules = {
 
 const elements = {
   asOfLine: document.querySelector("#asOfLine"),
-  refreshButton: document.querySelector("#refreshButton"),
   standingsCards: document.querySelector("#standingsCards"),
   groupWinPoints: document.querySelector("#groupWinPoints"),
   advancePoints: document.querySelector("#advancePoints"),
@@ -109,7 +108,6 @@ function boot() {
   }
 
   render();
-  elements.refreshButton.addEventListener("click", () => window.location.reload());
 }
 
 function parseParticipants(csvText) {

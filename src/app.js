@@ -150,7 +150,6 @@ const rulesYaml = `pool_rules:
 
 const elements = {
   asOfLine: document.querySelector("#asOfLine"),
-  refreshButton: document.querySelector("#refreshButton"),
   standingsBody: document.querySelector("#standingsBody"),
   groupWinPoints: document.querySelector("#groupWinPoints"),
   advancePoints: document.querySelector("#advancePoints"),
@@ -165,7 +164,6 @@ async function boot() {
   loadGeneratedResults();
   render();
 
-  elements.refreshButton.addEventListener("click", () => window.location.reload());
 }
 
 function parseParticipants(csvText) {

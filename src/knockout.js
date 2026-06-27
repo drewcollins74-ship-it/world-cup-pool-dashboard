@@ -95,7 +95,7 @@ const groupState = buildGroupState();
 const ownerByTeam = new Map(participants.flatMap((participant) => participant.teams.map((team) => [team, participant.name])));
 
 const elements = {
-  asOfLine:document.querySelector("#asOfLine"), refreshButton:document.querySelector("#refreshButton"),
+  asOfLine:document.querySelector("#asOfLine"),
   progressStrip:document.querySelector("#progressStrip"), leaderboardBody:document.querySelector("#leaderboardBody"),
   leaderboardCards:document.querySelector("#leaderboardCards"), bestPositioned:document.querySelector("#bestPositioned"),
   bracket:document.querySelector("#bracket"), upcomingMatches:document.querySelector("#upcomingMatches"),
@@ -337,5 +337,4 @@ function formatEasternDateTime(value) {
   return `${new Intl.DateTimeFormat("en-US", { timeZone:"America/New_York", month:"short", day:"numeric", hour:"numeric", minute:"2-digit" }).format(date)} ET`;
 }
 
-elements.refreshButton?.addEventListener("click", () => window.location.reload());
 render();

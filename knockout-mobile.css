@@ -4,11 +4,10 @@ html { scroll-behavior: smooth; }
 body { background: var(--paper); color: var(--ink); font-family: Arial, Helvetica, sans-serif; margin: 0; }
 h1, h2, p { margin: 0; }
 .ko-mobile { display: grid; gap: 10px; margin: 0 auto; max-width: 760px; padding: 8px; }
-.ko-hero { align-items: center; background: linear-gradient(110deg,#071b43,#0b3777); border-bottom: 3px solid var(--gold); color: var(--white); display: grid; gap: 8px; grid-template-columns: 42px 1fr 40px; min-height: 86px; padding: 10px; }
+.ko-hero { align-items: center; background: linear-gradient(110deg,#071b43,#0b3777); border-bottom: 3px solid var(--gold); color: var(--white); display: grid; gap: 8px; grid-template-columns: 42px 1fr; min-height: 86px; padding: 10px; }
 .hero-mark { font-size: 34px; }
 h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; line-height: 1; text-transform: uppercase; }
 .ko-hero p { color: #ffc42b; font-size: 12px; font-weight: 900; margin-top: 5px; text-transform: uppercase; }
-.ko-hero button { aspect-ratio: 1; background: #ffffff12; border: 2px solid #d9e3f2; color: #fff; font-size: 25px; }
 .stage-nav { background: var(--white); border: 1px solid var(--line); display: grid; grid-template-columns: 1fr 1fr auto; }
 .stage-nav a { color: var(--blue); font-size: 12px; font-weight: 900; padding: 9px 10px; text-align: center; text-decoration: none; text-transform: uppercase; }
 .stage-nav a + a { border-left: 1px solid var(--line); }

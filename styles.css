@@ -33,7 +33,7 @@ body {
   border-bottom: 4px solid var(--gold);
   color: var(--white);
   display: grid;
-  grid-template-columns: 74px 1fr 44px;
+  grid-template-columns: 74px 1fr;
   gap: 12px;
   min-height: 126px;
   padding: 14px 18px;
@@ -67,22 +67,10 @@ h1 {
   text-transform: uppercase;
 }
 
-.icon-button,
 button {
   border: 0;
   cursor: pointer;
   font: inherit;
-}
-
-.icon-button {
-  align-items: center;
-  aspect-ratio: 1;
-  background: #ffffff18;
-  border: 1px solid #ffffff55;
-  color: var(--white);
-  display: grid;
-  font-size: 28px;
-  justify-content: center;
 }
 
 button {
@@ -503,7 +491,7 @@ tr.rank-red td.rank {
   }
 
   .hero {
-    grid-template-columns: 54px 1fr 38px;
+    grid-template-columns: 54px 1fr;
     padding: 12px;
   }
 
