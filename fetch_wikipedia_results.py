@@ -147,7 +147,31 @@ def parse_knockout_matches(wikitext):
 
 
 def football_box_blocks(wikitext):
-    return re.findall(r"\{\{#invoke:\s*football box\|main(?P<body>.*?)\n\}\}", wikitext, flags=re.S | re.I)
+    blocks = []
+    start_pattern = re.compile(r"\{\{#invoke:\s*football box\s*\|\s*main", flags=re.I)
+    position = 0
+
+    while True:
+        start_match = start_pattern.search(wikitext, position)
+        if not start_match:
+            break
+
+        depth = 1
+        cursor = start_match.end()
+        while cursor < len(wikitext) and depth:
+            if wikitext.startswith("{{", cursor):
+                depth += 1
+                cursor += 2
+            elif wikitext.startswith("}}", cursor):
+                depth -= 1
+                if depth == 0:
+                    blocks.append(wikitext[start_match.end():cursor])
+                cursor += 2
+            else:
+                cursor += 1
+        position = cursor
+
+    return blocks
 
 
 def parse_fixture_block(block, round_name):
@@ -209,7 +233,8 @@ def team_from_field(block, field):
     value = field_value(block, field)
     code_match = re.search(r"(?:\{\{|\|)fb(?:-rt)?\|([A-Z0-9]{3})", value, flags=re.I)
     if code_match:
-        return TEAM_CODES.get(code_match.group(1), code_match.group(1))
+        code = code_match.group(1).upper()
+        return TEAM_CODES.get(code, code)
 
     clean = strip_markup(value)
     return normalize_name(clean)
@@ -284,6 +309,157 @@ def parse_team_status(wikitext):
     return statuses
 
 
+def derive_team_status(fixtures):
+    completed_statuses = {"FT", "AET", "PEN"}
+    group_fixtures = {}
+    all_group_teams = set()
+
+    for fixture in fixtures:
+        round_name = fixture.get("fixture", {}).get("round", "")
+        if not round_name.startswith("Group "):
+            continue
+        group_fixtures.setdefault(round_name, []).append(fixture)
+        all_group_teams.update({
+            fixture["teams"]["home"]["name"],
+            fixture["teams"]["away"]["name"],
+        })
+
+    statuses = {}
+    third_place_records = []
+    unresolved_third_slots = 0
+
+    for group_name, matches in group_fixtures.items():
+        if len(matches) != 6 or any(
+            match.get("fixture", {}).get("status", {}).get("short") not in completed_statuses
+            for match in matches
+        ):
+            unresolved_third_slots += 1
+            continue
+
+        ranked = rank_completed_group(matches)
+        metric_counts = {}
+        for record in ranked:
+            metric_counts[record["rank_metrics"]] = metric_counts.get(record["rank_metrics"], 0) + 1
+
+        for record in ranked:
+            metrics = record["rank_metrics"]
+            better_count = sum(count for key, count in metric_counts.items() if key < metrics)
+            equal_count = metric_counts[metrics]
+            if better_count + equal_count <= 2:
+                statuses[record["team"]] = "qualified"
+            elif better_count >= 3:
+                statuses[record["team"]] = "eliminated"
+            elif better_count == 2 and equal_count == 1:
+                statuses[record["team"]] = "pending"
+                third_place_records.append(record)
+            else:
+                statuses[record["team"]] = "pending"
+                unresolved_third_slots += 1
+
+    rank_third_place_teams(third_place_records, unresolved_third_slots, statuses)
+
+    for fixture in fixtures:
+        round_name = fixture.get("fixture", {}).get("round", "")
+        if round_name.startswith("Group "):
+            continue
+        for side in ("home", "away"):
+            team = fixture.get("teams", {}).get(side, {}).get("name")
+            if team in all_group_teams:
+                statuses[team] = "qualified"
+
+    return statuses
+
+
+def rank_completed_group(matches):
+    teams = sorted({
+        fixture["teams"][side]["name"]
+        for fixture in matches
+        for side in ("home", "away")
+    })
+    overall = {team: blank_standing(team) for team in teams}
+    for fixture in matches:
+        apply_standing_result(overall, fixture)
+
+    ranked = []
+    point_groups = {}
+    for record in overall.values():
+        point_groups.setdefault(record["points"], []).append(record)
+
+    for points in sorted(point_groups, reverse=True):
+        tied_records = point_groups[points]
+        tied_teams = {record["team"] for record in tied_records}
+        head_to_head = {team: blank_standing(team) for team in tied_teams}
+        for fixture in matches:
+            home = fixture["teams"]["home"]["name"]
+            away = fixture["teams"]["away"]["name"]
+            if home in tied_teams and away in tied_teams:
+                apply_standing_result(head_to_head, fixture)
+
+        for record in tied_records:
+            mini = head_to_head[record["team"]]
+            record["rank_metrics"] = (
+                -record["points"],
+                -mini["points"],
+                -goal_difference(mini),
+                -mini["goals_for"],
+                -goal_difference(record),
+                -record["goals_for"],
+            )
+        ranked.extend(sorted(tied_records, key=lambda record: (record["rank_metrics"], record["team"])))
+
+    return ranked
+
+
+def blank_standing(team):
+    return {"team": team, "points": 0, "goals_for": 0, "goals_against": 0}
+
+
+def apply_standing_result(standings, fixture):
+    home = fixture["teams"]["home"]["name"]
+    away = fixture["teams"]["away"]["name"]
+    home_goals = fixture["goals"]["home"]
+    away_goals = fixture["goals"]["away"]
+    if home_goals is None or away_goals is None:
+        return
+
+    standings[home]["goals_for"] += home_goals
+    standings[home]["goals_against"] += away_goals
+    standings[away]["goals_for"] += away_goals
+    standings[away]["goals_against"] += home_goals
+    if home_goals > away_goals:
+        standings[home]["points"] += 3
+    elif away_goals > home_goals:
+        standings[away]["points"] += 3
+    else:
+        standings[home]["points"] += 1
+        standings[away]["points"] += 1
+
+
+def goal_difference(record):
+    return record["goals_for"] - record["goals_against"]
+
+
+def rank_third_place_teams(records, unresolved_slots, statuses):
+    metric_counts = {}
+    for record in records:
+        metrics = (
+            -record["points"],
+            -goal_difference(record),
+            -record["goals_for"],
+        )
+        record["third_place_metrics"] = metrics
+        metric_counts[metrics] = metric_counts.get(metrics, 0) + 1
+
+    for record in records:
+        metrics = record["third_place_metrics"]
+        better_count = sum(count for key, count in metric_counts.items() if key < metrics)
+        equal_count = metric_counts[metrics]
+        if better_count + equal_count + unresolved_slots <= 8:
+            statuses[record["team"]] = "qualified"
+        elif better_count >= 8:
+            statuses[record["team"]] = "eliminated"
+
+
 def normalize_name(name):
     name = re.sub(r"\s+", " ", name).strip()
     return NAME_ALIASES.get(name, name)
@@ -347,6 +523,7 @@ def main():
     else:
         print(f"Warning: no Wikipedia content found for {KNOCKOUT_TITLE}")
 
+    team_status.update(derive_team_status(fixtures))
     output = write_outputs(fixtures, team_status)
     completed = sum(1 for fixture in fixtures if fixture["fixture"]["status"]["short"] == "FT")
     print(f"Wrote {len(output['fixtures'])} Wikipedia fixtures to {RESULTS_JSON}")

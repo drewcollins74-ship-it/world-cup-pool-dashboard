@@ -176,9 +176,9 @@ function applyGeneratedTeamStatus(state, teamStatus) {
   if (!teamStatus) return;
   Object.entries(teamStatus).forEach(([team, status]) => {
     const normalizedTeam = normalizeTeam(team);
-    if (!state[normalizedTeam] || !["qualified", "eliminated"].includes(status)) return;
+    if (!state[normalizedTeam] || !["qualified", "eliminated", "pending"].includes(status)) return;
     state[normalizedTeam].status = status;
-    state[normalizedTeam].advancement = status === "qualified" ? "Very Likely" : "Out";
+    state[normalizedTeam].advancement = status === "qualified" ? "Very Likely" : status === "eliminated" ? "Out" : "Possible";
   });
 }
 

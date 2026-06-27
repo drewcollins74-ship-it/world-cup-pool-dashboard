@@ -931,6 +931,35 @@
     },
     {
       "fixture": {
+        "date": "2026-06-21T02:00:00+00:00",
+        "status": {
+          "short": "FT"
+        },
+        "round": "Group F",
+        "source": "FIFA",
+        "winner": "Japan"
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Group F"
+      },
+      "teams": {
+        "home": {
+          "name": "Tunisia"
+        },
+        "away": {
+          "name": "Japan"
+        }
+      },
+      "goals": {
+        "home": 0,
+        "away": 4
+      }
+    },
+    {
+      "fixture": {
         "date": "2026-06-25T23:00:00+00:00",
         "status": {
           "short": "FT"
@@ -1994,9 +2023,46 @@
       }
     }
   ],
-  "teamStatus": {},
+  "teamStatus": {
+    "Mexico": "qualified",
+    "South Africa": "qualified",
+    "South Korea": "pending",
+    "Czechia": "eliminated",
+    "Switzerland": "qualified",
+    "Canada": "qualified",
+    "Bosnia & Herzegovina": "qualified",
+    "Qatar": "eliminated",
+    "United States": "qualified",
+    "Australia": "qualified",
+    "Paraguay": "qualified",
+    "Türkiye": "eliminated",
+    "Brazil": "qualified",
+    "Morocco": "qualified",
+    "Scotland": "pending",
+    "Haiti": "eliminated",
+    "Germany": "qualified",
+    "Ivory Coast": "qualified",
+    "Ecuador": "qualified",
+    "Curaçao": "eliminated",
+    "Netherlands": "qualified",
+    "Japan": "qualified",
+    "Sweden": "qualified",
+    "Tunisia": "eliminated",
+    "Spain": "qualified",
+    "Cape Verde": "qualified",
+    "Uruguay": "eliminated",
+    "Saudi Arabia": "eliminated",
+    "Belgium": "qualified",
+    "Egypt": "qualified",
+    "Iran": "pending",
+    "New Zealand": "eliminated",
+    "France": "qualified",
+    "Norway": "qualified",
+    "Senegal": "qualified",
+    "Iraq": "eliminated"
+  },
   "api": {
-    "results": 71,
+    "results": 72,
     "errors": null
   }
 }

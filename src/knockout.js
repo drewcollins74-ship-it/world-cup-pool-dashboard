@@ -167,7 +167,7 @@ function buildGroupState() {
   });
   Object.entries(generated.teamStatus || {}).forEach(([team, status]) => {
     const normalized = normalizeTeam(team);
-    if (state[normalized] && ["qualified", "eliminated"].includes(status)) state[normalized].status = status;
+    if (state[normalized] && ["qualified", "eliminated", "pending"].includes(status)) state[normalized].status = status;
   });
   knockoutFixtures.forEach((fixture) => fixtureTeams(fixture).forEach((team) => {
     if (state[team]) state[team].status = "qualified";
