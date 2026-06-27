@@ -95,6 +95,17 @@ h1 {
   color: var(--white);
 }
 
+.source-note {
+  color: #52647b;
+  font-size: 11px;
+  text-align: center;
+}
+
+.source-note a {
+  color: var(--blue);
+  font-weight: 800;
+}
+
 .mobile-panel {
   background: var(--white);
   border: 1px solid #95accd;

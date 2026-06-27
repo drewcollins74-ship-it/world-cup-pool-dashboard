@@ -25,6 +25,8 @@ h1 { font-size: 42px; font-weight: 900; letter-spacing: 0; line-height: 1; text-
 .stage-nav a { background:var(--white); border:1px solid var(--line); color:var(--blue); font-size:12px; font-weight:900; padding:8px 12px; text-decoration:none; text-transform:uppercase; }
 .stage-nav a + a { border-left:0; }
 .stage-nav a.active { background: var(--blue); color: var(--white); }
+.source-note { color:#52647b; font-size:11px; margin-top:6px; }
+.source-note a { color:var(--blue); font-weight:800; }
 
 .progress-strip { display: grid; gap: 6px; grid-template-columns: repeat(6, minmax(0, 1fr)); margin-top: 10px; }
 .progress-item { align-items: center; background: var(--white); border: 1px solid var(--line); display: grid; gap: 8px; grid-template-columns: 36px 1fr auto; min-height: 68px; padding: 9px; }

@@ -116,6 +116,17 @@ button:hover {
   display: inline-block;
 }
 
+.source-note {
+  color: #52647b;
+  font-size: 12px;
+  margin-top: 6px;
+}
+
+.source-note a {
+  color: var(--blue);
+  font-weight: 800;
+}
+
 .layout {
   align-items: stretch;
   display: grid;
