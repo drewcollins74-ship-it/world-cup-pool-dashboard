@@ -26,7 +26,7 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .summary-grid { display: grid; gap: 10px; }
 .mobile-panel { background: var(--white); border: 1px solid var(--line); overflow: hidden; }
 .mobile-panel > h2, .panel-title { color: var(--blue); font-size: 15px; padding: 12px 14px 7px; text-transform: uppercase; }
-.mobile-leader-head, .mobile-leader-row { align-items: center; display: grid; gap: 5px; grid-template-columns: 48px 100px 68px 48px 48px 66px; min-width: 430px; }
+.mobile-leader-head, .mobile-leader-row { align-items: center; display: grid; gap: 2px; grid-template-columns: 44px minmax(76px,1fr) 56px 42px 36px 56px; min-width: 350px; }
 .leaderboard-card { overflow-x: auto; }
 .leaderboard-card > h2 { background: var(--navy); color: var(--white); padding: 8px 12px; }
 .mobile-leader-head { font-size: 9px; font-weight: 900; padding: 5px 10px; }
