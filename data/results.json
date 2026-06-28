@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-27T17:47:10.388694+00:00",
+  "generatedAt": "2026-06-28T22:14:24.317415+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -12,7 +12,8 @@
           "short": "FT"
         },
         "round": "Group A",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Mexico"
       },
       "league": {
         "id": "wikipedia",
@@ -40,7 +41,8 @@
           "short": "FT"
         },
         "round": "Group A",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "South Korea"
       },
       "league": {
         "id": "wikipedia",
@@ -68,7 +70,8 @@
           "short": "FT"
         },
         "round": "Group A",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -96,7 +99,8 @@
           "short": "FT"
         },
         "round": "Group A",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Mexico"
       },
       "league": {
         "id": "wikipedia",
@@ -124,7 +128,8 @@
           "short": "FT"
         },
         "round": "Group A",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Mexico"
       },
       "league": {
         "id": "wikipedia",
@@ -152,7 +157,8 @@
           "short": "FT"
         },
         "round": "Group A",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "South Africa"
       },
       "league": {
         "id": "wikipedia",
@@ -180,7 +186,8 @@
           "short": "FT"
         },
         "round": "Group B",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -208,7 +215,8 @@
           "short": "FT"
         },
         "round": "Group B",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -236,7 +244,8 @@
           "short": "FT"
         },
         "round": "Group B",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Switzerland"
       },
       "league": {
         "id": "wikipedia",
@@ -264,7 +273,8 @@
           "short": "FT"
         },
         "round": "Group B",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Canada"
       },
       "league": {
         "id": "wikipedia",
@@ -292,7 +302,8 @@
           "short": "FT"
         },
         "round": "Group B",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Switzerland"
       },
       "league": {
         "id": "wikipedia",
@@ -320,7 +331,8 @@
           "short": "FT"
         },
         "round": "Group B",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Bosnia & Herzegovina"
       },
       "league": {
         "id": "wikipedia",
@@ -348,7 +360,8 @@
           "short": "FT"
         },
         "round": "Group C",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -376,7 +389,8 @@
           "short": "FT"
         },
         "round": "Group C",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Scotland"
       },
       "league": {
         "id": "wikipedia",
@@ -404,7 +418,8 @@
           "short": "FT"
         },
         "round": "Group C",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Morocco"
       },
       "league": {
         "id": "wikipedia",
@@ -432,7 +447,8 @@
           "short": "FT"
         },
         "round": "Group C",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Brazil"
       },
       "league": {
         "id": "wikipedia",
@@ -460,7 +476,8 @@
           "short": "FT"
         },
         "round": "Group C",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Brazil"
       },
       "league": {
         "id": "wikipedia",
@@ -488,7 +505,8 @@
           "short": "FT"
         },
         "round": "Group C",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Morocco"
       },
       "league": {
         "id": "wikipedia",
@@ -516,7 +534,8 @@
           "short": "FT"
         },
         "round": "Group D",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "United States"
       },
       "league": {
         "id": "wikipedia",
@@ -544,7 +563,8 @@
           "short": "FT"
         },
         "round": "Group D",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Australia"
       },
       "league": {
         "id": "wikipedia",
@@ -572,7 +592,8 @@
           "short": "FT"
         },
         "round": "Group D",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "United States"
       },
       "league": {
         "id": "wikipedia",
@@ -600,7 +621,8 @@
           "short": "FT"
         },
         "round": "Group D",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Paraguay"
       },
       "league": {
         "id": "wikipedia",
@@ -628,7 +650,8 @@
           "short": "FT"
         },
         "round": "Group D",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Türkiye"
       },
       "league": {
         "id": "wikipedia",
@@ -656,7 +679,8 @@
           "short": "FT"
         },
         "round": "Group D",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -684,7 +708,8 @@
           "short": "FT"
         },
         "round": "Group E",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Germany"
       },
       "league": {
         "id": "wikipedia",
@@ -712,7 +737,8 @@
           "short": "FT"
         },
         "round": "Group E",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Ivory Coast"
       },
       "league": {
         "id": "wikipedia",
@@ -740,7 +766,8 @@
           "short": "FT"
         },
         "round": "Group E",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Germany"
       },
       "league": {
         "id": "wikipedia",
@@ -768,7 +795,8 @@
           "short": "FT"
         },
         "round": "Group E",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -796,7 +824,8 @@
           "short": "FT"
         },
         "round": "Group E",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Ivory Coast"
       },
       "league": {
         "id": "wikipedia",
@@ -824,7 +853,8 @@
           "short": "FT"
         },
         "round": "Group E",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Ecuador"
       },
       "league": {
         "id": "wikipedia",
@@ -852,7 +882,8 @@
           "short": "FT"
         },
         "round": "Group F",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -880,7 +911,8 @@
           "short": "FT"
         },
         "round": "Group F",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Sweden"
       },
       "league": {
         "id": "wikipedia",
@@ -908,7 +940,8 @@
           "short": "FT"
         },
         "round": "Group F",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Netherlands"
       },
       "league": {
         "id": "wikipedia",
@@ -931,12 +964,12 @@
     },
     {
       "fixture": {
-        "date": "2026-06-21T02:00:00+00:00",
+        "date": "2026-06-21T04:00:00+00:00",
         "status": {
           "short": "FT"
         },
         "round": "Group F",
-        "source": "FIFA",
+        "source": "Wikipedia",
         "winner": "Japan"
       },
       "league": {
@@ -965,7 +998,8 @@
           "short": "FT"
         },
         "round": "Group F",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -993,7 +1027,8 @@
           "short": "FT"
         },
         "round": "Group F",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Netherlands"
       },
       "league": {
         "id": "wikipedia",
@@ -1021,7 +1056,8 @@
           "short": "FT"
         },
         "round": "Group G",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1049,7 +1085,8 @@
           "short": "FT"
         },
         "round": "Group G",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1077,7 +1114,8 @@
           "short": "FT"
         },
         "round": "Group G",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1105,7 +1143,8 @@
           "short": "FT"
         },
         "round": "Group G",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Egypt"
       },
       "league": {
         "id": "wikipedia",
@@ -1133,7 +1172,8 @@
           "short": "FT"
         },
         "round": "Group G",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1161,7 +1201,8 @@
           "short": "FT"
         },
         "round": "Group G",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Belgium"
       },
       "league": {
         "id": "wikipedia",
@@ -1189,7 +1230,8 @@
           "short": "FT"
         },
         "round": "Group H",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1217,7 +1259,8 @@
           "short": "FT"
         },
         "round": "Group H",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1245,7 +1288,8 @@
           "short": "FT"
         },
         "round": "Group H",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Spain"
       },
       "league": {
         "id": "wikipedia",
@@ -1273,7 +1317,8 @@
           "short": "FT"
         },
         "round": "Group H",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1301,7 +1346,8 @@
           "short": "FT"
         },
         "round": "Group H",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1329,7 +1375,8 @@
           "short": "FT"
         },
         "round": "Group H",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Spain"
       },
       "league": {
         "id": "wikipedia",
@@ -1357,7 +1404,8 @@
           "short": "FT"
         },
         "round": "Group I",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "France"
       },
       "league": {
         "id": "wikipedia",
@@ -1385,7 +1433,8 @@
           "short": "FT"
         },
         "round": "Group I",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Norway"
       },
       "league": {
         "id": "wikipedia",
@@ -1413,7 +1462,8 @@
           "short": "FT"
         },
         "round": "Group I",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "France"
       },
       "league": {
         "id": "wikipedia",
@@ -1441,7 +1491,8 @@
           "short": "FT"
         },
         "round": "Group I",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Norway"
       },
       "league": {
         "id": "wikipedia",
@@ -1469,7 +1520,8 @@
           "short": "FT"
         },
         "round": "Group I",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "France"
       },
       "league": {
         "id": "wikipedia",
@@ -1497,7 +1549,8 @@
           "short": "FT"
         },
         "round": "Group I",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Senegal"
       },
       "league": {
         "id": "wikipedia",
@@ -1525,7 +1578,8 @@
           "short": "FT"
         },
         "round": "Group J",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Argentina"
       },
       "league": {
         "id": "wikipedia",
@@ -1553,7 +1607,8 @@
           "short": "FT"
         },
         "round": "Group J",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Austria"
       },
       "league": {
         "id": "wikipedia",
@@ -1581,7 +1636,8 @@
           "short": "FT"
         },
         "round": "Group J",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Argentina"
       },
       "league": {
         "id": "wikipedia",
@@ -1609,7 +1665,8 @@
           "short": "FT"
         },
         "round": "Group J",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Algeria"
       },
       "league": {
         "id": "wikipedia",
@@ -1634,10 +1691,11 @@
       "fixture": {
         "date": "2026-06-28T02:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group J",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1654,18 +1712,19 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 3
       }
     },
     {
       "fixture": {
         "date": "2026-06-28T02:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group J",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Argentina"
       },
       "league": {
         "id": "wikipedia",
@@ -1682,8 +1741,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 3
       }
     },
     {
@@ -1693,7 +1752,8 @@
           "short": "FT"
         },
         "round": "Group K",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1721,7 +1781,8 @@
           "short": "FT"
         },
         "round": "Group K",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Colombia"
       },
       "league": {
         "id": "wikipedia",
@@ -1749,7 +1810,8 @@
           "short": "FT"
         },
         "round": "Group K",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Portugal"
       },
       "league": {
         "id": "wikipedia",
@@ -1777,7 +1839,8 @@
           "short": "FT"
         },
         "round": "Group K",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Colombia"
       },
       "league": {
         "id": "wikipedia",
@@ -1802,10 +1865,11 @@
       "fixture": {
         "date": "2026-06-27T23:30:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group K",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1822,18 +1886,19 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       }
     },
     {
       "fixture": {
         "date": "2026-06-27T23:30:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group K",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "DR Congo"
       },
       "league": {
         "id": "wikipedia",
@@ -1850,8 +1915,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 1
       }
     },
     {
@@ -1861,7 +1926,8 @@
           "short": "FT"
         },
         "round": "Group L",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "England"
       },
       "league": {
         "id": "wikipedia",
@@ -1889,7 +1955,8 @@
           "short": "FT"
         },
         "round": "Group L",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Ghana"
       },
       "league": {
         "id": "wikipedia",
@@ -1917,7 +1984,8 @@
           "short": "FT"
         },
         "round": "Group L",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
@@ -1945,7 +2013,8 @@
           "short": "FT"
         },
         "round": "Group L",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Croatia"
       },
       "league": {
         "id": "wikipedia",
@@ -1970,10 +2039,11 @@
       "fixture": {
         "date": "2026-06-27T21:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group L",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "England"
       },
       "league": {
         "id": "wikipedia",
@@ -1990,18 +2060,19 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 2
       }
     },
     {
       "fixture": {
         "date": "2026-06-27T21:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Group L",
-        "source": "Wikipedia"
+        "source": "Wikipedia",
+        "winner": "Croatia"
       },
       "league": {
         "id": "wikipedia",
@@ -2018,33 +2089,32 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       }
     },
     {
       "fixture": {
-        "date": "2026-06-28T19:00:00+00:00",
+        "date": "2026-07-04T17:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 73
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Round of 16"
       },
       "teams": {
         "home": {
-          "name": "South Africa"
-        },
-        "away": {
           "name": "Canada"
+        },
+        "away": {
+          "name": "Winner Match 75"
         }
       },
       "goals": {
@@ -2054,27 +2124,26 @@
     },
     {
       "fixture": {
-        "date": "2026-06-29T17:00:00+00:00",
+        "date": "2026-07-04T21:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 76
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Round of 16"
       },
       "teams": {
         "home": {
-          "name": "Brazil"
+          "name": "Winner Match 74"
         },
         "away": {
-          "name": "Japan"
+          "name": "Winner Match 77"
         }
       },
       "goals": {
@@ -2084,27 +2153,26 @@
     },
     {
       "fixture": {
-        "date": "2026-06-29T20:30:00+00:00",
+        "date": "2026-07-05T20:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 74
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Round of 16"
       },
       "teams": {
         "home": {
-          "name": "Germany"
+          "name": "Winner Match 76"
         },
         "away": {
-          "name": "Paraguay"
+          "name": "Winner Match 78"
         }
       },
       "goals": {
@@ -2114,27 +2182,26 @@
     },
     {
       "fixture": {
-        "date": "2026-06-30T01:00:00+00:00",
+        "date": "2026-07-06T00:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 75
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Round of 16"
       },
       "teams": {
         "home": {
-          "name": "Netherlands"
+          "name": "Winner Match 79"
         },
         "away": {
-          "name": "Morocco"
+          "name": "Winner Match 80"
         }
       },
       "goals": {
@@ -2144,27 +2211,26 @@
     },
     {
       "fixture": {
-        "date": "2026-06-30T17:00:00+00:00",
+        "date": "2026-07-06T19:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 78
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Round of 16"
       },
       "teams": {
         "home": {
-          "name": "Ivory Coast"
+          "name": "Winner Match 83"
         },
         "away": {
-          "name": "Norway"
+          "name": "Winner Match 84"
         }
       },
       "goals": {
@@ -2174,27 +2240,26 @@
     },
     {
       "fixture": {
-        "date": "2026-06-30T21:00:00+00:00",
+        "date": "2026-07-07T00:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 77
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Round of 16"
       },
       "teams": {
         "home": {
-          "name": "France"
+          "name": "Winner Match 81"
         },
         "away": {
-          "name": "Sweden"
+          "name": "Winner Match 82"
         }
       },
       "goals": {
@@ -2204,27 +2269,26 @@
     },
     {
       "fixture": {
-        "date": "2026-07-01T01:00:00+00:00",
+        "date": "2026-07-07T16:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 79
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Round of 16"
       },
       "teams": {
         "home": {
-          "name": "Mexico"
+          "name": "Winner Match 86"
         },
         "away": {
-          "name": "Third-place Group C/E"
+          "name": "Winner Match 88"
         }
       },
       "goals": {
@@ -2234,27 +2298,26 @@
     },
     {
       "fixture": {
-        "date": "2026-07-01T16:00:00+00:00",
+        "date": "2026-07-07T20:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 80
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Round of 16"
       },
       "teams": {
         "home": {
-          "name": "Winner Group L"
+          "name": "Winner Match 85"
         },
         "away": {
-          "name": "Third-place Group I/J/K"
+          "name": "Winner Match 87"
         }
       },
       "goals": {
@@ -2264,27 +2327,26 @@
     },
     {
       "fixture": {
-        "date": "2026-07-01T20:00:00+00:00",
+        "date": "2026-07-09T20:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 82
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Quarterfinals"
       },
       "teams": {
         "home": {
-          "name": "Belgium"
+          "name": "Winner Match 89"
         },
         "away": {
-          "name": "Third-place Group A/I/J"
+          "name": "Winner Match 90"
         }
       },
       "goals": {
@@ -2294,27 +2356,26 @@
     },
     {
       "fixture": {
-        "date": "2026-07-02T00:00:00+00:00",
+        "date": "2026-07-10T19:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 81
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Quarterfinals"
       },
       "teams": {
         "home": {
-          "name": "United States"
+          "name": "Winner Match 93"
         },
         "away": {
-          "name": "Bosnia & Herzegovina"
+          "name": "Winner Match 94"
         }
       },
       "goals": {
@@ -2324,27 +2385,26 @@
     },
     {
       "fixture": {
-        "date": "2026-07-02T19:00:00+00:00",
+        "date": "2026-07-11T21:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 84
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Quarterfinals"
       },
       "teams": {
         "home": {
-          "name": "Spain"
+          "name": "Winner Match 91"
         },
         "away": {
-          "name": "Runner-up Group J"
+          "name": "Winner Match 92"
         }
       },
       "goals": {
@@ -2354,27 +2414,26 @@
     },
     {
       "fixture": {
-        "date": "2026-07-02T23:00:00+00:00",
+        "date": "2026-07-12T01:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 83
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Quarterfinals"
       },
       "teams": {
         "home": {
-          "name": "Runner-up Group K"
+          "name": "Winner Match 95"
         },
         "away": {
-          "name": "Runner-up Group L"
+          "name": "Winner Match 96"
         }
       },
       "goals": {
@@ -2384,27 +2443,26 @@
     },
     {
       "fixture": {
-        "date": "2026-07-03T03:00:00+00:00",
+        "date": "2026-07-14T19:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Semifinals",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 85
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Semifinals"
       },
       "teams": {
         "home": {
-          "name": "Switzerland"
+          "name": "Winner Match 97"
         },
         "away": {
-          "name": "Third-place Group G/J"
+          "name": "Winner Match 98"
         }
       },
       "goals": {
@@ -2414,27 +2472,26 @@
     },
     {
       "fixture": {
-        "date": "2026-07-03T18:00:00+00:00",
+        "date": "2026-07-15T19:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Semifinals",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 88
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Semifinals"
       },
       "teams": {
         "home": {
-          "name": "Australia"
+          "name": "Winner Match 99"
         },
         "away": {
-          "name": "Egypt"
+          "name": "Winner Match 100"
         }
       },
       "goals": {
@@ -2444,57 +2501,26 @@
     },
     {
       "fixture": {
-        "date": "2026-07-03T22:00:00+00:00",
+        "date": "2026-07-18T21:00:00+00:00",
         "status": {
           "short": "NS"
         },
-        "round": "Round of 32",
+        "round": "Third Place",
         "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 86
+        "winner": null
       },
       "league": {
         "id": "wikipedia",
         "name": "FIFA World Cup",
         "season": 2026,
-        "round": "Round of 32"
+        "round": "Third Place"
       },
       "teams": {
         "home": {
-          "name": "Argentina"
+          "name": "Loser Match 101"
         },
         "away": {
-          "name": "Cape Verde"
-        }
-      },
-      "goals": {
-        "home": null,
-        "away": null
-      }
-    },
-    {
-      "fixture": {
-        "date": "2026-07-04T01:30:00+00:00",
-        "status": {
-          "short": "NS"
-        },
-        "round": "Round of 32",
-        "source": "Wikipedia",
-        "winner": null,
-        "matchNumber": 87
-      },
-      "league": {
-        "id": "wikipedia",
-        "name": "FIFA World Cup",
-        "season": 2026,
-        "round": "Round of 32"
-      },
-      "teams": {
-        "home": {
-          "name": "Winner Group K"
-        },
-        "away": {
-          "name": "Third-place Group E/I/L"
+          "name": "Loser Match 102"
         }
       },
       "goals": {
@@ -2506,7 +2532,7 @@
   "teamStatus": {
     "Mexico": "qualified",
     "South Africa": "qualified",
-    "South Korea": "pending",
+    "South Korea": "eliminated",
     "Czechia": "eliminated",
     "Switzerland": "qualified",
     "Canada": "qualified",
@@ -2514,7 +2540,7 @@
     "Qatar": "eliminated",
     "Brazil": "qualified",
     "Morocco": "qualified",
-    "Scotland": "pending",
+    "Scotland": "eliminated",
     "Haiti": "eliminated",
     "United States": "qualified",
     "Australia": "qualified",
@@ -2530,7 +2556,7 @@
     "Tunisia": "eliminated",
     "Belgium": "qualified",
     "Egypt": "qualified",
-    "Iran": "pending",
+    "Iran": "eliminated",
     "New Zealand": "eliminated",
     "Spain": "qualified",
     "Cape Verde": "qualified",
@@ -2540,10 +2566,21 @@
     "Norway": "qualified",
     "Senegal": "qualified",
     "Iraq": "eliminated",
-    "Argentina": "qualified"
+    "Argentina": "qualified",
+    "Austria": "qualified",
+    "Algeria": "qualified",
+    "Jordan": "eliminated",
+    "Colombia": "qualified",
+    "Portugal": "qualified",
+    "DR Congo": "qualified",
+    "Uzbekistan": "eliminated",
+    "England": "qualified",
+    "Croatia": "qualified",
+    "Ghana": "qualified",
+    "Panama": "eliminated"
   },
   "api": {
-    "results": 88,
+    "results": 87,
     "errors": null
   }
 }
