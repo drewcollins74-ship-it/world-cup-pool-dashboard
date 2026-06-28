@@ -309,7 +309,8 @@ function renderSwingMatches() {
 }
 
 function renderMostAlive(rows) {
-  elements.mostAlive.innerHTML = rows.slice(0,5).map((row) => `<li><b>${row.name}</b><span>${row.aliveTeams.length}</span></li>`).join("");
+  const byTeamsAlive = [...rows].sort((a,b) => b.aliveTeams.length - a.aliveTeams.length || a.name.localeCompare(b.name));
+  elements.mostAlive.innerHTML = byTeamsAlive.slice(0,5).map((row) => `<li><b>${row.name}</b><span>${row.aliveTeams.length}</span></li>`).join("");
 }
 
 function readableRound(fixture) {
