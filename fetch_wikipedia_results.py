@@ -16,6 +16,7 @@ RESULTS_JS = ROOT / "src" / "latest-results.js"
 WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
 GROUPS = "ABCDEFGHIJKL"
 KNOCKOUT_TITLE = "2026 FIFA World Cup knockout stage"
+ROUND_OF_32_TITLE = "2026 FIFA World Cup round of 32"
 
 TEAM_CODES = {
     "ALG": "Algeria",
@@ -77,7 +78,11 @@ NAME_ALIASES = {
 
 
 def fetch_wikitexts():
-    titles = "|".join([*(f"2026 FIFA World Cup Group {group}" for group in GROUPS), KNOCKOUT_TITLE])
+    titles = "|".join([
+        *(f"2026 FIFA World Cup Group {group}" for group in GROUPS),
+        KNOCKOUT_TITLE,
+        ROUND_OF_32_TITLE,
+    ])
     params = urlencode({
         "action": "query",
         "titles": titles,
@@ -143,6 +148,15 @@ def parse_knockout_matches(wikitext):
             fixture = parse_fixture_block(block, round_name)
             if fixture:
                 fixtures.append(fixture)
+    return fixtures
+
+
+def parse_round_page_matches(wikitext, round_name):
+    fixtures = []
+    for block in football_box_blocks(wikitext):
+        fixture = parse_fixture_block(block, round_name)
+        if fixture:
+            fixtures.append(fixture)
     return fixtures
 
 
@@ -519,12 +533,28 @@ def main():
 
     knockout_wikitext = pages.get(KNOCKOUT_TITLE, "")
     if knockout_wikitext:
-        knockout_fixtures = parse_knockout_matches(knockout_wikitext)
+        knockout_fixtures = [
+            fixture
+            for fixture in parse_knockout_matches(knockout_wikitext)
+            if fixture["fixture"]["round"] != "Round of 32"
+        ]
         fixtures.extend(knockout_fixtures)
         if not knockout_fixtures:
             print(f"Warning: no knockout fixtures parsed from {KNOCKOUT_TITLE}")
     else:
         print(f"Warning: no Wikipedia content found for {KNOCKOUT_TITLE}")
+
+    round_of_32_wikitext = pages.get(ROUND_OF_32_TITLE, "")
+    if round_of_32_wikitext:
+        round_of_32_fixtures = parse_round_page_matches(round_of_32_wikitext, "Round of 32")
+        fixtures.extend(round_of_32_fixtures)
+        if len(round_of_32_fixtures) != 16:
+            print(
+                f"Warning: expected 16 Round of 32 fixtures from {ROUND_OF_32_TITLE}, "
+                f"found {len(round_of_32_fixtures)}"
+            )
+    else:
+        print(f"Warning: no Wikipedia content found for {ROUND_OF_32_TITLE}")
 
     team_status.update(derive_team_status(fixtures))
     output = write_outputs(fixtures, team_status)

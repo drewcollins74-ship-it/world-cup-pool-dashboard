@@ -26,12 +26,15 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .summary-grid { display: grid; gap: 10px; }
 .mobile-panel { background: var(--white); border: 1px solid var(--line); overflow: hidden; }
 .mobile-panel > h2, .panel-title { color: var(--blue); font-size: 15px; padding: 12px 14px 7px; text-transform: uppercase; }
-.mobile-leader-head, .mobile-leader-row { align-items: center; display: grid; gap: 5px; grid-template-columns: 48px minmax(85px,1.2fr) 68px 66px 84px; min-width: 420px; }
+.mobile-leader-head, .mobile-leader-row { align-items: center; display: grid; gap: 5px; grid-template-columns: 48px 100px 68px 48px 48px 66px 84px; min-width: 520px; }
 .leaderboard-card { overflow-x: auto; }
+.leaderboard-card > h2 { background: var(--navy); color: var(--white); padding: 8px 12px; }
 .mobile-leader-head { font-size: 9px; font-weight: 900; padding: 5px 10px; }
 .mobile-leader-row { border-top: 1px solid #d5ddea; min-height: 44px; padding: 0 10px; text-align: center; }
 .mobile-leader-row .rank { align-self: stretch; align-items: center; background: #1762ae; color: #fff; display: flex; font-size: 18px; font-weight: 900; justify-content: center; margin-left: -10px; }
 .mobile-leader-row.rank-1 .rank { background: var(--gold); }
+.mobile-leader-row.rank-2 .rank, .mobile-leader-row.rank-3 .rank { background: #e79d12; }
+.mobile-leader-row.rank-low .rank { background: var(--red); }
 .mobile-leader-row .player { color: #111; font-weight: 900; text-align: left; }
 .mobile-leader-row .total { color: #0b2a82; font-size: 17px; font-weight: 900; }
 .mobile-leader-row .remaining { color: var(--green); font-weight: 900; }

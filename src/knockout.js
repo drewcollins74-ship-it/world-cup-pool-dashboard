@@ -217,12 +217,13 @@ function maxRemainingForTeam(team) {
 
 function standings() {
   const rows = participants.map((participant) => {
-    const groupPoints = participant.teams.reduce((sum, team) => sum + (groupState[team]?.wins || 0) * rules.group_stage_match_win, 0);
+    const groupWinPoints = participant.teams.reduce((sum, team) => sum + (groupState[team]?.wins || 0) * rules.group_stage_match_win, 0);
     const qualificationPoints = participant.teams.filter((team) => groupState[team]?.status === "qualified").length * rules.advance_to_knockout_rounds;
     const winPoints = participant.teams.reduce((sum, team) => sum + scoredWinPoints(team), 0);
     const aliveTeams = participant.teams.filter(teamIsAlive);
     const maxRemaining = aliveTeams.reduce((sum, team) => sum + maxRemainingForTeam(team), 0);
-    const knockoutPoints = qualificationPoints + winPoints;
+    const groupPoints = groupWinPoints + qualificationPoints;
+    const knockoutPoints = winPoints;
     return { ...participant, groupPoints, knockoutPoints, totalPoints:groupPoints + knockoutPoints, aliveTeams, maxRemaining };
   });
   rows.sort((a,b) => b.totalPoints - a.totalPoints || b.aliveTeams.length - a.aliveTeams.length || b.maxRemaining - a.maxRemaining || a.name.localeCompare(b.name));
@@ -262,7 +263,7 @@ function renderLeaderboard(rows) {
     elements.leaderboardBody.innerHTML = rows.map((row) => `<tr class="${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><td class="rank">${row.rank}</td><td class="player">${row.name}</td><td class="total">${row.totalPoints}</td><td>${row.groupPoints}</td><td>${row.knockoutPoints}</td><td>${row.aliveTeams.length}</td><td class="positive">+${row.maxRemaining}</td></tr>`).join("");
   }
   if (elements.leaderboardCards) {
-    elements.leaderboardCards.innerHTML = rows.slice(0,5).map((row) => `<div class="mobile-leader-row ${row.rank === 1 ? "rank-1" : ""}"><span class="rank">${row.rank}</span><span class="player">${row.name}</span><span class="total">${row.totalPoints}</span><span>${row.aliveTeams.length}</span><span class="remaining">+${row.maxRemaining}</span></div>`).join("");
+    elements.leaderboardCards.innerHTML = rows.map((row) => `<div class="mobile-leader-row ${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><span class="rank">${row.rank}</span><span class="player">${row.name}</span><span class="total">${row.totalPoints}</span><span>${row.groupPoints}</span><span>${row.knockoutPoints}</span><span>${row.aliveTeams.length}</span><span class="remaining">+${row.maxRemaining}</span></div>`).join("");
   }
 }
 
