@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T16:36:43.339993+00:00",
+  "generatedAt": "2026-06-28T19:45:49.719414+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -960,6 +960,35 @@
       "goals": {
         "home": 5,
         "away": 1
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-06-21T04:00:00+00:00",
+        "status": {
+          "short": "FT"
+        },
+        "round": "Group F",
+        "source": "Wikipedia",
+        "winner": "Japan"
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Group F"
+      },
+      "teams": {
+        "home": {
+          "name": "Tunisia"
+        },
+        "away": {
+          "name": "Japan"
+        }
+      },
+      "goals": {
+        "home": 0,
+        "away": 4
       }
     },
     {
@@ -2521,9 +2550,13 @@
     "Ivory Coast": "qualified",
     "Ecuador": "qualified",
     "Curaçao": "eliminated",
+    "Netherlands": "qualified",
+    "Japan": "qualified",
+    "Sweden": "qualified",
+    "Tunisia": "eliminated",
     "Belgium": "qualified",
     "Egypt": "qualified",
-    "Iran": "pending",
+    "Iran": "eliminated",
     "New Zealand": "eliminated",
     "Spain": "qualified",
     "Cape Verde": "qualified",
@@ -2547,7 +2580,7 @@
     "Panama": "eliminated"
   },
   "api": {
-    "results": 86,
+    "results": 87,
     "errors": null
   }
 }
