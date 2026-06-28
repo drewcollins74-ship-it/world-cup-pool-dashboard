@@ -138,15 +138,22 @@ Patrick,Algeria
 Patrick,Uruguay`;
 
 const rulesYaml = `pool_rules:
-  group_stage_win: 1
-  group_stage_draw: 0
-  group_stage_loss: 0
-  knockout_qualification: 3
-  round_of_16_win: 4
-  quarterfinal_win: 5
-  semifinal_win: 6
-  third_place_win: 1
-  world_cup_final_win: 10`;
+  group_stage_match_win:
+    points: 1
+  advance_to_knockout_rounds:
+    points: 3
+  round_of_32_victory:
+    points: 5
+  round_of_16_victory:
+    points: 10
+  quarterfinal_victory:
+    points: 15
+  semifinal_victory:
+    points: 20
+  third_place_match_winner:
+    points: 10
+  world_cup_winner:
+    points: 30`;
 
 const elements = {
   asOfLine: document.querySelector("#asOfLine"),
@@ -179,9 +186,12 @@ function parseParticipants(csvText) {
 }
 
 function parseRules(yamlText) {
+  let currentRule = null;
   return yamlText.split(/\r?\n/).reduce((parsed, line) => {
-    const match = line.match(/^\s{2}([a-z0-9_]+):\s*(\d+)/i);
-    if (match) parsed[match[1]] = Number(match[2]);
+    const ruleMatch = line.match(/^\s{2}([a-z0-9_]+):\s*$/i);
+    if (ruleMatch) currentRule = ruleMatch[1];
+    const pointsMatch = line.match(/^\s{4}points:\s*(\d+)/i);
+    if (currentRule && pointsMatch) parsed[currentRule] = Number(pointsMatch[1]);
     return parsed;
   }, {});
 }
@@ -286,8 +296,8 @@ function normalizeTeam(name = "") {
 function standings() {
   const rows = participants.map((participant) => {
     const groupWins = participant.teams.reduce((sum, team) => sum + (teamState[team]?.wins || 0), 0);
-    const advancementBonus = participant.teams.filter((team) => teamState[team]?.status === "qualified").length * (rules.knockout_qualification || 3);
-    const points = groupWins * (rules.group_stage_win || 1) + advancementBonus;
+    const advancementBonus = participant.teams.filter((team) => teamState[team]?.status === "qualified").length * (rules.advance_to_knockout_rounds || 3);
+    const points = groupWins * (rules.group_stage_match_win || 1) + advancementBonus;
     const availableItems = availablePointsForParticipant(participant);
     const availablePoints = availableItems.reduce((sum, item) => sum + item.points, 0);
     return { ...participant, groupWins, advancementBonus, points, availableItems, availablePoints };
@@ -308,8 +318,8 @@ function standings() {
 }
 
 function render() {
-  elements.groupWinPoints.textContent = `${rules.group_stage_win || 1} point`;
-  elements.advancePoints.textContent = `${rules.knockout_qualification || 3} points`;
+  elements.groupWinPoints.textContent = `${rules.group_stage_match_win || 1} point`;
+  elements.advancePoints.textContent = `${rules.advance_to_knockout_rounds || 3} points`;
   elements.asOfLine.textContent = `Through ${formatThroughDate()} - ${dataSourceLabel()} - Updated ${formatUpdatedAt()}`;
 
   const rows = standings();
@@ -369,8 +379,8 @@ function availablePointsForTeam(team) {
   const record = teamState[team] || { wins: 0, draws: 0, losses: 0, status: "pending" };
   const matchesPlayed = record.wins + record.draws + record.losses;
   const remainingMatches = Math.max(0, 3 - matchesPlayed);
-  const groupPoints = remainingMatches * (rules.group_stage_win || 1);
-  const advancementPoints = record.status === "pending" ? (rules.knockout_qualification || 3) : 0;
+  const groupPoints = remainingMatches * (rules.group_stage_match_win || 1);
+  const advancementPoints = record.status === "pending" ? (rules.advance_to_knockout_rounds || 3) : 0;
   const points = groupPoints + advancementPoints;
   const noteParts = [];
   if (remainingMatches) noteParts.push(`${remainingMatches} match${remainingMatches === 1 ? "" : "es"}`);

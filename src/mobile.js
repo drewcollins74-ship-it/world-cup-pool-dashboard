@@ -79,8 +79,8 @@ Patrick,Algeria
 Patrick,Uruguay`;
 
 const rules = {
-  group_stage_win: 1,
-  knockout_qualification: 3
+  group_stage_match_win: 1,
+  advance_to_knockout_rounds: 3
 };
 
 const elements = {
@@ -185,8 +185,8 @@ function applyGeneratedTeamStatus(state, teamStatus) {
 function standings() {
   const rows = participants.map((participant) => {
     const groupWins = participant.teams.reduce((sum, team) => sum + (teamState[team]?.wins || 0), 0);
-    const advancementBonus = participant.teams.filter((team) => teamState[team]?.status === "qualified").length * rules.knockout_qualification;
-    const points = groupWins * rules.group_stage_win + advancementBonus;
+    const advancementBonus = participant.teams.filter((team) => teamState[team]?.status === "qualified").length * rules.advance_to_knockout_rounds;
+    const points = groupWins * rules.group_stage_match_win + advancementBonus;
     const availableItems = availablePointsForParticipant(participant);
     const availablePoints = availableItems.reduce((sum, item) => sum + item.points, 0);
     return { ...participant, groupWins, advancementBonus, points, availableItems, availablePoints };
@@ -212,8 +212,8 @@ function availablePointsForTeam(team) {
   const record = teamState[team] || { wins: 0, draws: 0, losses: 0, status: "pending" };
   const matchesPlayed = record.wins + record.draws + record.losses;
   const remainingMatches = Math.max(0, 3 - matchesPlayed);
-  const groupPoints = remainingMatches * rules.group_stage_win;
-  const advancementPoints = record.status === "pending" ? rules.knockout_qualification : 0;
+  const groupPoints = remainingMatches * rules.group_stage_match_win;
+  const advancementPoints = record.status === "pending" ? rules.advance_to_knockout_rounds : 0;
   const points = groupPoints + advancementPoints;
   const note = [remainingMatches ? `${remainingMatches} match${remainingMatches === 1 ? "" : "es"}` : "", advancementPoints ? "advancement" : ""].filter(Boolean).join(" + ");
   return { team, points, note };
@@ -221,8 +221,8 @@ function availablePointsForTeam(team) {
 
 function render() {
   elements.asOfLine.innerHTML = `<span>Through ${formatThroughDate()}</span><span>Updated ${formatUpdatedAt()}</span>`;
-  elements.groupWinPoints.textContent = `${rules.group_stage_win} point`;
-  elements.advancePoints.textContent = `${rules.knockout_qualification} points`;
+  elements.groupWinPoints.textContent = `${rules.group_stage_match_win} point`;
+  elements.advancePoints.textContent = `${rules.advance_to_knockout_rounds} points`;
   elements.standingsCards.innerHTML = standings().map(renderPlayerCard).join("");
   renderMatchTicker();
 }

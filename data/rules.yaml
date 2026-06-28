@@ -1,11 +1,26 @@
 pool_rules:
-  group_stage_win: 1
-  group_stage_draw: 0
-  group_stage_loss: 0
-  knockout_qualification: 3
-  round_of_32_win: 0
-  round_of_16_win: 4
-  quarterfinal_win: 5
-  semifinal_win: 6
-  third_place_win: 1
-  world_cup_final_win: 10
+  group_stage_match_win:
+    points: 1
+    description: Group Stage Match Win
+  advance_to_knockout_rounds:
+    points: 3
+    description: Advance to Knockout Rounds
+    qualification_rule: Top 2 in each group plus best 8 third-place teams
+  round_of_32_victory:
+    points: 5
+    description: Round of 32 Victory
+  round_of_16_victory:
+    points: 10
+    description: Round of 16 Victory
+  quarterfinal_victory:
+    points: 15
+    description: Quarterfinal Victory
+  semifinal_victory:
+    points: 20
+    description: Semi Final Victory
+  third_place_match_winner:
+    points: 10
+    description: 3rd Place Match Winner
+  world_cup_winner:
+    points: 30
+    description: World Cup Winner

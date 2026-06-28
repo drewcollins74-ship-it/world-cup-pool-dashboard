@@ -49,14 +49,14 @@ Patrick,Algeria
 Patrick,Uruguay`;
 
 const rules = {
-  group_stage_win: 1,
-  knockout_qualification: 3,
-  round_of_32_win: 0,
-  round_of_16_win: 4,
-  quarterfinal_win: 5,
-  semifinal_win: 6,
-  third_place_win: 1,
-  world_cup_final_win: 10
+  group_stage_match_win: 1,
+  advance_to_knockout_rounds: 3,
+  round_of_32_victory: 5,
+  round_of_16_victory: 10,
+  quarterfinal_victory: 15,
+  semifinal_victory: 20,
+  third_place_match_winner: 10,
+  world_cup_winner: 30
 };
 
 const flags = {
@@ -79,12 +79,12 @@ const aliases = new Map([
 ]);
 
 const roundDefinitions = [
-  { key:"r32", label:"Round of 32", short:"R32", icon:"⇥", points:rules.round_of_32_win },
-  { key:"r16", label:"Round of 16", short:"R16", icon:"⇥", points:rules.round_of_16_win },
-  { key:"qf", label:"Quarterfinals", short:"QF", icon:"♕", points:rules.quarterfinal_win },
-  { key:"sf", label:"Semifinals", short:"SF", icon:"☆", points:rules.semifinal_win },
-  { key:"third", label:"Third Place", short:"3rd Place", icon:"♙", points:rules.third_place_win },
-  { key:"final", label:"Final", short:"Final", icon:"♛", points:rules.world_cup_final_win }
+  { key:"r32", label:"Round of 32", short:"R32", scoringLabel:"Round of 32 victory", icon:"⇥", points:rules.round_of_32_victory },
+  { key:"r16", label:"Round of 16", short:"R16", scoringLabel:"Round of 16 victory", icon:"⇥", points:rules.round_of_16_victory },
+  { key:"qf", label:"Quarterfinals", short:"QF", scoringLabel:"Quarterfinal victory", icon:"♕", points:rules.quarterfinal_victory },
+  { key:"sf", label:"Semifinals", short:"SF", scoringLabel:"Semifinal victory", icon:"☆", points:rules.semifinal_victory },
+  { key:"third", label:"Third Place", short:"3rd Place", scoringLabel:"Third-place match winner", icon:"♙", points:rules.third_place_match_winner },
+  { key:"final", label:"Final", short:"Final", scoringLabel:"World Cup winner", icon:"♛", points:rules.world_cup_winner }
 ];
 
 const completedStatuses = new Set(["FT", "AET", "PEN"]);
@@ -205,19 +205,20 @@ function teamIsAlive(team) {
 function maxRemainingForTeam(team) {
   if (!teamIsAlive(team)) return 0;
   const losses = teamLosses(team);
-  if (losses.some((fixture) => getRoundKey(fixture) === "sf")) return rules.third_place_win;
+  if (losses.some((fixture) => getRoundKey(fixture) === "sf")) return rules.third_place_match_winner;
   const won = new Set(knockoutFixtures.filter((fixture) => winnerOf(fixture) === team).map(getRoundKey));
   if (won.has("final")) return 0;
-  if (won.has("sf")) return rules.world_cup_final_win;
-  if (won.has("qf")) return rules.semifinal_win + rules.world_cup_final_win;
-  if (won.has("r16")) return rules.quarterfinal_win + rules.semifinal_win + rules.world_cup_final_win;
-  return rules.round_of_16_win + rules.quarterfinal_win + rules.semifinal_win + rules.world_cup_final_win;
+  if (won.has("sf")) return rules.world_cup_winner;
+  if (won.has("qf")) return rules.semifinal_victory + rules.world_cup_winner;
+  if (won.has("r16")) return rules.quarterfinal_victory + rules.semifinal_victory + rules.world_cup_winner;
+  if (won.has("r32")) return rules.round_of_16_victory + rules.quarterfinal_victory + rules.semifinal_victory + rules.world_cup_winner;
+  return rules.round_of_32_victory + rules.round_of_16_victory + rules.quarterfinal_victory + rules.semifinal_victory + rules.world_cup_winner;
 }
 
 function standings() {
   const rows = participants.map((participant) => {
-    const groupPoints = participant.teams.reduce((sum, team) => sum + (groupState[team]?.wins || 0) * rules.group_stage_win, 0);
-    const qualificationPoints = participant.teams.filter((team) => groupState[team]?.status === "qualified").length * rules.knockout_qualification;
+    const groupPoints = participant.teams.reduce((sum, team) => sum + (groupState[team]?.wins || 0) * rules.group_stage_match_win, 0);
+    const qualificationPoints = participant.teams.filter((team) => groupState[team]?.status === "qualified").length * rules.advance_to_knockout_rounds;
     const winPoints = participant.teams.reduce((sum, team) => sum + scoredWinPoints(team), 0);
     const aliveTeams = participant.teams.filter(teamIsAlive);
     const maxRemaining = aliveTeams.reduce((sum, team) => sum + maxRemainingForTeam(team), 0);
@@ -245,7 +246,7 @@ function render() {
 
 function renderProgress() {
   const qualifiedCount = Object.values(groupState).filter((record) => record.status === "qualified").length;
-  const items = [{ key:"qualified", label:"Qualified", icon:"♙", points:rules.knockout_qualification, complete:qualifiedCount, total:32 }, ...roundDefinitions];
+  const items = [{ key:"qualified", label:"Qualified", icon:"♙", points:rules.advance_to_knockout_rounds, complete:qualifiedCount, total:32 }, ...roundDefinitions];
   elements.progressStrip.innerHTML = items.map((item) => {
     const fixturesForRound = item.key === "qualified" ? [] : knockoutFixtures.filter((fixture) => getRoundKey(fixture) === item.key);
     const complete = item.key === "qualified" ? qualifiedCount : fixturesForRound.filter(isComplete).length;
@@ -284,7 +285,7 @@ function renderBracket(bestRow) {
 
 function renderThirdPlace() {
   const matches = knockoutFixtures.filter((fixture) => getRoundKey(fixture) === "third");
-  return matches.length ? `<div class="round-title">Third Place <span>(+${rules.third_place_win})</span></div>${matches.map(renderBracketMatch).join("")}` : "";
+  return matches.length ? `<div class="round-title">Third Place <span>(+${rules.third_place_match_winner})</span></div>${matches.map(renderBracketMatch).join("")}` : "";
 }
 
 function renderBracketMatch(fixture) {
@@ -302,9 +303,9 @@ function renderUpcoming() {
 }
 
 function renderScoring() {
-  const rows = [{label:"Qualified (from groups)", points:rules.knockout_qualification}, ...roundDefinitions.filter((round) => round.points > 0).map((round) => ({label:`${round.label} win`, points:round.points}))];
+  const rows = [{label:"Advance to knockout rounds", points:rules.advance_to_knockout_rounds}, ...roundDefinitions.map((round) => ({label:round.scoringLabel, points:round.points}))];
   elements.scoringKey.innerHTML = rows.map((row) => `<div class="score-row"><span>${row.label}</span><b>+${row.points}</b></div>`).join("");
-  if (elements.remainingByRound) elements.remainingByRound.innerHTML = `${roundDefinitions.filter((round) => round.points > 0).map((round) => `<div class="score-row"><span>${round.label} win</span><b>+${round.points}</b></div>`).join("")}<div class="score-row score-total"><span>Maximum path</span><b>+${rules.round_of_16_win + rules.quarterfinal_win + rules.semifinal_win + rules.world_cup_final_win}</b></div>`;
+  if (elements.remainingByRound) elements.remainingByRound.innerHTML = `${roundDefinitions.map((round) => `<div class="score-row"><span>${round.scoringLabel}</span><b>+${round.points}</b></div>`).join("")}<div class="score-row score-total"><span>Maximum path</span><b>+${rules.round_of_32_victory + rules.round_of_16_victory + rules.quarterfinal_victory + rules.semifinal_victory + rules.world_cup_winner}</b></div>`;
 }
 
 function renderSwingMatches() {
