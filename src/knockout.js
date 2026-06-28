@@ -292,7 +292,10 @@ function renderThirdPlace() {
 function renderBracketMatch(fixture) {
   const winner = winnerOf(fixture);
   const teams = fixtureTeams(fixture);
-  return `<article class="match-card">${teams.map((team,index) => `<div class="match-team ${team === winner ? "winner" : ""}"><span>${flags[team] || "□"}</span><b>${team || "TBD"}</b><span>${isComplete(fixture) ? (index === 0 ? fixture.goals?.home : fixture.goals?.away) ?? "" : ""}</span></div>`).join("")}<small class="match-meta">${isComplete(fixture) ? "Final" : formatEasternDateTime(fixture.fixture?.date)}</small></article>`;
+  return `<article class="match-card">${teams.map((team,index) => {
+    const owner = ownerByTeam.get(team);
+    return `<div class="match-team ${team === winner ? "winner" : ""}"><span>${flags[team] || "□"}</span><span class="team-label"><b>${team || "TBD"}</b>${owner ? `<small class="team-owner">(${owner})</small>` : ""}</span><span>${isComplete(fixture) ? (index === 0 ? fixture.goals?.home : fixture.goals?.away) ?? "" : ""}</span></div>`;
+  }).join("")}<small class="match-meta">${isComplete(fixture) ? "Final" : formatEasternDateTime(fixture.fixture?.date)}</small></article>`;
 }
 
 function renderUpcoming() {

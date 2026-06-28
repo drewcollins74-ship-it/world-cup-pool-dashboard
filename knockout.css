@@ -72,6 +72,9 @@ td.positive { color: var(--green); font-weight: 900; }
 .match-team + .match-team { border-top: 1px solid #e2e7ef; }
 .match-team b { font-size: 11px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .match-team.winner b, .match-team.winner span:last-child { color: var(--green); }
+.team-label { align-items: baseline; display: flex; gap: 3px; min-width: 0; overflow: hidden; }
+.team-label b { min-width: 0; }
+.team-owner { color: #52647b; flex: none; font-size: 8px; font-style: italic; font-weight: 700; }
 .match-meta { color: #59667c; display: block; font-size: 9px; margin-top: 5px; text-align: center; text-transform: uppercase; }
 .empty-round { border: 1px dashed #bac6d5; color: #6e7b8e; font-size: 11px; padding: 14px 8px; text-align: center; }
 .best-positioned { border: 2px solid var(--gold); padding: 13px 8px; text-align: center; }
