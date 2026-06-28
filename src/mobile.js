@@ -187,12 +187,10 @@ function standings() {
     const groupWins = participant.teams.reduce((sum, team) => sum + (teamState[team]?.wins || 0), 0);
     const advancementBonus = participant.teams.filter((team) => teamState[team]?.status === "qualified").length * rules.advance_to_knockout_rounds;
     const points = groupWins * rules.group_stage_match_win + advancementBonus;
-    const availableItems = availablePointsForParticipant(participant);
-    const availablePoints = availableItems.reduce((sum, item) => sum + item.points, 0);
-    return { ...participant, groupWins, advancementBonus, points, availableItems, availablePoints };
+    return { ...participant, groupWins, advancementBonus, points };
   });
 
-  rows.sort((a, b) => b.points - a.points || b.availablePoints - a.availablePoints || b.groupWins - a.groupWins || a.name.localeCompare(b.name));
+  rows.sort((a, b) => b.points - a.points || b.groupWins - a.groupWins || a.name.localeCompare(b.name));
   let previous = null;
   rows.forEach((row, index) => {
     row.rank = previous && previous.points === row.points ? previous.rank : index + 1;
@@ -202,21 +200,6 @@ function standings() {
     row.tieCount = rows.filter((entry) => entry.rank === row.rank).length;
   });
   return rows;
-}
-
-function availablePointsForParticipant(participant) {
-  return participant.teams.map((team) => availablePointsForTeam(team)).filter((item) => item.points > 0).sort((a, b) => b.points - a.points || a.team.localeCompare(b.team));
-}
-
-function availablePointsForTeam(team) {
-  const record = teamState[team] || { wins: 0, draws: 0, losses: 0, status: "pending" };
-  const matchesPlayed = record.wins + record.draws + record.losses;
-  const remainingMatches = Math.max(0, 3 - matchesPlayed);
-  const groupPoints = remainingMatches * rules.group_stage_match_win;
-  const advancementPoints = record.status === "pending" ? rules.advance_to_knockout_rounds : 0;
-  const points = groupPoints + advancementPoints;
-  const note = [remainingMatches ? `${remainingMatches} match${remainingMatches === 1 ? "" : "es"}` : "", advancementPoints ? "advancement" : ""].filter(Boolean).join(" + ");
-  return { team, points, note };
 }
 
 function render() {
@@ -239,7 +222,6 @@ function renderPlayerCard(row) {
           <div class="points">${row.points}<small>${row.groupWins} + ${row.advancementBonus}</small></div>
         </div>
         <div class="teams">${sortedTeamsByWins(row.teams).map(renderTeamRow).join("")}</div>
-        <div class="available">${renderAvailable(row)}</div>
       </div>
     </article>
   `;
@@ -256,21 +238,6 @@ function renderTeamRow(team) {
       <span class="record">${record.wins}-${record.draws}-${record.losses}</span>
       <span class="status ${statusClass}">${glyph}</span>
     </div>
-  `;
-}
-
-function renderAvailable(row) {
-  if (!row.availableItems.length) return `<div class="available-total">0 possible</div>`;
-  return `
-    <div class="available-total">+${row.availablePoints} possible</div>
-    ${row.availableItems.map((item) => `
-      <div class="available-row">
-        <span>${flags[item.team] || "□"}</span>
-        <span>${item.team}</span>
-        <strong>+${item.points}</strong>
-        <small>${item.note}</small>
-      </div>
-    `).join("")}
   `;
 }
 

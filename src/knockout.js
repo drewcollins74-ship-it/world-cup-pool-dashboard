@@ -101,7 +101,7 @@ const elements = {
   progressStrip:document.querySelector("#progressStrip"), leaderboardBody:document.querySelector("#leaderboardBody"),
   leaderboardCards:document.querySelector("#leaderboardCards"), bestPositioned:document.querySelector("#bestPositioned"),
   bracket:document.querySelector("#bracket"), upcomingMatches:document.querySelector("#upcomingMatches"),
-  scoringKey:document.querySelector("#scoringKey"), remainingByRound:document.querySelector("#remainingByRound"),
+  scoringKey:document.querySelector("#scoringKey"),
   swingMatches:document.querySelector("#swingMatches"), mostAlive:document.querySelector("#mostAlive")
 };
 
@@ -202,31 +202,17 @@ function teamIsAlive(team) {
   return !thirdPlace || !isComplete(thirdPlace);
 }
 
-function maxRemainingForTeam(team) {
-  if (!teamIsAlive(team)) return 0;
-  const losses = teamLosses(team);
-  if (losses.some((fixture) => getRoundKey(fixture) === "sf")) return rules.third_place_match_winner;
-  const won = new Set(knockoutFixtures.filter((fixture) => winnerOf(fixture) === team).map(getRoundKey));
-  if (won.has("final")) return 0;
-  if (won.has("sf")) return rules.world_cup_winner;
-  if (won.has("qf")) return rules.semifinal_victory + rules.world_cup_winner;
-  if (won.has("r16")) return rules.quarterfinal_victory + rules.semifinal_victory + rules.world_cup_winner;
-  if (won.has("r32")) return rules.round_of_16_victory + rules.quarterfinal_victory + rules.semifinal_victory + rules.world_cup_winner;
-  return rules.round_of_32_victory + rules.round_of_16_victory + rules.quarterfinal_victory + rules.semifinal_victory + rules.world_cup_winner;
-}
-
 function standings() {
   const rows = participants.map((participant) => {
     const groupWinPoints = participant.teams.reduce((sum, team) => sum + (groupState[team]?.wins || 0) * rules.group_stage_match_win, 0);
     const qualificationPoints = participant.teams.filter((team) => groupState[team]?.status === "qualified").length * rules.advance_to_knockout_rounds;
     const winPoints = participant.teams.reduce((sum, team) => sum + scoredWinPoints(team), 0);
     const aliveTeams = participant.teams.filter(teamIsAlive);
-    const maxRemaining = aliveTeams.reduce((sum, team) => sum + maxRemainingForTeam(team), 0);
     const groupPoints = groupWinPoints + qualificationPoints;
     const knockoutPoints = winPoints;
-    return { ...participant, groupPoints, knockoutPoints, totalPoints:groupPoints + knockoutPoints, aliveTeams, maxRemaining };
+    return { ...participant, groupPoints, knockoutPoints, totalPoints:groupPoints + knockoutPoints, aliveTeams };
   });
-  rows.sort((a,b) => b.totalPoints - a.totalPoints || b.aliveTeams.length - a.aliveTeams.length || b.maxRemaining - a.maxRemaining || a.name.localeCompare(b.name));
+  rows.sort((a,b) => b.totalPoints - a.totalPoints || b.aliveTeams.length - a.aliveTeams.length || a.name.localeCompare(b.name));
   let previous;
   rows.forEach((row,index) => { row.rank = previous && previous.totalPoints === row.totalPoints ? previous.rank : index + 1; previous = row; });
   return rows;
@@ -260,16 +246,16 @@ function renderProgress() {
 
 function renderLeaderboard(rows) {
   if (elements.leaderboardBody) {
-    elements.leaderboardBody.innerHTML = rows.map((row) => `<tr class="${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><td class="rank">${row.rank}</td><td class="player">${row.name}</td><td class="total">${row.totalPoints}</td><td>${row.groupPoints}</td><td>${row.knockoutPoints}</td><td>${row.aliveTeams.length}</td><td class="positive">+${row.maxRemaining}</td></tr>`).join("");
+    elements.leaderboardBody.innerHTML = rows.map((row) => `<tr class="${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><td class="rank">${row.rank}</td><td class="player">${row.name}</td><td class="total">${row.totalPoints}</td><td>${row.groupPoints}</td><td>${row.knockoutPoints}</td><td>${row.aliveTeams.length}</td></tr>`).join("");
   }
   if (elements.leaderboardCards) {
-    elements.leaderboardCards.innerHTML = rows.map((row) => `<div class="mobile-leader-row ${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><span class="rank">${row.rank}</span><span class="player">${row.name}</span><span class="total">${row.totalPoints}</span><span>${row.groupPoints}</span><span>${row.knockoutPoints}</span><span>${row.aliveTeams.length}</span><span class="remaining">+${row.maxRemaining}</span></div>`).join("");
+    elements.leaderboardCards.innerHTML = rows.map((row) => `<div class="mobile-leader-row ${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><span class="rank">${row.rank}</span><span class="player">${row.name}</span><span class="total">${row.totalPoints}</span><span>${row.groupPoints}</span><span>${row.knockoutPoints}</span><span>${row.aliveTeams.length}</span></div>`).join("");
   }
 }
 
 function bestPositionedMarkup(row) {
   if (!row) return "";
-  return `<div class="best-positioned"><small>Best Positioned Player</small><strong>${row.name}</strong><div class="person">♟</div><b>${row.aliveTeams.length} team${row.aliveTeams.length === 1 ? "" : "s"} alive</b><span><em>+${row.maxRemaining}</em> max remaining</span></div>`;
+  return `<div class="best-positioned"><small>Best Positioned Player</small><strong>${row.name}</strong><div class="person">♟</div><b>${row.aliveTeams.length} team${row.aliveTeams.length === 1 ? "" : "s"} alive</b></div>`;
 }
 
 function renderBestPositioned(row) { if (elements.bestPositioned) elements.bestPositioned.innerHTML = bestPositionedMarkup(row); }
@@ -309,7 +295,6 @@ function renderUpcoming() {
 function renderScoring() {
   const rows = [{label:"Advance to knockout rounds", points:rules.advance_to_knockout_rounds}, ...roundDefinitions.map((round) => ({label:round.scoringLabel, points:round.points}))];
   elements.scoringKey.innerHTML = rows.map((row) => `<div class="score-row"><span>${row.label}</span><b>+${row.points}</b></div>`).join("");
-  if (elements.remainingByRound) elements.remainingByRound.innerHTML = `${roundDefinitions.map((round) => `<div class="score-row"><span>${round.scoringLabel}</span><b>+${round.points}</b></div>`).join("")}<div class="score-row score-total"><span>Maximum path</span><b>+${rules.round_of_32_victory + rules.round_of_16_victory + rules.quarterfinal_victory + rules.semifinal_victory + rules.world_cup_winner}</b></div>`;
 }
 
 function renderSwingMatches() {

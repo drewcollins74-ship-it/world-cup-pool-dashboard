@@ -291,39 +291,6 @@ h1 {
   color: #e00000;
 }
 
-.available {
-  background: #f5f9fd;
-  border-top: 1px solid var(--line);
-  margin: 10px -10px -10px;
-  padding: 9px 10px 10px;
-}
-
-.available-total {
-  color: var(--green);
-  font-size: 16px;
-  font-weight: 900;
-  margin-bottom: 5px;
-}
-
-.available-row {
-  align-items: center;
-  display: grid;
-  gap: 6px;
-  grid-template-columns: 22px minmax(0, 1fr) 34px;
-  min-height: 25px;
-}
-
-.available-row strong {
-  color: var(--green);
-}
-
-.available-row small {
-  color: #071948;
-  display: block;
-  font-size: 12px;
-  grid-column: 2 / span 2;
-}
-
 .mobile-grid {
   display: grid;
   gap: 10px;
