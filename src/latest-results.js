@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-06-29T22:20:14.795070+00:00",
+  "generatedAt": "2026-06-29T23:34:52.066461+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2436,7 +2436,7 @@ window.__WORLD_CUP_RESULTS__ = {
       },
       "teams": {
         "home": {
-          "name": "Winner Match 74"
+          "name": "Paraguay"
         },
         "away": {
           "name": "Winner Match 77"
@@ -2946,11 +2946,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-06-29T20:30:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Paraguay",
         "venue": {
           "name": "Gillette Stadium, Foxborough",
           "city": null
@@ -2971,8 +2971,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       }
     },
     {
