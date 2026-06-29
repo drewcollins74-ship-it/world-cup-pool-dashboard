@@ -311,12 +311,14 @@ function renderScoring() {
 }
 
 function renderMostLikely() {
-  elements.mostLikely.innerHTML = roundOf32Favorites.length ? roundOf32Favorites.map((item) => {
-    const teams = item.match.split(" vs ").map(normalizeTeam);
+  const byPlayer = roundOf32Favorites.map((item) => {
     const favorite = normalizeTeam(item.favoriteToAdvance);
+    return { item, favorite, owner:ownerByTeam.get(favorite) || "Unassigned" };
+  }).sort((a,b) => a.owner.localeCompare(b.owner) || a.favorite.localeCompare(b.favorite));
+  elements.mostLikely.innerHTML = byPlayer.length ? byPlayer.map(({ item, favorite, owner }) => {
+    const teams = item.match.split(" vs ").map(normalizeTeam);
     const opponent = teams.find((team) => team !== favorite) || "Opponent TBD";
-    const owner = ownerByTeam.get(favorite);
-    return `<div class="favorite-pick"><span class="favorite-marker" aria-hidden="true">★</span><div><b>${favorite}${owner ? ` <em>(${owner})</em>` : ""}</b><small>vs ${opponent}</small></div></div>`;
+    return `<div class="favorite-pick"><span class="favorite-marker" aria-hidden="true">★</span><div><b>${favorite} <em>(${owner})</em></b><small>vs ${opponent}</small></div></div>`;
   }).join("") : `<div class="empty-message">Favorite selections have not been added.</div>`;
 }
 
