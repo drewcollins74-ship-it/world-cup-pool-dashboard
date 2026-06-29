@@ -50,7 +50,8 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .panel-title span { font-size: 11px; font-weight: 700; text-transform: none; }
 .bracket-scroll { overflow-x: auto; }
 .bracket { display: grid; gap: 24px; grid-template-columns: repeat(5, 160px) 140px; min-height: 310px; padding: 8px 14px 15px; width: max-content; }
-.bracket-round { display: flex; flex-direction: column; gap: 7px; justify-content: space-around; }
+.bracket-round { display: flex; flex-direction: column; gap: 7px; justify-content: space-around; padding-top: 34px; position: relative; }
+.bracket-round > .round-title:first-child { left: 0; position: absolute; right: 0; top: 0; }
 .round-title { font-size: 10px; font-weight: 900; min-height: 28px; text-align: center; text-transform: uppercase; }
 .round-title span { display: block; margin-top: 2px; }
 .match-card { background: #f9fbfd; border: 1px solid #b6c5d9; min-height: 58px; padding: 6px 8px; }

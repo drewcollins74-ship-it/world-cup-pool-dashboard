@@ -87,6 +87,24 @@ const roundDefinitions = [
   { key:"final", label:"Final", short:"Final", scoringLabel:"World Cup winner", icon:"♛", points:rules.world_cup_winner }
 ];
 
+const roundOf32BracketPath = [
+  ["South Africa", "Canada"], ["Netherlands", "Morocco"],
+  ["Germany", "Paraguay"], ["France", "Sweden"],
+  ["Portugal", "Croatia"], ["Spain", "Austria"],
+  ["United States", "Bosnia & Herzegovina"], ["Belgium", "Senegal"],
+  ["Brazil", "Japan"], ["Ivory Coast", "Norway"],
+  ["Mexico", "Ecuador"], ["England", "DR Congo"],
+  ["Argentina", "Cape Verde"], ["Australia", "Egypt"],
+  ["Switzerland", "Algeria"], ["Colombia", "Ghana"]
+];
+
+const roundOf16BracketPath = [
+  "2026-07-04T17:00", "2026-07-04T21:00",
+  "2026-07-06T19:00", "2026-07-07T00:00",
+  "2026-07-05T20:00", "2026-07-06T00:00",
+  "2026-07-07T16:00", "2026-07-07T20:00"
+];
+
 const completedStatuses = new Set(["FT", "AET", "PEN"]);
 const participants = parseParticipants(participantsCsv);
 const generated = window.__WORLD_CUP_RESULTS__ || {};
@@ -272,11 +290,23 @@ function renderBestPositioned(row) { if (elements.bestPositioned) elements.bestP
 function renderBracket(bestRow) {
   const bracketRounds = roundDefinitions.filter((round) => ["r32","r16","qf","sf","final"].includes(round.key));
   const columns = bracketRounds.map((round) => {
-    const matches = knockoutFixtures.filter((fixture) => getRoundKey(fixture) === round.key).sort(sortByDate);
+    const matches = sortBracketMatches(knockoutFixtures.filter((fixture) => getRoundKey(fixture) === round.key), round.key);
     return `<section class="bracket-round"><div class="round-title">${round.label}<span>(+${round.points})</span></div>${matches.length ? matches.map(renderBracketMatch).join("") : `<div class="empty-round">Awaiting ${round.label} matchups</div>`}${round.key === "final" ? renderThirdPlace() : ""}</section>`;
   });
   columns.push(`<section class="bracket-round"><div class="round-title">Pool Position</div>${bestPositionedMarkup(bestRow)}</section>`);
   elements.bracket.innerHTML = columns.join("");
+}
+
+function sortBracketMatches(matches, roundKey) {
+  if (roundKey === "r32") {
+    const pathOrder = new Map(roundOf32BracketPath.map((teams,index) => [matchKey(teams), index]));
+    return [...matches].sort((a,b) => (pathOrder.get(matchKey(fixtureTeams(a))) ?? 99) - (pathOrder.get(matchKey(fixtureTeams(b))) ?? 99) || sortByDate(a,b));
+  }
+  if (roundKey === "r16") {
+    const pathOrder = new Map(roundOf16BracketPath.map((date,index) => [date, index]));
+    return [...matches].sort((a,b) => (pathOrder.get(`${a.fixture?.date || ""}`.slice(0,16)) ?? 99) - (pathOrder.get(`${b.fixture?.date || ""}`.slice(0,16)) ?? 99) || sortByDate(a,b));
+  }
+  return [...matches].sort(sortByDate);
 }
 
 function renderThirdPlace() {
