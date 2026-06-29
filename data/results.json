@@ -2536,7 +2536,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": "Canada"
+        "winner": "Canada",
+        "venue": {
+          "name": "SoFi Stadium",
+          "city": "Inglewood"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2565,7 +2569,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "NRG Stadium",
+          "city": "Houston"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2594,7 +2602,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Gillette Stadium",
+          "city": "Foxborough"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2623,7 +2635,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Estadio BBVA",
+          "city": "Guadalupe"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2652,7 +2668,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "AT&T Stadium",
+          "city": "Arlington"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2681,7 +2701,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "MetLife Stadium",
+          "city": "East Rutherford"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2710,7 +2734,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Estadio Azteca",
+          "city": "Mexico City"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2739,7 +2767,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Mercedes-Benz Stadium",
+          "city": "Atlanta"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2768,7 +2800,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Lumen Field",
+          "city": "Seattle"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2797,7 +2833,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Levi's Stadium",
+          "city": "Santa Clara"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2826,7 +2866,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "SoFi Stadium",
+          "city": "Inglewood"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2855,7 +2899,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "BMO Field",
+          "city": "Toronto"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2884,7 +2932,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "BC Place",
+          "city": "Vancouver"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2913,7 +2965,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "AT&T Stadium",
+          "city": "Arlington"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2942,7 +2998,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Hard Rock Stadium",
+          "city": "Miami Gardens"
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2971,7 +3031,11 @@
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Arrowhead Stadium",
+          "city": "Kansas City"
+        }
       },
       "league": {
         "id": "wikipedia",

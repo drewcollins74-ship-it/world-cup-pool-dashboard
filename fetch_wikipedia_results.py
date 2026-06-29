@@ -228,6 +228,8 @@ def parse_fixture_block(block, round_name):
 
     home_goals, away_goals = parse_score(field_value(block, "score"))
     date = parse_datetime(field_value(block, "date"), field_value(block, "time"))
+    venue_name = strip_markup(unescape(field_value(block, "stadium"))).replace("\xa0", " ").strip()
+    venue_city = strip_markup(unescape(field_value(block, "location"))).replace("\xa0", " ").strip()
     status = "FT" if home_goals is not None and away_goals is not None else "NS"
     winner = parse_winner(block, team1, team2, home_goals, away_goals)
 
@@ -238,6 +240,7 @@ def parse_fixture_block(block, round_name):
             "round": round_name,
             "source": "Wikipedia",
             "winner": winner,
+            "venue": {"name": venue_name or None, "city": venue_city or None},
         },
         "league": {
             "id": "wikipedia",

@@ -120,7 +120,7 @@ const elements = {
   asOfLine:document.querySelector("#asOfLine"),
   progressStrip:document.querySelector("#progressStrip"), leaderboardBody:document.querySelector("#leaderboardBody"),
   leaderboardCards:document.querySelector("#leaderboardCards"), bestPositioned:document.querySelector("#bestPositioned"),
-  bracket:document.querySelector("#bracket"), upcomingMatches:document.querySelector("#upcomingMatches"),
+  bracket:document.querySelector("#bracket"), todayMatches:document.querySelector("#todayMatches"),
   scoringKey:document.querySelector("#scoringKey"),
   mostLikely:document.querySelector("#mostLikely"), mostAlive:document.querySelector("#mostAlive")
 };
@@ -254,7 +254,7 @@ function render() {
   renderLeaderboard(rows);
   renderBestPositioned(rows[0]);
   renderBracket(rows[0]);
-  renderUpcoming();
+  renderTodayMatches();
   renderScoring();
   renderMostLikely();
   renderMostAlive(rows);
@@ -350,12 +350,23 @@ function renderBracketMatch(fixture) {
   }).join("")}<small class="match-meta">${isComplete(fixture) ? "Final" : formatEasternDateTime(fixture.fixture?.date)}</small></article>`;
 }
 
-function renderUpcoming() {
-  const upcoming = knockoutFixtures.filter((fixture) => !isComplete(fixture)).sort(sortByDate);
-  elements.upcomingMatches.innerHTML = upcoming.length ? upcoming.slice(0,8).map((fixture,index) => {
+function renderTodayMatches() {
+  const today = easternDateKey(new Date());
+  const matches = knockoutFixtures.filter((fixture) => easternDateKey(fixture.fixture?.date) === today).sort(sortByDate);
+  elements.todayMatches.innerHTML = matches.length ? matches.map((fixture) => {
     const teams = fixtureTeams(fixture); const round = readableRound(fixture);
-    return `<div class="compact-row"><b>${round} ${index + 1} &nbsp; ${teams.join(" vs ") || "Matchup TBD"}</b><small>${formatEasternDateTime(fixture.fixture?.date)}</small></div>`;
-  }).join("") : `<div class="empty-message">Upcoming knockout matchups will appear here automatically.</div>`;
+    const favorite = favoriteForFixture(fixture);
+    const matchup = teams.map((team) => teamWithOwner(team, favorite)).join(" vs ");
+    const matchStatus = isComplete(fixture) ? `Final • ${fixture.goals?.home ?? ""}-${fixture.goals?.away ?? ""}` : formatEasternDateTime(fixture.fixture?.date);
+    const venue = [fixture.fixture?.venue?.name, fixture.fixture?.venue?.city].filter(Boolean).join(" • ");
+    return `<div class="compact-row"><b>${matchup || "Matchup TBD"}</b><small>${round} • ${matchStatus}</small>${venue ? `<small class="venue-line">${venue}</small>` : ""}</div>`;
+  }).join("") : `<div class="empty-message">No knockout matches are scheduled today.</div>`;
+}
+
+function teamWithOwner(team, favorite) {
+  const owner = ownerByTeam.get(team);
+  const favoriteMarker = team === favorite ? ` <span class="favorite-marker" title="Favorite to advance" aria-label="Favorite to advance">★</span>` : "";
+  return `${team}${favoriteMarker}${owner ? ` (${owner})` : ""}`;
 }
 
 function renderScoring() {
@@ -387,6 +398,11 @@ function readableRound(fixture) {
 }
 
 function sortByDate(a,b) { return new Date(a.fixture?.date || 0) - new Date(b.fixture?.date || 0); }
+function easternDateKey(value) {
+  const date = new Date(value || "");
+  if (Number.isNaN(date.getTime())) return "";
+  return new Intl.DateTimeFormat("en-CA", { timeZone:"America/New_York", year:"numeric", month:"2-digit", day:"2-digit" }).format(date);
+}
 function formatUpdatedAt(value) {
   const date = new Date(value || "");
   if (Number.isNaN(date.getTime())) return "time unavailable";

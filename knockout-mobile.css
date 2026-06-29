@@ -82,6 +82,7 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .compact-row:last-child { border-bottom: 0; }
 .compact-row b, .compact-row small { display: block; }
 .compact-row small { font-size: 10px; font-weight: 800; margin-top: 3px; text-transform: uppercase; }
+.compact-row .venue-line { color:#59667c; font-weight:700; text-transform:none; }
 .favorite-pick { align-items:center; border-bottom:1px solid #d6deea; display:grid; gap:7px; grid-template-columns:15px minmax(0,1fr); padding:7px 0; }
 .favorite-pick:last-child { border-bottom:0; }
 .favorite-pick b, .favorite-pick small { display:block; }
