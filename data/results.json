@@ -3062,5 +3062,67 @@
   "api": {
     "results": 103,
     "errors": null
-  }
+  },
+  "roundOf32Favorites": [
+    {
+      "match": "Brazil vs Japan",
+      "favoriteToAdvance": "Brazil"
+    },
+    {
+      "match": "Germany vs Paraguay",
+      "favoriteToAdvance": "Germany"
+    },
+    {
+      "match": "Netherlands vs Morocco",
+      "favoriteToAdvance": "Netherlands"
+    },
+    {
+      "match": "Ivory Coast vs Norway",
+      "favoriteToAdvance": "Norway"
+    },
+    {
+      "match": "France vs Sweden",
+      "favoriteToAdvance": "France"
+    },
+    {
+      "match": "Mexico vs Ecuador",
+      "favoriteToAdvance": "Mexico"
+    },
+    {
+      "match": "England vs DR Congo",
+      "favoriteToAdvance": "England"
+    },
+    {
+      "match": "Belgium vs Senegal",
+      "favoriteToAdvance": "Belgium"
+    },
+    {
+      "match": "United States vs Bosnia & Herzegovina",
+      "favoriteToAdvance": "United States"
+    },
+    {
+      "match": "Spain vs Austria",
+      "favoriteToAdvance": "Spain"
+    },
+    {
+      "match": "Portugal vs Croatia",
+      "favoriteToAdvance": "Portugal"
+    },
+    {
+      "match": "Switzerland vs Algeria",
+      "favoriteToAdvance": "Switzerland"
+    },
+    {
+      "match": "Australia vs Egypt",
+      "favoriteToAdvance": "Egypt"
+    },
+    {
+      "match": "Argentina vs Cape Verde",
+      "favoriteToAdvance": "Argentina"
+    },
+    {
+      "match": "Colombia vs Ghana",
+      "favoriteToAdvance": "Colombia"
+    }
+  ]
 }

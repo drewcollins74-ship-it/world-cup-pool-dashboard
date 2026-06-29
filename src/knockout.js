@@ -95,6 +95,8 @@ const groupFixtures = fixtures.filter((fixture) => getRoundKey(fixture) === "gro
 const knockoutFixtures = fixtures.filter((fixture) => !["group", "unknown"].includes(getRoundKey(fixture)));
 const groupState = buildGroupState();
 const ownerByTeam = new Map(participants.flatMap((participant) => participant.teams.map((team) => [team, participant.name])));
+const roundOf32Favorites = Array.isArray(generated.roundOf32Favorites) ? generated.roundOf32Favorites : [];
+const favoriteByMatch = new Map(roundOf32Favorites.map((item) => [matchKey(item.match.split(" vs ")), normalizeTeam(item.favoriteToAdvance)]));
 
 const elements = {
   asOfLine:document.querySelector("#asOfLine"),
@@ -102,7 +104,7 @@ const elements = {
   leaderboardCards:document.querySelector("#leaderboardCards"), bestPositioned:document.querySelector("#bestPositioned"),
   bracket:document.querySelector("#bracket"), upcomingMatches:document.querySelector("#upcomingMatches"),
   scoringKey:document.querySelector("#scoringKey"),
-  swingMatches:document.querySelector("#swingMatches"), mostAlive:document.querySelector("#mostAlive")
+  mostLikely:document.querySelector("#mostLikely"), mostAlive:document.querySelector("#mostAlive")
 };
 
 function parseParticipants(csv) {
@@ -118,6 +120,15 @@ function parseParticipants(csv) {
 function normalizeTeam(name = "") {
   const clean = name.trim();
   return aliases.get(clean.toLowerCase()) || clean;
+}
+
+function matchKey(teams) {
+  return teams.map(normalizeTeam).sort().join("|");
+}
+
+function favoriteForFixture(fixture) {
+  if (getRoundKey(fixture) !== "r32") return null;
+  return favoriteByMatch.get(matchKey(fixtureTeams(fixture))) || null;
 }
 
 function getRoundKey(fixture) {
@@ -227,7 +238,7 @@ function render() {
   renderBracket(rows[0]);
   renderUpcoming();
   renderScoring();
-  renderSwingMatches();
+  renderMostLikely();
   renderMostAlive(rows);
 }
 
@@ -278,9 +289,11 @@ function renderThirdPlace() {
 function renderBracketMatch(fixture) {
   const winner = winnerOf(fixture);
   const teams = fixtureTeams(fixture);
+  const favorite = favoriteForFixture(fixture);
   return `<article class="match-card">${teams.map((team,index) => {
     const owner = ownerByTeam.get(team);
-    return `<div class="match-team ${team === winner ? "winner" : ""}"><span>${flags[team] || "□"}</span><span class="team-label"><b>${team || "TBD"}</b>${owner ? `<small class="team-owner">(${owner})</small>` : ""}</span><span>${isComplete(fixture) ? (index === 0 ? fixture.goals?.home : fixture.goals?.away) ?? "" : ""}</span></div>`;
+    const favoriteMarker = team === favorite ? `<span class="favorite-marker" title="Favorite to advance" aria-label="Favorite to advance">★</span>` : "";
+    return `<div class="match-team ${team === winner ? "winner" : ""}"><span>${flags[team] || "□"}</span><span class="team-label"><b>${team || "TBD"}</b>${favoriteMarker}${owner ? `<small class="team-owner">(${owner})</small>` : ""}</span><span>${isComplete(fixture) ? (index === 0 ? fixture.goals?.home : fixture.goals?.away) ?? "" : ""}</span></div>`;
   }).join("")}<small class="match-meta">${isComplete(fixture) ? "Final" : formatEasternDateTime(fixture.fixture?.date)}</small></article>`;
 }
 
@@ -297,15 +310,14 @@ function renderScoring() {
   elements.scoringKey.innerHTML = rows.map((row) => `<div class="score-row"><span>${row.label}</span><b>+${row.points}</b></div>`).join("");
 }
 
-function renderSwingMatches() {
-  const upcoming = knockoutFixtures.filter((fixture) => !isComplete(fixture)).sort(sortByDate);
-  const rows = upcoming.map((fixture) => {
-    const assignments = fixtureTeams(fixture).filter((team) => ownerByTeam.has(team)).map((team) => `${ownerByTeam.get(team)}: ${team}`);
-    if (!assignments.length) return "";
-    const points = roundDefinitions.find((round) => round.key === getRoundKey(fixture))?.points || 0;
-    return `<div class="compact-row"><b>${fixtureTeams(fixture).join(" vs ")}</b><small>${assignments.join(" • ")}${points ? ` • +${points} for a win` : ""}</small></div>`;
-  }).filter(Boolean);
-  elements.swingMatches.innerHTML = rows.length ? rows.slice(0,8).join("") : `<div class="empty-message">Assignment swing matches will appear when knockout pairings are set.</div>`;
+function renderMostLikely() {
+  elements.mostLikely.innerHTML = roundOf32Favorites.length ? roundOf32Favorites.map((item) => {
+    const teams = item.match.split(" vs ").map(normalizeTeam);
+    const favorite = normalizeTeam(item.favoriteToAdvance);
+    const opponent = teams.find((team) => team !== favorite) || "Opponent TBD";
+    const owner = ownerByTeam.get(favorite);
+    return `<div class="favorite-pick"><span class="favorite-marker" aria-hidden="true">★</span><div><b>${favorite}${owner ? ` <em>(${owner})</em>` : ""}</b><small>vs ${opponent}</small></div></div>`;
+  }).join("") : `<div class="empty-message">Favorite selections have not been added.</div>`;
 }
 
 function renderMostAlive(rows) {
