@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T11:23:54.588837+00:00",
+  "generatedAt": "2026-06-29T16:10:40.595248+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -3043,10 +3043,6 @@
     "Ghana": "qualified",
     "Panama": "eliminated"
   },
-  "api": {
-    "results": 103,
-    "errors": null
-  },
   "roundOf32Favorites": [
     {
       "match": "Brazil vs Japan",
@@ -3108,5 +3104,9 @@
       "match": "Colombia vs Ghana",
       "favoriteToAdvance": "Colombia"
     }
-  ]
+  ],
+  "api": {
+    "results": 103,
+    "errors": null
+  }
 }
