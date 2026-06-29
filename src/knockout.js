@@ -291,10 +291,34 @@ function renderBracket(bestRow) {
   const bracketRounds = roundDefinitions.filter((round) => ["r32","r16","qf","sf","final"].includes(round.key));
   const columns = bracketRounds.map((round) => {
     const matches = sortBracketMatches(knockoutFixtures.filter((fixture) => getRoundKey(fixture) === round.key), round.key);
-    return `<section class="bracket-round"><div class="round-title">${round.label}<span>(+${round.points})</span></div>${matches.length ? matches.map(renderBracketMatch).join("") : `<div class="empty-round">Awaiting ${round.label} matchups</div>`}${round.key === "final" ? renderThirdPlace() : ""}</section>`;
+    const matchMarkup = round.key === "final"
+      ? renderFinalMatch(matches[0])
+      : matches.length ? matches.map(renderBracketMatch).join("") : `<div class="empty-round">Awaiting ${round.label} matchups</div>`;
+    return `<section class="bracket-round round-${round.key}"><div class="round-title">${round.label}<span>(+${round.points})</span></div>${matchMarkup}${round.key === "final" ? renderThirdPlace() : ""}</section>`;
   });
   columns.push(`<section class="bracket-round"><div class="round-title">Pool Position</div>${bestPositionedMarkup(bestRow)}</section>`);
   elements.bracket.innerHTML = columns.join("");
+}
+
+function renderFinalMatch(fixture) {
+  const fixtureTeamNames = fixture ? fixtureTeams(fixture) : [];
+  const teams = [0,1].map((index) => {
+    const team = fixtureTeamNames[index] || "";
+    return !team || /^(Winner|Loser) Match/i.test(team) ? `Winner Semi-final ${index + 1}` : team;
+  });
+  const winner = fixture ? winnerOf(fixture) : null;
+  const complete = fixture ? isComplete(fixture) : false;
+  return `<article class="match-card final-match-card">
+    ${renderFinalTeam(teams[0], winner, complete ? fixture.goals?.home : null)}
+    <div class="final-trophy"><img src="assets/world-cup-trophy.png" alt="World Cup trophy"><span>vs</span></div>
+    ${renderFinalTeam(teams[1], winner, complete ? fixture.goals?.away : null)}
+    <small class="match-meta">${fixture ? (complete ? "Final" : formatEasternDateTime(fixture.fixture?.date)) : "Championship Match"}</small>
+  </article>`;
+}
+
+function renderFinalTeam(team, winner, score) {
+  const owner = ownerByTeam.get(team);
+  return `<div class="final-team ${team === winner ? "winner" : ""}"><span>${flags[team] || ""}</span><b>${team}</b>${owner ? `<small>(${owner})</small>` : ""}${score !== null && score !== undefined ? `<strong>${score}</strong>` : ""}</div>`;
 }
 
 function sortBracketMatches(matches, roundKey) {
@@ -320,8 +344,9 @@ function renderBracketMatch(fixture) {
   const favorite = favoriteForFixture(fixture);
   return `<article class="match-card">${teams.map((team,index) => {
     const owner = ownerByTeam.get(team);
+    const displayTeam = getRoundKey(fixture) === "third" && /^Loser Match/i.test(team) ? `Loser Semi-final ${index + 1}` : team;
     const favoriteMarker = team === favorite ? `<span class="favorite-marker" title="Favorite to advance" aria-label="Favorite to advance">★</span>` : "";
-    return `<div class="match-team ${team === winner ? "winner" : ""}"><span>${flags[team] || "□"}</span><span class="team-label"><b>${team || "TBD"}</b>${favoriteMarker}${owner ? `<small class="team-owner">(${owner})</small>` : ""}</span><span>${isComplete(fixture) ? (index === 0 ? fixture.goals?.home : fixture.goals?.away) ?? "" : ""}</span></div>`;
+    return `<div class="match-team ${team === winner ? "winner" : ""}"><span>${flags[team] || "□"}</span><span class="team-label"><b>${displayTeam || "TBD"}</b>${favoriteMarker}${owner ? `<small class="team-owner">(${owner})</small>` : ""}</span><span>${isComplete(fixture) ? (index === 0 ? fixture.goals?.home : fixture.goals?.away) ?? "" : ""}</span></div>`;
   }).join("")}<small class="match-meta">${isComplete(fixture) ? "Final" : formatEasternDateTime(fixture.fixture?.date)}</small></article>`;
 }
 

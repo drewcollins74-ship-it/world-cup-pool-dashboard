@@ -78,6 +78,16 @@ td.positive { color: var(--green); font-weight: 900; }
 .team-owner { color: #52647b; flex: none; font-size: 8px; font-style: italic; font-weight: 700; }
 .favorite-marker { color: #e79d12; flex: none; font-size: 11px; line-height: 1; }
 .match-meta { color: #59667c; display: block; font-size: 9px; margin-top: 5px; text-align: center; text-transform: uppercase; }
+.final-match-card { background: linear-gradient(180deg,#fffdf4,#fff8dc); border: 2px solid var(--gold); box-shadow: 0 3px 12px rgba(7,29,68,.16); min-height: 210px; padding: 12px 8px; text-align: center; }
+.final-team { align-items: center; display: flex; flex-wrap: wrap; gap: 3px; justify-content: center; min-height: 34px; }
+.final-team b { color: var(--navy); font-size: 11px; }
+.final-team small { color: #52647b; font-size: 8px; font-style: italic; font-weight: 700; }
+.final-team strong { color: var(--green); font-size: 15px; margin-left: 3px; }
+.final-team.winner b { color: var(--green); }
+.final-trophy { align-items: center; display: flex; flex-direction: column; margin: 5px 0; }
+.final-trophy img { height: 76px; object-fit: contain; width: 76px; }
+.final-trophy span { color: var(--navy); font-size: 9px; font-weight: 900; margin-top: -3px; text-transform: uppercase; }
+.final-match-card .match-meta { border-top: 1px solid #ead597; margin-top: 8px; padding-top: 6px; }
 .empty-round { border: 1px dashed #bac6d5; color: #6e7b8e; font-size: 11px; padding: 14px 8px; text-align: center; }
 .best-positioned { border: 2px solid var(--gold); padding: 13px 8px; text-align: center; }
 .best-positioned small, .best-positioned strong, .best-positioned b { display: block; }
