@@ -105,6 +105,11 @@ const roundOf16BracketPath = [
   "2026-07-07T16:00", "2026-07-07T20:00"
 ];
 
+const championshipFallback = {
+  date:"2026-07-19T19:00:00+00:00",
+  venue:{ name:"New York New Jersey Stadium", city:"East Rutherford" }
+};
+
 const completedStatuses = new Set(["FT", "AET", "PEN"]);
 const participants = parseParticipants(participantsCsv);
 const generated = window.__WORLD_CUP_RESULTS__ || {};
@@ -308,11 +313,15 @@ function renderFinalMatch(fixture) {
   });
   const winner = fixture ? winnerOf(fixture) : null;
   const complete = fixture ? isComplete(fixture) : false;
+  const finalDate = fixture?.fixture?.date || championshipFallback.date;
+  const finalVenue = fixture?.fixture?.venue || championshipFallback.venue;
+  const venue = [finalVenue?.name, finalVenue?.city].filter(Boolean).join(" • ");
   return `<article class="match-card final-match-card">
     ${renderFinalTeam(teams[0], winner, complete ? fixture.goals?.home : null)}
     <div class="final-trophy"><img src="assets/world-cup-trophy.png" alt="World Cup trophy"><span>vs</span></div>
     ${renderFinalTeam(teams[1], winner, complete ? fixture.goals?.away : null)}
-    <small class="match-meta">${fixture ? (complete ? "Final" : formatEasternDateTime(fixture.fixture?.date)) : "Championship Match"}</small>
+    <small class="match-meta">${complete ? "Final • " : ""}${formatEasternDateTime(finalDate)}</small>
+    ${venue ? `<small class="final-venue">${venue}</small>` : ""}
   </article>`;
 }
 

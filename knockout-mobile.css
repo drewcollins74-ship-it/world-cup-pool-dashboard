@@ -74,6 +74,7 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .final-trophy img { height:70px; object-fit:contain; width:70px; }
 .final-trophy span { color:var(--navy); font-size:9px; font-weight:900; margin-top:-3px; text-transform:uppercase; }
 .final-match-card .match-meta { border-top:1px solid #ead597; margin-top:7px; padding-top:5px; }
+.final-venue { color:#59667c; display:block; font-size:8px; font-weight:700; margin-top:4px; }
 .empty-round { border:1px dashed #bac6d5; color:#6e7b8e; font-size:10px; padding:12px 7px; text-align:center; }
 .bracket .best-positioned { display: none; }
 .info-grid { display: grid; gap: 10px; }
