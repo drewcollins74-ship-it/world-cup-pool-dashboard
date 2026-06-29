@@ -545,7 +545,7 @@ def write_outputs(fixtures, team_status):
     RESULTS_JSON.write_text(json.dumps(output, indent=2, ensure_ascii=False), encoding="utf-8")
     RESULTS_JS.write_text(
         "window.__WORLD_CUP_RESULTS__ = "
-        + json.dumps(output, ensure_ascii=False)
+        + json.dumps(output, indent=2, ensure_ascii=False)
         + ";\n",
         encoding="utf-8",
     )
