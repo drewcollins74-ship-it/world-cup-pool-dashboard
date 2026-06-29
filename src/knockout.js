@@ -243,12 +243,10 @@ function render() {
 }
 
 function renderProgress() {
-  const qualifiedCount = Object.values(groupState).filter((record) => record.status === "qualified").length;
-  const items = [{ key:"qualified", label:"Qualified", icon:"♙", points:rules.advance_to_knockout_rounds, complete:qualifiedCount, total:32 }, ...roundDefinitions];
-  elements.progressStrip.innerHTML = items.map((item) => {
-    const fixturesForRound = item.key === "qualified" ? [] : knockoutFixtures.filter((fixture) => getRoundKey(fixture) === item.key);
-    const complete = item.key === "qualified" ? qualifiedCount : fixturesForRound.filter(isComplete).length;
-    const expected = item.key === "qualified" ? 32 : ({ r32:16, r16:8, qf:4, sf:2, third:1, final:1 }[item.key] || fixturesForRound.length);
+  elements.progressStrip.innerHTML = roundDefinitions.map((item) => {
+    const fixturesForRound = knockoutFixtures.filter((fixture) => getRoundKey(fixture) === item.key);
+    const complete = fixturesForRound.filter(isComplete).length;
+    const expected = ({ r32:16, r16:8, qf:4, sf:2, third:1, final:1 }[item.key] || fixturesForRound.length);
     const done = expected > 0 && complete >= expected;
     const pointsLabel = item.points ? `+${item.points}` : "No points";
     return `<article class="progress-item"><span class="progress-icon">${item.icon}</span><div class="progress-copy"><b>${item.label}</b><strong>${pointsLabel}</strong><small>${done ? "Complete" : "In progress"}</small></div><div class="progress-count">${complete} / ${expected}<span class="${done ? "" : "pending"}">${done ? "●" : "○"}</span></div></article>`;
