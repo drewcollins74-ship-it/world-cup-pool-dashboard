@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-06-29T16:10:40.595248+00:00",
+  "generatedAt": "2026-06-29T20:16:02.013957+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -13,7 +13,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group A",
         "source": "Wikipedia",
-        "winner": "Mexico"
+        "winner": "Mexico",
+        "venue": {
+          "name": "Estadio Azteca, Mexico City",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -42,7 +46,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group A",
         "source": "Wikipedia",
-        "winner": "South Korea"
+        "winner": "South Korea",
+        "venue": {
+          "name": "Estadio Akron, Zapopan",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -71,7 +79,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group A",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Mercedes-Benz Stadium, Atlanta",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -100,7 +112,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group A",
         "source": "Wikipedia",
-        "winner": "Mexico"
+        "winner": "Mexico",
+        "venue": {
+          "name": "Estadio Akron, Zapopan",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -129,7 +145,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group A",
         "source": "Wikipedia",
-        "winner": "Mexico"
+        "winner": "Mexico",
+        "venue": {
+          "name": "Estadio Azteca, Mexico City",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -158,7 +178,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group A",
         "source": "Wikipedia",
-        "winner": "South Africa"
+        "winner": "South Africa",
+        "venue": {
+          "name": "Estadio BBVA, Guadalupe",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -187,7 +211,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group B",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "BMO Field, Toronto",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -216,7 +244,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group B",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Levi's Stadium, Santa Clara",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -245,7 +277,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group B",
         "source": "Wikipedia",
-        "winner": "Switzerland"
+        "winner": "Switzerland",
+        "venue": {
+          "name": "SoFi Stadium, Inglewood",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -274,7 +310,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group B",
         "source": "Wikipedia",
-        "winner": "Canada"
+        "winner": "Canada",
+        "venue": {
+          "name": "BC Place, Vancouver",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -303,7 +343,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group B",
         "source": "Wikipedia",
-        "winner": "Switzerland"
+        "winner": "Switzerland",
+        "venue": {
+          "name": "BC Place, Vancouver",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -332,7 +376,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group B",
         "source": "Wikipedia",
-        "winner": "Bosnia & Herzegovina"
+        "winner": "Bosnia & Herzegovina",
+        "venue": {
+          "name": "Lumen Field, Seattle",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -361,7 +409,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group C",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "MetLife Stadium, East Rutherford",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -390,7 +442,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group C",
         "source": "Wikipedia",
-        "winner": "Scotland"
+        "winner": "Scotland",
+        "venue": {
+          "name": "Gillette Stadium, Foxborough",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -419,7 +475,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group C",
         "source": "Wikipedia",
-        "winner": "Morocco"
+        "winner": "Morocco",
+        "venue": {
+          "name": "Gillette Stadium, Foxborough",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -448,7 +508,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group C",
         "source": "Wikipedia",
-        "winner": "Brazil"
+        "winner": "Brazil",
+        "venue": {
+          "name": "Lincoln Financial Field, Philadelphia",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -477,7 +541,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group C",
         "source": "Wikipedia",
-        "winner": "Brazil"
+        "winner": "Brazil",
+        "venue": {
+          "name": "Hard Rock Stadium, Miami Gardens",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -506,7 +574,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group C",
         "source": "Wikipedia",
-        "winner": "Morocco"
+        "winner": "Morocco",
+        "venue": {
+          "name": "Mercedes-Benz Stadium, Atlanta",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -535,7 +607,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group D",
         "source": "Wikipedia",
-        "winner": "United States"
+        "winner": "United States",
+        "venue": {
+          "name": "SoFi Stadium, Inglewood",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -564,7 +640,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group D",
         "source": "Wikipedia",
-        "winner": "Australia"
+        "winner": "Australia",
+        "venue": {
+          "name": "BC Place, Vancouver",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -593,7 +673,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group D",
         "source": "Wikipedia",
-        "winner": "United States"
+        "winner": "United States",
+        "venue": {
+          "name": "Lumen Field, Seattle",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -622,7 +706,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group D",
         "source": "Wikipedia",
-        "winner": "Paraguay"
+        "winner": "Paraguay",
+        "venue": {
+          "name": "Levi's Stadium, Santa Clara",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -651,7 +739,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group D",
         "source": "Wikipedia",
-        "winner": "Türkiye"
+        "winner": "Türkiye",
+        "venue": {
+          "name": "SoFi Stadium, Inglewood",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -680,7 +772,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group D",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Levi's Stadium, Santa Clara",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -709,7 +805,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group E",
         "source": "Wikipedia",
-        "winner": "Germany"
+        "winner": "Germany",
+        "venue": {
+          "name": "NRG Stadium, Houston",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -738,7 +838,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group E",
         "source": "Wikipedia",
-        "winner": "Ivory Coast"
+        "winner": "Ivory Coast",
+        "venue": {
+          "name": "Lincoln Financial Field, Philadelphia",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -767,7 +871,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group E",
         "source": "Wikipedia",
-        "winner": "Germany"
+        "winner": "Germany",
+        "venue": {
+          "name": "BMO Field, Toronto",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -796,7 +904,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group E",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Arrowhead Stadium, Kansas City",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -825,7 +937,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group E",
         "source": "Wikipedia",
-        "winner": "Ivory Coast"
+        "winner": "Ivory Coast",
+        "venue": {
+          "name": "Lincoln Financial Field, Philadelphia",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -854,7 +970,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group E",
         "source": "Wikipedia",
-        "winner": "Ecuador"
+        "winner": "Ecuador",
+        "venue": {
+          "name": "MetLife Stadium, East Rutherford",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -883,7 +1003,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group F",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "AT&T Stadium, Arlington",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -912,7 +1036,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group F",
         "source": "Wikipedia",
-        "winner": "Sweden"
+        "winner": "Sweden",
+        "venue": {
+          "name": "Estadio BBVA, Guadalupe",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -941,7 +1069,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group F",
         "source": "Wikipedia",
-        "winner": "Netherlands"
+        "winner": "Netherlands",
+        "venue": {
+          "name": "NRG Stadium, Houston",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -970,7 +1102,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group F",
         "source": "Wikipedia",
-        "winner": "Japan"
+        "winner": "Japan",
+        "venue": {
+          "name": "Estadio BBVA, Guadalupe",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -999,7 +1135,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group F",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "AT&T Stadium, Arlington",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1028,7 +1168,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group F",
         "source": "Wikipedia",
-        "winner": "Netherlands"
+        "winner": "Netherlands",
+        "venue": {
+          "name": "Arrowhead Stadium, Kansas City",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1057,7 +1201,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group G",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Lumen Field, Seattle",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1086,7 +1234,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group G",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "SoFi Stadium, Inglewood",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1115,7 +1267,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group G",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "SoFi Stadium, Inglewood",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1144,7 +1300,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group G",
         "source": "Wikipedia",
-        "winner": "Egypt"
+        "winner": "Egypt",
+        "venue": {
+          "name": "BC Place, Vancouver",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1173,7 +1333,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group G",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Lumen Field, Seattle",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1202,7 +1366,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group G",
         "source": "Wikipedia",
-        "winner": "Belgium"
+        "winner": "Belgium",
+        "venue": {
+          "name": "BC Place, Vancouver",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1231,7 +1399,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group H",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Mercedes-Benz Stadium, Atlanta",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1260,7 +1432,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group H",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Hard Rock Stadium, Miami Gardens",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1289,7 +1465,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group H",
         "source": "Wikipedia",
-        "winner": "Spain"
+        "winner": "Spain",
+        "venue": {
+          "name": "Mercedes-Benz Stadium, Atlanta",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1318,7 +1498,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group H",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Hard Rock Stadium, Miami Gardens",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1347,7 +1531,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group H",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "NRG Stadium, Houston",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1376,7 +1564,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group H",
         "source": "Wikipedia",
-        "winner": "Spain"
+        "winner": "Spain",
+        "venue": {
+          "name": "Estadio Akron, Zapopan",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1405,7 +1597,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group I",
         "source": "Wikipedia",
-        "winner": "France"
+        "winner": "France",
+        "venue": {
+          "name": "MetLife Stadium, East Rutherford",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1434,7 +1630,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group I",
         "source": "Wikipedia",
-        "winner": "Norway"
+        "winner": "Norway",
+        "venue": {
+          "name": "Gillette Stadium, Foxborough",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1463,7 +1663,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group I",
         "source": "Wikipedia",
-        "winner": "France"
+        "winner": "France",
+        "venue": {
+          "name": "Lincoln Financial Field, Philadelphia",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1492,7 +1696,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group I",
         "source": "Wikipedia",
-        "winner": "Norway"
+        "winner": "Norway",
+        "venue": {
+          "name": "MetLife Stadium, East Rutherford",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1521,7 +1729,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group I",
         "source": "Wikipedia",
-        "winner": "France"
+        "winner": "France",
+        "venue": {
+          "name": "Gillette Stadium, Foxborough",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1550,7 +1762,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group I",
         "source": "Wikipedia",
-        "winner": "Senegal"
+        "winner": "Senegal",
+        "venue": {
+          "name": "BMO Field, Toronto",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1579,7 +1795,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group J",
         "source": "Wikipedia",
-        "winner": "Argentina"
+        "winner": "Argentina",
+        "venue": {
+          "name": "Arrowhead Stadium, Kansas City",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1608,7 +1828,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group J",
         "source": "Wikipedia",
-        "winner": "Austria"
+        "winner": "Austria",
+        "venue": {
+          "name": "Levi's Stadium, Santa Clara",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1637,7 +1861,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group J",
         "source": "Wikipedia",
-        "winner": "Argentina"
+        "winner": "Argentina",
+        "venue": {
+          "name": "AT&T Stadium, Arlington",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1666,7 +1894,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group J",
         "source": "Wikipedia",
-        "winner": "Algeria"
+        "winner": "Algeria",
+        "venue": {
+          "name": "Levi's Stadium, Santa Clara",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1695,7 +1927,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group J",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Arrowhead Stadium, Kansas City",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1724,7 +1960,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group J",
         "source": "Wikipedia",
-        "winner": "Argentina"
+        "winner": "Argentina",
+        "venue": {
+          "name": "AT&T Stadium, Arlington",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1753,7 +1993,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group K",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "NRG Stadium, Houston",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1782,7 +2026,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group K",
         "source": "Wikipedia",
-        "winner": "Colombia"
+        "winner": "Colombia",
+        "venue": {
+          "name": "Estadio Azteca, Mexico City",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1811,7 +2059,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group K",
         "source": "Wikipedia",
-        "winner": "Portugal"
+        "winner": "Portugal",
+        "venue": {
+          "name": "NRG Stadium, Houston",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1840,7 +2092,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group K",
         "source": "Wikipedia",
-        "winner": "Colombia"
+        "winner": "Colombia",
+        "venue": {
+          "name": "Estadio Akron, Zapopan",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1869,7 +2125,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group K",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Hard Rock Stadium, Miami Gardens",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1898,7 +2158,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group K",
         "source": "Wikipedia",
-        "winner": "DR Congo"
+        "winner": "DR Congo",
+        "venue": {
+          "name": "Mercedes-Benz Stadium, Atlanta",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1927,7 +2191,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group L",
         "source": "Wikipedia",
-        "winner": "England"
+        "winner": "England",
+        "venue": {
+          "name": "AT&T Stadium, Arlington",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1956,7 +2224,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group L",
         "source": "Wikipedia",
-        "winner": "Ghana"
+        "winner": "Ghana",
+        "venue": {
+          "name": "BMO Field, Toronto",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -1985,7 +2257,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group L",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Gillette Stadium, Foxborough",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2014,7 +2290,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group L",
         "source": "Wikipedia",
-        "winner": "Croatia"
+        "winner": "Croatia",
+        "venue": {
+          "name": "BMO Field, Toronto",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2043,7 +2323,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group L",
         "source": "Wikipedia",
-        "winner": "England"
+        "winner": "England",
+        "venue": {
+          "name": "MetLife Stadium, East Rutherford",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2072,7 +2356,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Group L",
         "source": "Wikipedia",
-        "winner": "Croatia"
+        "winner": "Croatia",
+        "venue": {
+          "name": "Lincoln Financial Field, Philadelphia",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2101,7 +2389,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "NRG Stadium, Houston",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2130,7 +2422,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Lincoln Financial Field, Philadelphia",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2159,7 +2455,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "MetLife Stadium, East Rutherford",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2169,7 +2469,7 @@ window.__WORLD_CUP_RESULTS__ = {
       },
       "teams": {
         "home": {
-          "name": "Winner Match 76"
+          "name": "Brazil"
         },
         "away": {
           "name": "Winner Match 78"
@@ -2188,7 +2488,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Estadio Azteca, Mexico City",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2217,7 +2521,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "AT&T Stadium, Arlington",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2246,7 +2554,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Lumen Field, Seattle",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2275,7 +2587,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Mercedes-Benz Stadium, Atlanta",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2304,7 +2620,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "BC Place, Vancouver",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2333,7 +2653,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Gillette Stadium, Foxborough",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2362,7 +2686,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "SoFi Stadium, Inglewood",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2391,7 +2719,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Hard Rock Stadium, Miami Gardens",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2420,7 +2752,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Arrowhead Stadium, Kansas City",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2449,7 +2785,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Semifinals",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "AT&T Stadium, Arlington",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2478,7 +2818,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Semifinals",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Mercedes-Benz Stadium, Atlanta",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2507,7 +2851,11 @@ window.__WORLD_CUP_RESULTS__ = {
         },
         "round": "Third Place",
         "source": "Wikipedia",
-        "winner": null
+        "winner": null,
+        "venue": {
+          "name": "Hard Rock Stadium, Miami Gardens",
+          "city": null
+        }
       },
       "league": {
         "id": "wikipedia",
@@ -2538,8 +2886,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": "Canada",
         "venue": {
-          "name": "SoFi Stadium",
-          "city": "Inglewood"
+          "name": "SoFi Stadium, Inglewood",
+          "city": null
         }
       },
       "league": {
@@ -2565,14 +2913,14 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-06-29T17:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Brazil",
         "venue": {
-          "name": "NRG Stadium",
-          "city": "Houston"
+          "name": "NRG Stadium, Houston",
+          "city": null
         }
       },
       "league": {
@@ -2590,8 +2938,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       }
     },
     {
@@ -2604,8 +2952,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "Gillette Stadium",
-          "city": "Foxborough"
+          "name": "Gillette Stadium, Foxborough",
+          "city": null
         }
       },
       "league": {
@@ -2637,8 +2985,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "Estadio BBVA",
-          "city": "Guadalupe"
+          "name": "Estadio BBVA, Guadalupe",
+          "city": null
         }
       },
       "league": {
@@ -2670,8 +3018,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "AT&T Stadium",
-          "city": "Arlington"
+          "name": "AT&T Stadium, Arlington",
+          "city": null
         }
       },
       "league": {
@@ -2703,8 +3051,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "MetLife Stadium",
-          "city": "East Rutherford"
+          "name": "MetLife Stadium, East Rutherford",
+          "city": null
         }
       },
       "league": {
@@ -2736,8 +3084,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "Estadio Azteca",
-          "city": "Mexico City"
+          "name": "Estadio Azteca, Mexico City",
+          "city": null
         }
       },
       "league": {
@@ -2769,8 +3117,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "Mercedes-Benz Stadium",
-          "city": "Atlanta"
+          "name": "Mercedes-Benz Stadium, Atlanta",
+          "city": null
         }
       },
       "league": {
@@ -2802,8 +3150,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "Lumen Field",
-          "city": "Seattle"
+          "name": "Lumen Field, Seattle",
+          "city": null
         }
       },
       "league": {
@@ -2835,8 +3183,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "Levi's Stadium",
-          "city": "Santa Clara"
+          "name": "Levi's Stadium, Santa Clara",
+          "city": null
         }
       },
       "league": {
@@ -2868,8 +3216,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "SoFi Stadium",
-          "city": "Inglewood"
+          "name": "SoFi Stadium, Inglewood",
+          "city": null
         }
       },
       "league": {
@@ -2901,8 +3249,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "BMO Field",
-          "city": "Toronto"
+          "name": "BMO Field, Toronto",
+          "city": null
         }
       },
       "league": {
@@ -2934,8 +3282,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "BC Place",
-          "city": "Vancouver"
+          "name": "BC Place, Vancouver",
+          "city": null
         }
       },
       "league": {
@@ -2967,8 +3315,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "AT&T Stadium",
-          "city": "Arlington"
+          "name": "AT&T Stadium, Arlington",
+          "city": null
         }
       },
       "league": {
@@ -3000,8 +3348,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "Hard Rock Stadium",
-          "city": "Miami Gardens"
+          "name": "Hard Rock Stadium, Miami Gardens",
+          "city": null
         }
       },
       "league": {
@@ -3033,8 +3381,8 @@ window.__WORLD_CUP_RESULTS__ = {
         "source": "Wikipedia",
         "winner": null,
         "venue": {
-          "name": "Arrowhead Stadium",
-          "city": "Kansas City"
+          "name": "Arrowhead Stadium, Kansas City",
+          "city": null
         }
       },
       "league": {
