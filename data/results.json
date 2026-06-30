@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-29T23:34:52.066461+00:00",
+  "generatedAt": "2026-06-30T03:54:44.154218+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2406,7 +2406,7 @@
           "name": "Canada"
         },
         "away": {
-          "name": "Winner Match 75"
+          "name": "Morocco"
         }
       },
       "goals": {
@@ -2979,11 +2979,11 @@
       "fixture": {
         "date": "2026-06-30T01:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Morocco",
         "venue": {
           "name": "Estadio BBVA, Guadalupe",
           "city": null
@@ -3004,8 +3004,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       }
     },
     {
