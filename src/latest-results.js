@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-06-30T17:15:48.857296+00:00",
+  "generatedAt": "2026-06-30T19:04:00.770107+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2472,7 +2472,7 @@ window.__WORLD_CUP_RESULTS__ = {
           "name": "Brazil"
         },
         "away": {
-          "name": "Winner Match 78"
+          "name": "Norway"
         }
       },
       "goals": {
@@ -3012,11 +3012,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-06-30T17:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Norway",
         "venue": {
           "name": "AT&T Stadium, Arlington",
           "city": null
@@ -3037,8 +3037,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 2
       }
     },
     {
