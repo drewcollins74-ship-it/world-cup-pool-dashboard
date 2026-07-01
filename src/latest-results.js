@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-01T00:37:20.006688+00:00",
+  "generatedAt": "2026-07-01T04:53:39.228994+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2502,7 +2502,7 @@ window.__WORLD_CUP_RESULTS__ = {
       },
       "teams": {
         "home": {
-          "name": "Winner Match 79"
+          "name": "Mexico"
         },
         "away": {
           "name": "Winner Match 80"
@@ -3076,13 +3076,13 @@ window.__WORLD_CUP_RESULTS__ = {
     },
     {
       "fixture": {
-        "date": "2026-07-01T01:00:00+00:00",
+        "date": "2026-07-01T02:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Mexico",
         "venue": {
           "name": "Estadio Azteca, Mexico City",
           "city": null
@@ -3103,8 +3103,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       }
     },
     {
