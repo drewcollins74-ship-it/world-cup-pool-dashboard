@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-06-30T22:39:32.104656+00:00",
+  "generatedAt": "2026-07-01T00:37:20.006688+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2439,7 +2439,7 @@ window.__WORLD_CUP_RESULTS__ = {
           "name": "Paraguay"
         },
         "away": {
-          "name": "Winner Match 77"
+          "name": "France"
         }
       },
       "goals": {
@@ -3045,11 +3045,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-06-30T21:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "France",
         "venue": {
           "name": "MetLife Stadium, East Rutherford",
           "city": null
@@ -3070,8 +3070,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 0
       }
     },
     {
