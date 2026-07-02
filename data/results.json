@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T19:51:12.659599+00:00",
+  "generatedAt": "2026-07-02T22:14:14.192684+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2538,7 +2538,7 @@
           "name": "Winner Match 83"
         },
         "away": {
-          "name": "Winner Match 84"
+          "name": "Spain"
         }
       },
       "goals": {
@@ -3210,11 +3210,11 @@
       "fixture": {
         "date": "2026-07-02T19:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Spain",
         "venue": {
           "name": "SoFi Stadium, Inglewood",
           "city": null
@@ -3235,8 +3235,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 0
       }
     },
     {
