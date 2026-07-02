@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-01T22:39:44.449949+00:00",
+  "generatedAt": "2026-07-02T01:03:04.963000+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2571,7 +2571,7 @@
           "name": "Winner Match 81"
         },
         "away": {
-          "name": "Winner Match 82"
+          "name": "Belgium"
         }
       },
       "goals": {
@@ -3144,11 +3144,11 @@
       "fixture": {
         "date": "2026-07-01T20:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Belgium",
         "venue": {
           "name": "Lumen Field, Seattle",
           "city": null
@@ -3169,8 +3169,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 2
       }
     },
     {
