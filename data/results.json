@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T01:03:04.963000+00:00",
+  "generatedAt": "2026-07-02T04:21:07.771988+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2568,7 +2568,7 @@
       },
       "teams": {
         "home": {
-          "name": "Winner Match 81"
+          "name": "United States"
         },
         "away": {
           "name": "Belgium"
@@ -3177,11 +3177,11 @@
       "fixture": {
         "date": "2026-07-02T00:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "United States",
         "venue": {
           "name": "Levi's Stadium, Santa Clara",
           "city": null
@@ -3202,8 +3202,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       }
     },
     {
