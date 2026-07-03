@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-03T19:49:00.282970+00:00",
+  "generatedAt": "2026-07-03T20:56:40.007130+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2482,7 +2482,7 @@
     },
     {
       "fixture": {
-        "date": "2026-07-06T00:00:00+00:00",
+        "date": "2026-07-05T18:00:00+00:00",
         "status": {
           "short": "NS"
         },
@@ -2604,7 +2604,7 @@
           "name": "Winner Match 86"
         },
         "away": {
-          "name": "Winner Match 88"
+          "name": "Egypt"
         }
       },
       "goals": {
@@ -3309,11 +3309,11 @@
       "fixture": {
         "date": "2026-07-03T18:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Egypt",
         "venue": {
           "name": "AT&T Stadium, Arlington",
           "city": null
@@ -3334,8 +3334,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 1
       }
     },
     {
