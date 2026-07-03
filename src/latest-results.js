@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-03T04:07:54.596059+00:00",
+  "generatedAt": "2026-07-03T09:34:49.288040+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2634,7 +2634,7 @@ window.__WORLD_CUP_RESULTS__ = {
       },
       "teams": {
         "home": {
-          "name": "Winner Match 85"
+          "name": "Switzerland"
         },
         "away": {
           "name": "Winner Match 87"
@@ -3276,11 +3276,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-07-03T03:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Switzerland",
         "venue": {
           "name": "BC Place, Vancouver",
           "city": null
@@ -3301,8 +3301,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 0
       }
     },
     {
