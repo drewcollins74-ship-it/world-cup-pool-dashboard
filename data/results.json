@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-02T22:18:49.279987+00:00",
+  "generatedAt": "2026-07-03T02:08:08.496497+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2535,7 +2535,7 @@
       },
       "teams": {
         "home": {
-          "name": "Winner Match 83"
+          "name": "Portugal"
         },
         "away": {
           "name": "Spain"
@@ -3243,11 +3243,11 @@
       "fixture": {
         "date": "2026-07-02T23:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Portugal",
         "venue": {
           "name": "BMO Field, Toronto",
           "city": null
@@ -3268,8 +3268,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       }
     },
     {
