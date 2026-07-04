@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-04T16:15:25.089156+00:00",
+  "generatedAt": "2026-07-04T19:35:30.424203+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2385,11 +2385,11 @@
       "fixture": {
         "date": "2026-07-04T17:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Morocco",
         "venue": {
           "name": "NRG Stadium, Houston",
           "city": null
@@ -2410,8 +2410,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 3
       }
     },
     {
@@ -2670,7 +2670,7 @@
           "name": "Winner Match 89"
         },
         "away": {
-          "name": "Winner Match 90"
+          "name": "Morocco"
         }
       },
       "goals": {
