@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-04T01:50:25.484029+00:00",
+  "generatedAt": "2026-07-04T04:01:15.838214+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2637,7 +2637,7 @@ window.__WORLD_CUP_RESULTS__ = {
           "name": "Switzerland"
         },
         "away": {
-          "name": "Winner Match 87"
+          "name": "Colombia"
         }
       },
       "goals": {
@@ -3375,11 +3375,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-07-04T01:30:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Colombia",
         "venue": {
           "name": "Arrowhead Stadium, Kansas City",
           "city": null
@@ -3400,8 +3400,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 0
       }
     }
   ],
