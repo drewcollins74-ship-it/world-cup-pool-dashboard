@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-04T22:10:33.623634+00:00",
+  "generatedAt": "2026-07-04T23:07:27.381169+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2418,11 +2418,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-07-04T21:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "France",
         "venue": {
           "name": "Lincoln Financial Field, Philadelphia",
           "city": null
@@ -2443,8 +2443,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 1
       }
     },
     {
@@ -2667,7 +2667,7 @@ window.__WORLD_CUP_RESULTS__ = {
       },
       "teams": {
         "home": {
-          "name": "Winner Match 89"
+          "name": "France"
         },
         "away": {
           "name": "Morocco"
