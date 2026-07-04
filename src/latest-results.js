@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-03T22:16:08.657334+00:00",
+  "generatedAt": "2026-07-04T01:50:25.484029+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2601,7 +2601,7 @@ window.__WORLD_CUP_RESULTS__ = {
       },
       "teams": {
         "home": {
-          "name": "Winner Match 86"
+          "name": "Argentina"
         },
         "away": {
           "name": "Egypt"
@@ -3342,11 +3342,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-07-03T22:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 32",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Argentina",
         "venue": {
           "name": "Hard Rock Stadium, Miami Gardens",
           "city": null
@@ -3367,8 +3367,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 2
       }
     },
     {
