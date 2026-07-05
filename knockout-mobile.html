@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>World Cup Pool - Knockout Stage Mobile</title>
     <link rel="stylesheet" href="knockout-mobile.css?v=20260705-4">
   </head>
@@ -14,7 +17,7 @@
       </header>
 
       <nav class="stage-nav" aria-label="Dashboard stage">
-        <a href="mobile.html">Group Stage</a><a class="active" href="knockout-mobile.html">Knockout</a><a href="knockout.html">Desktop</a>
+        <a href="mobile.html?v=20260705-7">Group Stage</a><a class="active" href="knockout-mobile.html?v=20260705-7">Knockout</a><a href="knockout.html?v=20260705-7">Desktop</a>
       </nav>
       <p class="source-note">Results sourced from <a href="https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage" target="_blank" rel="noopener noreferrer">Wikipedia</a></p>
       <div class="progress-scroll"><section class="progress-strip" id="progressStrip"></section></div>
@@ -45,7 +48,18 @@
         <a href="#summary">⌂<span>Home</span></a><a href="#bracketSection">⇥<span>Bracket</span></a><a href="#todayMatches">▣<span>Matches</span></a><a href="#players">♙<span>Leaders</span></a>
       </nav>
     </main>
-    <script src="src/latest-results.js?v=20260705-2"></script>
-    <script src="src/knockout.js?v=20260705-6"></script>
+    <script>
+      (() => {
+        const fresh = Date.now();
+        const load = (source) => new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = `${source}?v=${fresh}`;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.body.appendChild(script);
+        });
+        load("src/latest-results.js").then(() => load("src/knockout.js"));
+      })();
+    </script>
   </body>
 </html>

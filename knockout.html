@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>World Cup Pool Standings - Knockout Stage</title>
     <link rel="stylesheet" href="knockout.css?v=20260705-4">
   </head>
@@ -17,9 +20,9 @@
       </header>
 
       <nav class="stage-nav" aria-label="Dashboard stage">
-        <a href="index.html">Group Stage</a>
-        <a class="active" href="knockout.html">Knockout Stage</a>
-        <a href="knockout-mobile.html">Mobile Version</a>
+        <a href="index.html?v=20260705-7">Group Stage</a>
+        <a class="active" href="knockout.html?v=20260705-7">Knockout Stage</a>
+        <a href="knockout-mobile.html?v=20260705-7">Mobile Version</a>
       </nav>
       <p class="source-note">Results sourced from <a href="https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_knockout_stage" target="_blank" rel="noopener noreferrer">Wikipedia: 2026 FIFA World Cup knockout stage</a></p>
 
@@ -67,7 +70,18 @@
       <footer class="dashboard-note">ⓘ <b>Note:</b> Group-stage pages remain available from the stage switch above. Knockout totals use the scoring rules for this pool.</footer>
     </main>
 
-    <script src="src/latest-results.js?v=20260705-2"></script>
-    <script src="src/knockout.js?v=20260705-6"></script>
+    <script>
+      (() => {
+        const fresh = Date.now();
+        const load = (source) => new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = `${source}?v=${fresh}`;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.body.appendChild(script);
+        });
+        load("src/latest-results.js").then(() => load("src/knockout.js"));
+      })();
+    </script>
   </body>
 </html>

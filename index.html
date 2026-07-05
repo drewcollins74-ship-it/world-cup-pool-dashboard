@@ -3,6 +3,9 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>World Cup Pool Standings</title>
     <link rel="stylesheet" href="styles.css?v=20260628-1">
   </head>
@@ -16,9 +19,9 @@
         </div>
       </header>
       <nav class="stage-nav" aria-label="Dashboard stage">
-        <a class="active" href="index.html">Group Stage</a>
-        <a href="knockout.html">Knockout Stage</a>
-        <a class="mobile-link" href="mobile.html">Mobile Version</a>
+        <a class="active" href="index.html?v=20260705-7">Group Stage</a>
+        <a href="knockout.html?v=20260705-7">Knockout Stage</a>
+        <a class="mobile-link" href="mobile.html?v=20260705-7">Mobile Version</a>
       </nav>
       <p class="source-note">Results sourced from <a href="https://en.wikipedia.org/wiki/2026_FIFA_World_Cup" target="_blank" rel="noopener noreferrer">Wikipedia: 2026 FIFA World Cup</a></p>
 
@@ -83,7 +86,18 @@
       </div>
     </main>
 
-    <script src="src/latest-results.js?v=20260628-1"></script>
-    <script src="src/app.js?v=20260628-1"></script>
+    <script>
+      (() => {
+        const fresh = Date.now();
+        const load = (source) => new Promise((resolve, reject) => {
+          const script = document.createElement("script");
+          script.src = `${source}?v=${fresh}`;
+          script.onload = resolve;
+          script.onerror = reject;
+          document.body.appendChild(script);
+        });
+        load("src/latest-results.js").then(() => load("src/app.js"));
+      })();
+    </script>
   </body>
 </html>
