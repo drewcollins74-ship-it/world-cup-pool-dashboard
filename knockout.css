@@ -98,6 +98,8 @@ td.positive { color: var(--green); font-weight: 900; }
 .best-positioned .person { color: #5d6676; font-size: 52px; line-height: 1; }
 .best-positioned b { font-size: 13px; margin-top: 8px; }
 .best-positioned em { color: var(--green); font-size: 17px; font-style: normal; font-weight: 900; }
+.projected-winner span { color: var(--green); display: block; font-size: 11px; font-weight: 900; margin-top: 5px; }
+.projected-winner a { color: var(--blue); display: block; font-size: 8px; font-weight: 800; margin-top: 9px; }
 .bracket-note { border-top: 1px solid var(--line); font-size: 11px; line-height: 1.4; margin: 0 12px 12px; padding: 12px; }
 
 .right-column .panel > h2 { font-size: 13px; padding: 7px 10px; }

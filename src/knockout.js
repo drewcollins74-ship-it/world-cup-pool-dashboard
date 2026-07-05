@@ -76,6 +76,24 @@ const fifaRankings = {
   Egypt:29, Norway:31
 };
 
+const marketProjection = {
+  asOf:"July 5, 2026",
+  sourceUrl:"https://www.foxsports.com/stories/soccer/2026-world-cup-round-16-odds",
+  toAdvance:{
+    "Brazil|Norway":{ Brazil:0.690 },
+    "England|Mexico":{ England:0.550 },
+    "Portugal|Spain":{ Spain:0.658 },
+    "Belgium|United States":{ Belgium:0.515 },
+    "Argentina|Egypt":{ Argentina:0.850 },
+    "Colombia|Switzerland":{ Colombia:0.596 }
+  },
+  outrightStrength:{
+    France:0.3636, Argentina:0.1818, Spain:0.1538, England:0.0909, Brazil:0.0769,
+    Portugal:0.0769, Morocco:0.0476, Colombia:0.0385, Mexico:0.0385,
+    "United States":0.0294, Norway:0.0244, Belgium:0.0196, Switzerland:0.0123, Egypt:0.0033
+  }
+};
+
 const aliases = new Map([
   ["usa","United States"], ["united states","United States"], ["korea republic","South Korea"],
   ["south korea","South Korea"], ["côte d'ivoire","Ivory Coast"], ["cote d'ivoire","Ivory Coast"],
@@ -261,11 +279,12 @@ function standings() {
 
 function render() {
   const rows = standings();
+  const projection = projectPoolWinner(rows);
   elements.asOfLine.textContent = `Knockout Stage - Updated ${formatUpdatedAt(generated.generatedAt)}`;
   renderProgress();
   renderLeaderboard(rows);
-  renderBestPositioned(rows[0]);
-  renderBracket(rows[0]);
+  renderProjectedWinner(projection);
+  renderBracket(projection);
   renderTodayMatches();
   renderScoring();
   renderMostLikely();
@@ -296,14 +315,14 @@ function eliminatedPlayerMarker(row) {
   return row.aliveTeams.length === 0 ? ` <span class="eliminated-player" title="No teams alive" aria-label="No teams alive">☠</span>` : "";
 }
 
-function bestPositionedMarkup(row) {
-  if (!row) return "";
-  return `<div class="best-positioned"><small>Best Positioned Player</small><strong>${row.name}</strong><div class="person">♟</div><b>${row.aliveTeams.length} team${row.aliveTeams.length === 1 ? "" : "s"} alive</b></div>`;
+function projectedWinnerMarkup(projection) {
+  if (!projection) return "";
+  return `<div class="best-positioned projected-winner"><small>Projected Pool Winner</small><strong>${projection.name}</strong><div class="person">♛</div><b>${projection.winChance}% chance to win</b><span>${projection.expectedPoints} projected points</span><a href="${marketProjection.sourceUrl}" target="_blank" rel="noopener noreferrer">Market model • ${marketProjection.asOf}</a></div>`;
 }
 
-function renderBestPositioned(row) { if (elements.bestPositioned) elements.bestPositioned.innerHTML = bestPositionedMarkup(row); }
+function renderProjectedWinner(projection) { if (elements.bestPositioned) elements.bestPositioned.innerHTML = projectedWinnerMarkup(projection); }
 
-function renderBracket(bestRow) {
+function renderBracket(projection) {
   const bracketRounds = roundDefinitions.filter((round) => ["r32","r16","qf","sf","final"].includes(round.key));
   const columns = bracketRounds.map((round) => {
     const matches = sortBracketMatches(knockoutFixtures.filter((fixture) => getRoundKey(fixture) === round.key), round.key);
@@ -312,8 +331,75 @@ function renderBracket(bestRow) {
       : matches.length ? matches.map(renderBracketMatch).join("") : `<div class="empty-round">Awaiting ${round.label} matchups</div>`;
     return `<section class="bracket-round round-${round.key}"><div class="round-title">${round.label}<span>(+${round.points})</span></div>${matchMarkup}${round.key === "final" ? renderThirdPlace() : ""}</section>`;
   });
-  columns.push(`<section class="bracket-round"><div class="round-title">Pool Position</div>${bestPositionedMarkup(bestRow)}</section>`);
+  columns.push(`<section class="bracket-round"><div class="round-title">Pool Projection</div>${projectedWinnerMarkup(projection)}</section>`);
   elements.bracket.innerHTML = columns.join("");
+}
+
+function projectPoolWinner(rows) {
+  const r16 = sortBracketMatches(knockoutFixtures.filter((fixture) => getRoundKey(fixture) === "r16"), "r16");
+  if (r16.length !== 8) return null;
+  const simulations = 20000;
+  const totals = new Map(rows.map((row) => [row.name, { wins:0, points:0 }]));
+  const random = seededRandom(20260705);
+
+  for (let simulation = 0; simulation < simulations; simulation += 1) {
+    const scores = new Map(rows.map((row) => [row.name, row.totalPoints]));
+    const r16Winners = r16.map((fixture) => simulateFixture(fixture, scores, random));
+    const quarterfinals = [
+      [r16Winners[0], r16Winners[1]], [r16Winners[4], r16Winners[5]],
+      [r16Winners[2], r16Winners[3]], [r16Winners[6], r16Winners[7]]
+    ].map((teams) => simulateProjectedMatch(teams[0], teams[1], "qf", scores, random));
+    const semifinalOne = simulateProjectedMatch(quarterfinals[0].winner, quarterfinals[1].winner, "sf", scores, random);
+    const semifinalTwo = simulateProjectedMatch(quarterfinals[2].winner, quarterfinals[3].winner, "sf", scores, random);
+    simulateProjectedMatch(semifinalOne.loser, semifinalTwo.loser, "third", scores, random);
+    simulateProjectedMatch(semifinalOne.winner, semifinalTwo.winner, "final", scores, random);
+
+    const highScore = Math.max(...scores.values());
+    const leaders = [...scores].filter(([,score]) => score === highScore).map(([name]) => name);
+    scores.forEach((score,name) => { totals.get(name).points += score; });
+    leaders.forEach((name) => { totals.get(name).wins += 1 / leaders.length; });
+  }
+
+  return [...totals].map(([name,result]) => ({
+    name,
+    winChance:(result.wins * 100 / simulations).toFixed(1),
+    expectedPoints:Math.round(result.points / simulations)
+  })).sort((a,b) => Number(b.winChance) - Number(a.winChance) || b.expectedPoints - a.expectedPoints || a.name.localeCompare(b.name))[0];
+}
+
+function simulateFixture(fixture, scores, random) {
+  const teams = fixtureTeams(fixture);
+  const actualWinner = winnerOf(fixture);
+  if (actualWinner) return actualWinner;
+  return simulateProjectedMatch(teams[0], teams[1], "r16", scores, random).winner;
+}
+
+function simulateProjectedMatch(teamA, teamB, roundKey, scores, random) {
+  const winner = random() < projectedWinProbability(teamA, teamB) ? teamA : teamB;
+  awardProjectedPoints(winner, roundKey, scores);
+  return { winner, loser:winner === teamA ? teamB : teamA };
+}
+
+function awardProjectedPoints(team, roundKey, scores) {
+  const owner = ownerByTeam.get(team);
+  const points = roundDefinitions.find((round) => round.key === roundKey)?.points || 0;
+  if (owner && scores.has(owner)) scores.set(owner, scores.get(owner) + points);
+}
+
+function projectedWinProbability(teamA, teamB) {
+  const currentMarket = marketProjection.toAdvance[matchKey([teamA, teamB])];
+  if (currentMarket) return currentMarket[teamA] ?? 1 - currentMarket[teamB];
+  const strengthA = marketProjection.outrightStrength[teamA] || 0.005;
+  const strengthB = marketProjection.outrightStrength[teamB] || 0.005;
+  return strengthA / (strengthA + strengthB);
+}
+
+function seededRandom(seed) {
+  let value = seed >>> 0;
+  return () => {
+    value = (value * 1664525 + 1013904223) >>> 0;
+    return value / 4294967296;
+  };
 }
 
 function renderFinalMatch(fixture) {
