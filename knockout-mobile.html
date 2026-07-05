@@ -7,7 +7,7 @@
     <meta http-equiv="Pragma" content="no-cache">
     <meta http-equiv="Expires" content="0">
     <title>World Cup Pool - Knockout Stage Mobile</title>
-    <link rel="stylesheet" href="knockout-mobile.css?v=20260705-7">
+    <link rel="stylesheet" href="knockout-mobile.css?v=20260705-8">
   </head>
   <body data-layout="mobile">
     <main class="ko-mobile">
@@ -27,6 +27,12 @@
           <h2>Pool Leaderboard</h2>
           <div class="mobile-leader-head"><span>Rank</span><span>Player</span><span>Total Pts</span><span>Group</span><span>KO</span><span>Teams Alive</span></div>
           <div id="leaderboardCards"></div>
+          <div class="leaderboard-legend" aria-label="Leaderboard marker legend">
+            <span><i class="projected-place projected-place-1">1</i> Projected first</span>
+            <span><i class="projected-place projected-place-2">2</i> Projected second</span>
+            <span><i class="projected-place projected-place-3">3</i> Projected third</span>
+            <span><i class="legend-skull">☠</i> No teams alive</span>
+          </div>
         </article>
         <article class="mobile-panel best-card"><h2>Projected Winner</h2><div id="bestPositioned"></div></article>
       </section>
