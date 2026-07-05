@@ -47,3 +47,7 @@ round_of_16_favorites:
     favorite_to_advance: Argentina
   - match: Switzerland vs Colombia
     favorite_to_advance: Colombia
+
+quarterfinal_favorites:
+  - match: France vs Morocco
+    favorite_to_advance: France
