@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-05T14:08:52.584437+00:00",
+  "generatedAt": "2026-07-05T16:18:07.921264+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -3455,10 +3455,6 @@ window.__WORLD_CUP_RESULTS__ = {
     "Ghana": "qualified",
     "Panama": "eliminated"
   },
-  "api": {
-    "results": 103,
-    "errors": null
-  },
   "favoritesByRound": {
     "r32": [
       {
@@ -3562,5 +3558,9 @@ window.__WORLD_CUP_RESULTS__ = {
         "favoriteToAdvance": "France"
       }
     ]
+  },
+  "api": {
+    "results": 103,
+    "errors": null
   }
 };
