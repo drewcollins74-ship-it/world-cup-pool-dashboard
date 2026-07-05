@@ -33,7 +33,8 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .mobile-leader-row { border-top: 1px solid #d5ddea; min-height: 44px; padding: 0 10px; text-align: center; }
 .mobile-leader-row .rank { align-self: stretch; align-items: center; background: #1762ae; color: #fff; display: flex; font-size: 18px; font-weight: 900; justify-content: center; margin-left: -10px; }
 .mobile-leader-row.rank-1 .rank { background: var(--gold); }
-.mobile-leader-row.rank-2 .rank, .mobile-leader-row.rank-3 .rank { background: #e79d12; }
+.mobile-leader-row.rank-2 .rank { background:#7d8a9a; }
+.mobile-leader-row.rank-3 .rank { background:#a96532; }
 .mobile-leader-row.rank-low .rank { background: var(--red); }
 .mobile-leader-row .player { color: #111; font-weight: 900; text-align: left; }
 .projected-place { align-items:center; color:#fff; display:inline-flex; font-size:9px; height:17px; justify-content:center; margin-left:4px; vertical-align:1px; width:17px; }
