@@ -98,7 +98,13 @@ td.positive { color: var(--green); font-weight: 900; }
 .best-positioned .person { color: #5d6676; font-size: 52px; line-height: 1; }
 .best-positioned b { font-size: 13px; margin-top: 8px; }
 .best-positioned em { color: var(--green); font-size: 17px; font-style: normal; font-weight: 900; }
-.projected-winner span { color: var(--green); display: block; font-size: 11px; font-weight: 900; margin-top: 5px; }
+.projected-winner > span { color: var(--green); display: block; font-size: 11px; font-weight: 900; margin-top: 5px; }
+.projection-runners { border-top: 1px solid #d6deea; margin-top: 10px; padding-top: 5px; text-align: left; }
+.projection-runner { padding: 5px 0; }
+.projection-runner + .projection-runner { border-top: 1px solid #e2e7ef; }
+.projection-runner b { align-items: center; display: flex; font-size: 10px; gap: 5px; margin: 0; }
+.projection-runner i { align-items: center; background: var(--blue); color: #fff; display: inline-flex; font-size: 9px; font-style: normal; height: 17px; justify-content: center; width: 17px; }
+.projection-runner span { color: #59667c; display: block; font-size: 8px; font-weight: 800; margin: 3px 0 0 22px; }
 .projected-winner a { color: var(--blue); display: block; font-size: 8px; font-weight: 800; margin-top: 9px; }
 .bracket-note { border-top: 1px solid var(--line); font-size: 11px; line-height: 1.4; margin: 0 12px 12px; padding: 12px; }
 

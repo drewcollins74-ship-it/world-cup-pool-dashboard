@@ -315,9 +315,10 @@ function eliminatedPlayerMarker(row) {
   return row.aliveTeams.length === 0 ? ` <span class="eliminated-player" title="No teams alive" aria-label="No teams alive">☠</span>` : "";
 }
 
-function projectedWinnerMarkup(projection) {
-  if (!projection) return "";
-  return `<div class="best-positioned projected-winner"><small>Projected Pool Winner</small><strong>${projection.name}</strong><div class="person">♛</div><b>${projection.winChance}% chance to win</b><span>${projection.expectedPoints} projected points</span><a href="${marketProjection.sourceUrl}" target="_blank" rel="noopener noreferrer">Market model • ${marketProjection.asOf}</a></div>`;
+function projectedWinnerMarkup(projections) {
+  if (!projections?.length) return "";
+  const [winner, ...runnersUp] = projections;
+  return `<div class="best-positioned projected-winner"><small>Projected Pool Winner</small><strong>${winner.name}</strong><div class="person">♛</div><b>${winner.winChance}% chance to win</b><span>${winner.expectedPoints} projected points</span><div class="projection-runners">${runnersUp.map((player,index) => `<div class="projection-runner"><b><i>${index + 2}</i>${player.name}</b><span>${player.expectedPoints} pts • ${player.winChance}% title chance</span></div>`).join("")}</div><a href="${marketProjection.sourceUrl}" target="_blank" rel="noopener noreferrer">Market model • ${marketProjection.asOf}</a></div>`;
 }
 
 function renderProjectedWinner(projection) { if (elements.bestPositioned) elements.bestPositioned.innerHTML = projectedWinnerMarkup(projection); }
@@ -364,7 +365,7 @@ function projectPoolWinner(rows) {
     name,
     winChance:(result.wins * 100 / simulations).toFixed(1),
     expectedPoints:Math.round(result.points / simulations)
-  })).sort((a,b) => Number(b.winChance) - Number(a.winChance) || b.expectedPoints - a.expectedPoints || a.name.localeCompare(b.name))[0];
+  })).sort((a,b) => b.expectedPoints - a.expectedPoints || Number(b.winChance) - Number(a.winChance) || a.name.localeCompare(b.name)).slice(0,3);
 }
 
 function simulateFixture(fixture, scores, random) {
