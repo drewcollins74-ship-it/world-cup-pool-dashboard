@@ -93,9 +93,13 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .score-row { display: flex; justify-content: space-between; min-height: 27px; }
 .score-row b { color: var(--green); }
 .score-total { border-top:1px solid var(--line); color:var(--green); font-weight:900; padding-top:7px; text-transform:uppercase; }
-.alive-list { font-size:12px; margin:0; padding:6px 14px 12px 34px; }
-.alive-list li { padding:3px 0; }
-.alive-list span { float:right; font-weight:900; }
+.tournament-team-list { padding:6px 14px 10px; }
+.owner-team-group { padding:7px 0; }
+.owner-team-group + .owner-team-group { border-top:1px solid #d6deea; }
+.owner-name { color:var(--blue); display:block; font-size:11px; margin-bottom:3px; text-transform:uppercase; }
+.tournament-team-row { align-items:center; display:grid; font-size:11px; gap:6px; grid-template-columns:20px minmax(0, 1fr) auto; min-height:24px; }
+.tournament-team-row span:nth-child(2) { color:#111; font-weight:800; }
+.tournament-team-row strong { color:var(--green); font-size:10px; }
 .about-card p { font-size: 13px; line-height: 1.45; padding: 0 14px 8px; }
 .empty-message { color:#6d7889; line-height:1.35; padding:10px 0; text-align:center; }
 .bottom-nav { background:#fff; border:1px solid var(--line); bottom:0; display:grid; grid-template-columns:repeat(4,1fr); position:sticky; z-index:3; }

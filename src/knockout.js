@@ -70,6 +70,12 @@ const flags = {
   "United States":"🇺🇸", Uruguay:"🇺🇾", Uzbekistan:"🇺🇿"
 };
 
+const fifaRankings = {
+  Argentina:1, Spain:2, France:3, England:4, Portugal:5, Brazil:6, Morocco:7,
+  Belgium:9, Colombia:13, Mexico:14, "United States":17, Switzerland:19,
+  Egypt:29, Norway:31
+};
+
 const aliases = new Map([
   ["usa","United States"], ["united states","United States"], ["korea republic","South Korea"],
   ["south korea","South Korea"], ["côte d'ivoire","Ivory Coast"], ["cote d'ivoire","Ivory Coast"],
@@ -129,7 +135,7 @@ const elements = {
   leaderboardCards:document.querySelector("#leaderboardCards"), bestPositioned:document.querySelector("#bestPositioned"),
   bracket:document.querySelector("#bracket"), todayMatches:document.querySelector("#todayMatches"),
   scoringKey:document.querySelector("#scoringKey"),
-  mostLikely:document.querySelector("#mostLikely"), mostAlive:document.querySelector("#mostAlive")
+  mostLikely:document.querySelector("#mostLikely"), tournamentTeams:document.querySelector("#tournamentTeams")
 };
 
 function parseParticipants(csv) {
@@ -264,7 +270,7 @@ function render() {
   renderTodayMatches();
   renderScoring();
   renderMostLikely();
-  renderMostAlive(rows);
+  renderTournamentTeams(rows);
 }
 
 function renderProgress() {
@@ -416,9 +422,12 @@ function currentPredictionRound() {
   return { key:"complete", label:"Tournament complete", index:progression.length };
 }
 
-function renderMostAlive(rows) {
-  const byTeamsAlive = [...rows].sort((a,b) => b.aliveTeams.length - a.aliveTeams.length || a.name.localeCompare(b.name));
-  elements.mostAlive.innerHTML = byTeamsAlive.slice(0,5).map((row) => `<li><b>${row.name}</b><span>${row.aliveTeams.length}</span></li>`).join("");
+function renderTournamentTeams(rows) {
+  const owners = rows.filter((row) => row.aliveTeams.length).sort((a,b) => a.name.localeCompare(b.name));
+  elements.tournamentTeams.innerHTML = owners.length ? owners.map((row) => {
+    const teams = [...row.aliveTeams].sort((a,b) => (fifaRankings[a] ?? 999) - (fifaRankings[b] ?? 999) || a.localeCompare(b));
+    return `<section class="owner-team-group"><b class="owner-name">${row.name}</b>${teams.map((team) => `<div class="tournament-team-row"><span>${flags[team] || "□"}</span><span>${team}</span><strong>FIFA #${fifaRankings[team] ?? "NR"}</strong></div>`).join("")}</section>`;
+  }).join("") : `<div class="empty-message">No assigned teams remain in the tournament.</div>`;
 }
 
 function readableRound(fixture) {
