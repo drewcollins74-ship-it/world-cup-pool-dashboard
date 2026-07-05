@@ -282,7 +282,7 @@ function render() {
   const projection = projectPoolWinner(rows);
   elements.asOfLine.textContent = `Knockout Stage - Updated ${formatUpdatedAt(generated.generatedAt)}`;
   renderProgress();
-  renderLeaderboard(rows);
+  renderLeaderboard(rows, projection);
   renderProjectedWinner(projection);
   renderBracket(projection);
   renderTodayMatches();
@@ -302,13 +302,20 @@ function renderProgress() {
   }).join("");
 }
 
-function renderLeaderboard(rows) {
+function renderLeaderboard(rows, projections) {
   if (elements.leaderboardBody) {
-    elements.leaderboardBody.innerHTML = rows.map((row) => `<tr class="${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><td class="rank">${row.rank}</td><td class="player">${row.name}${eliminatedPlayerMarker(row)}</td><td class="total">${row.totalPoints}</td><td>${row.groupPoints}</td><td>${row.knockoutPoints}</td><td>${row.aliveTeams.length}</td></tr>`).join("");
+    elements.leaderboardBody.innerHTML = rows.map((row) => `<tr class="${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><td class="rank">${row.rank}</td><td class="player">${row.name}${projectedPlaceMarker(row, projections)}${eliminatedPlayerMarker(row)}</td><td class="total">${row.totalPoints}</td><td>${row.groupPoints}</td><td>${row.knockoutPoints}</td><td>${row.aliveTeams.length}</td></tr>`).join("");
   }
   if (elements.leaderboardCards) {
-    elements.leaderboardCards.innerHTML = rows.map((row) => `<div class="mobile-leader-row ${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><span class="rank">${row.rank}</span><span class="player">${row.name}${eliminatedPlayerMarker(row)}</span><span class="total">${row.totalPoints}</span><span>${row.groupPoints}</span><span>${row.knockoutPoints}</span><span>${row.aliveTeams.length}</span></div>`).join("");
+    elements.leaderboardCards.innerHTML = rows.map((row) => `<div class="mobile-leader-row ${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><span class="rank">${row.rank}</span><span class="player">${row.name}${projectedPlaceMarker(row, projections)}${eliminatedPlayerMarker(row)}</span><span class="total">${row.totalPoints}</span><span>${row.groupPoints}</span><span>${row.knockoutPoints}</span><span>${row.aliveTeams.length}</span></div>`).join("");
   }
+}
+
+function projectedPlaceMarker(row, projections) {
+  const place = projections?.findIndex((projection) => projection.name === row.name) + 1;
+  if (!place) return "";
+  const labels = ["Projected first place", "Projected second place", "Projected third place"];
+  return ` <span class="projected-place projected-place-${place}" title="${labels[place - 1]}" aria-label="${labels[place - 1]}">${place}</span>`;
 }
 
 function eliminatedPlayerMarker(row) {
