@@ -3455,104 +3455,112 @@ window.__WORLD_CUP_RESULTS__ = {
     "Ghana": "qualified",
     "Panama": "eliminated"
   },
-  "roundOf32Favorites": [
-    {
-      "match": "Brazil vs Japan",
-      "favoriteToAdvance": "Brazil"
-    },
-    {
-      "match": "Germany vs Paraguay",
-      "favoriteToAdvance": "Germany"
-    },
-    {
-      "match": "Netherlands vs Morocco",
-      "favoriteToAdvance": "Netherlands"
-    },
-    {
-      "match": "Ivory Coast vs Norway",
-      "favoriteToAdvance": "Norway"
-    },
-    {
-      "match": "France vs Sweden",
-      "favoriteToAdvance": "France"
-    },
-    {
-      "match": "Mexico vs Ecuador",
-      "favoriteToAdvance": "Mexico"
-    },
-    {
-      "match": "England vs DR Congo",
-      "favoriteToAdvance": "England"
-    },
-    {
-      "match": "Belgium vs Senegal",
-      "favoriteToAdvance": "Belgium"
-    },
-    {
-      "match": "United States vs Bosnia & Herzegovina",
-      "favoriteToAdvance": "United States"
-    },
-    {
-      "match": "Spain vs Austria",
-      "favoriteToAdvance": "Spain"
-    },
-    {
-      "match": "Portugal vs Croatia",
-      "favoriteToAdvance": "Portugal"
-    },
-    {
-      "match": "Switzerland vs Algeria",
-      "favoriteToAdvance": "Switzerland"
-    },
-    {
-      "match": "Australia vs Egypt",
-      "favoriteToAdvance": "Egypt"
-    },
-    {
-      "match": "Argentina vs Cape Verde",
-      "favoriteToAdvance": "Argentina"
-    },
-    {
-      "match": "Colombia vs Ghana",
-      "favoriteToAdvance": "Colombia"
-    }
-  ],
   "api": {
     "results": 103,
     "errors": null
   },
-  "roundOf16Favorites": [
-    {
-      "match": "Canada vs Morocco",
-      "favoriteToAdvance": "Morocco"
-    },
-    {
-      "match": "Paraguay vs France",
-      "favoriteToAdvance": "France"
-    },
-    {
-      "match": "Brazil vs Norway",
-      "favoriteToAdvance": "Brazil"
-    },
-    {
-      "match": "Mexico vs England",
-      "favoriteToAdvance": "England"
-    },
-    {
-      "match": "Portugal vs Spain",
-      "favoriteToAdvance": "Spain"
-    },
-    {
-      "match": "United States vs Belgium",
-      "favoriteToAdvance": "Belgium"
-    },
-    {
-      "match": "Argentina vs Egypt",
-      "favoriteToAdvance": "Argentina"
-    },
-    {
-      "match": "Switzerland vs Colombia",
-      "favoriteToAdvance": "Colombia"
-    }
-  ]
+  "favoritesByRound": {
+    "r32": [
+      {
+        "match": "Brazil vs Japan",
+        "favoriteToAdvance": "Brazil"
+      },
+      {
+        "match": "Germany vs Paraguay",
+        "favoriteToAdvance": "Germany"
+      },
+      {
+        "match": "Netherlands vs Morocco",
+        "favoriteToAdvance": "Netherlands"
+      },
+      {
+        "match": "Ivory Coast vs Norway",
+        "favoriteToAdvance": "Norway"
+      },
+      {
+        "match": "France vs Sweden",
+        "favoriteToAdvance": "France"
+      },
+      {
+        "match": "Mexico vs Ecuador",
+        "favoriteToAdvance": "Mexico"
+      },
+      {
+        "match": "England vs DR Congo",
+        "favoriteToAdvance": "England"
+      },
+      {
+        "match": "Belgium vs Senegal",
+        "favoriteToAdvance": "Belgium"
+      },
+      {
+        "match": "United States vs Bosnia & Herzegovina",
+        "favoriteToAdvance": "United States"
+      },
+      {
+        "match": "Spain vs Austria",
+        "favoriteToAdvance": "Spain"
+      },
+      {
+        "match": "Portugal vs Croatia",
+        "favoriteToAdvance": "Portugal"
+      },
+      {
+        "match": "Switzerland vs Algeria",
+        "favoriteToAdvance": "Switzerland"
+      },
+      {
+        "match": "Australia vs Egypt",
+        "favoriteToAdvance": "Egypt"
+      },
+      {
+        "match": "Argentina vs Cape Verde",
+        "favoriteToAdvance": "Argentina"
+      },
+      {
+        "match": "Colombia vs Ghana",
+        "favoriteToAdvance": "Colombia"
+      }
+    ],
+    "r16": [
+      {
+        "match": "Canada vs Morocco",
+        "favoriteToAdvance": "Morocco"
+      },
+      {
+        "match": "Paraguay vs France",
+        "favoriteToAdvance": "France"
+      },
+      {
+        "match": "Brazil vs Norway",
+        "favoriteToAdvance": "Brazil"
+      },
+      {
+        "match": "Mexico vs England",
+        "favoriteToAdvance": "England"
+      },
+      {
+        "match": "Portugal vs Spain",
+        "favoriteToAdvance": "Spain"
+      },
+      {
+        "match": "United States vs Belgium",
+        "favoriteToAdvance": "Belgium"
+      },
+      {
+        "match": "Argentina vs Egypt",
+        "favoriteToAdvance": "Argentina"
+      },
+      {
+        "match": "Switzerland vs Colombia",
+        "favoriteToAdvance": "Colombia"
+      }
+    ],
+    "qf": [
+      {
+        "match": "France vs Morocco",
+        "favoriteToAdvance": "France"
+      }
+    ]
+  }
 };

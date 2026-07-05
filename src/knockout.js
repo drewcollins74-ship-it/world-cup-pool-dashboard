@@ -124,9 +124,8 @@ const groupFixtures = fixtures.filter((fixture) => getRoundKey(fixture) === "gro
 const knockoutFixtures = fixtures.filter((fixture) => !["group", "unknown"].includes(getRoundKey(fixture)));
 const groupState = buildGroupState();
 const ownerByTeam = new Map(participants.flatMap((participant) => participant.teams.map((team) => [team, participant.name])));
-const roundOf32Favorites = Array.isArray(generated.roundOf32Favorites) ? generated.roundOf32Favorites : [];
-const roundOf16Favorites = Array.isArray(generated.roundOf16Favorites) ? generated.roundOf16Favorites : [];
-const favoritesByRound = new Map([["r32", roundOf32Favorites], ["r16", roundOf16Favorites]]);
+const generatedFavorites = generated.favoritesByRound || {};
+const favoritesByRound = new Map(Object.entries(generatedFavorites).filter(([,items]) => Array.isArray(items)));
 const favoriteByRoundAndMatch = new Map([...favoritesByRound].map(([roundKey,items]) => [roundKey, new Map(items.map((item) => [matchKey(item.match.split(" vs ")), normalizeTeam(item.favoriteToAdvance)]))]));
 
 const elements = {

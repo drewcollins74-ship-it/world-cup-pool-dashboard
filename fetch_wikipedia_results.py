@@ -13,8 +13,7 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parent
 RESULTS_JSON = ROOT / "data" / "results.json"
 RESULTS_JS = ROOT / "src" / "latest-results.js"
-ROUND_OF_32_FAVORITES_YAML = ROOT / "data" / "round_of_32_favorites.yaml"
-ROUND_OF_16_FAVORITES_YAML = ROOT / "data" / "round_of_16_favorites.yaml"
+FAVORITES_YAML = ROOT / "data" / "World_Cup_favorites.yaml"
 WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
 GROUPS = "ABCDEFGHIJKL"
 KNOCKOUT_TITLE = "2026 FIFA World Cup knockout stage"
@@ -81,15 +80,29 @@ NAME_ALIASES = {
 }
 
 
-def load_round_favorites(path):
-    if not path.exists():
-        return []
+def load_favorites():
+    if not FAVORITES_YAML.exists():
+        return {}
 
-    favorites = []
+    section_keys = {
+        "round_of_32_favorites": "r32",
+        "round_of_16_favorites": "r16",
+        "quarterfinal_favorites": "qf",
+        "semifinal_favorites": "sf",
+        "final_favorites": "final",
+    }
+    favorites = {key: [] for key in section_keys.values()}
+    current_section = None
     current_match = None
-    for line in path.read_text(encoding="utf-8").splitlines():
+    for line in FAVORITES_YAML.read_text(encoding="utf-8").splitlines():
+        section_entry = re.match(r"^([a-z0-9_]+):\s*$", line)
+        if section_entry:
+            current_section = section_keys.get(section_entry.group(1))
+            current_match = None
+            continue
+
         match_entry = re.match(r"^\s*-\s+match:\s*(.+?)\s*$", line)
-        if match_entry:
+        if match_entry and current_section:
             current_match = match_entry.group(1)
             continue
 
@@ -101,21 +114,13 @@ def load_round_favorites(path):
         favorite = normalize_name(favorite_entry.group(1))
         if len(teams) != 2 or favorite not in teams:
             raise ValueError(f"Invalid favorite entry: {current_match} -> {favorite}")
-        favorites.append({
+        favorites[current_section].append({
             "match": f"{teams[0]} vs {teams[1]}",
             "favoriteToAdvance": favorite,
         })
         current_match = None
 
-    return favorites
-
-
-def load_round_of_32_favorites():
-    return load_round_favorites(ROUND_OF_32_FAVORITES_YAML)
-
-
-def load_round_of_16_favorites():
-    return load_round_favorites(ROUND_OF_16_FAVORITES_YAML)
+    return {key: items for key, items in favorites.items() if items}
 
 
 def fetch_wikitexts():
@@ -534,6 +539,7 @@ def strip_markup(value):
 
 def write_outputs(fixtures, team_status):
     generated_at = datetime.now(timezone.utc).isoformat()
+    favorites_by_round = load_favorites()
     output = {
         "generatedAt": generated_at,
         "source": "Wikipedia",
@@ -542,8 +548,7 @@ def write_outputs(fixtures, team_status):
         "season": "2026",
         "fixtures": fixtures,
         "teamStatus": team_status,
-        "roundOf32Favorites": load_round_of_32_favorites(),
-        "roundOf16Favorites": load_round_of_16_favorites(),
+        "favoritesByRound": favorites_by_round,
         "api": {
             "results": len(fixtures),
             "errors": None,
