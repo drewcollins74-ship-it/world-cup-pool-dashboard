@@ -36,6 +36,7 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .mobile-leader-row.rank-2 .rank, .mobile-leader-row.rank-3 .rank { background: #e79d12; }
 .mobile-leader-row.rank-low .rank { background: var(--red); }
 .mobile-leader-row .player { color: #111; font-weight: 900; text-align: left; }
+.eliminated-player { color: var(--red); display:inline-block; font-size:1.3em; line-height:1; margin-left:4px; vertical-align:-1px; }
 .mobile-leader-row .total { color: #0b2a82; font-size: 17px; font-weight: 900; }
 .best-card { border-color: var(--gold); }
 .best-card .best-positioned small { display: none; }

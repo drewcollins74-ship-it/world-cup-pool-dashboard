@@ -54,6 +54,7 @@ tr.rank-1 td.rank { background: var(--gold); }
 tr.rank-2 td.rank, tr.rank-3 td.rank { background: #e79d12; }
 tr.rank-low td.rank { background: var(--red); }
 td.player { color: #111; font-size: 14px; font-weight: 900; text-align: left; }
+.eliminated-player { color: var(--red); display: inline-block; font-size: 1.3em; line-height: 1; margin-left: 5px; vertical-align: -1px; }
 td.total { color: #0b2a82; font-size: 17px; font-weight: 900; }
 td.positive { color: var(--green); font-weight: 900; }
 .about-panel dl { font-size: 11px; line-height: 1.4; margin: 0; padding: 12px 14px; }
