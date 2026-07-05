@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-05T19:41:36.603684+00:00",
+  "generatedAt": "2026-07-05T22:06:30.969038+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2451,11 +2451,11 @@
       "fixture": {
         "date": "2026-07-05T20:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Norway",
         "venue": {
           "name": "MetLife Stadium, East Rutherford",
           "city": null
@@ -2476,8 +2476,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 2
       }
     },
     {
@@ -2733,7 +2733,7 @@
       },
       "teams": {
         "home": {
-          "name": "Winner Match 91"
+          "name": "Norway"
         },
         "away": {
           "name": "Winner Match 92"
