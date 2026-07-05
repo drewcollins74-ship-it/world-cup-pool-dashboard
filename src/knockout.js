@@ -304,15 +304,19 @@ function renderProgress() {
 
 function renderLeaderboard(rows, projections) {
   if (elements.leaderboardBody) {
-    elements.leaderboardBody.innerHTML = rows.map((row) => `<tr class="${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><td class="rank">${row.rank}</td><td class="player">${row.name}${projectedPlaceMarker(row, projections)}${eliminatedPlayerMarker(row)}</td><td class="total">${row.totalPoints}</td><td>${row.groupPoints}</td><td>${row.knockoutPoints}</td><td>${row.aliveTeams.length}</td></tr>`).join("");
+    elements.leaderboardBody.innerHTML = rows.map((row) => `<tr class="${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><td class="rank">${row.rank}</td><td class="player">${row.name}${projectedPlaceMarker(row, projections)}${eliminatedPlayerMarker(row)}</td><td class="total">${row.totalPoints}</td><td class="projected-total">${projectedPointsFor(row, projections)}</td><td>${row.groupPoints}</td><td>${row.knockoutPoints}</td><td>${row.aliveTeams.length}</td></tr>`).join("");
   }
   if (elements.leaderboardCards) {
-    elements.leaderboardCards.innerHTML = rows.map((row) => `<div class="mobile-leader-row ${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><span class="rank">${row.rank}</span><span class="player">${row.name}${projectedPlaceMarker(row, projections)}${eliminatedPlayerMarker(row)}</span><span class="total">${row.totalPoints}</span><span>${row.groupPoints}</span><span>${row.knockoutPoints}</span><span>${row.aliveTeams.length}</span></div>`).join("");
+    elements.leaderboardCards.innerHTML = rows.map((row) => `<div class="mobile-leader-row ${row.rank === 1 ? "rank-1" : row.rank === 2 ? "rank-2" : row.rank === 3 ? "rank-3" : row.rank >= 10 ? "rank-low" : ""}"><span class="rank">${row.rank}</span><span class="player">${row.name}${projectedPlaceMarker(row, projections)}${eliminatedPlayerMarker(row)}</span><span class="total">${row.totalPoints}</span><span class="projected-total">${projectedPointsFor(row, projections)}</span><span>${row.groupPoints}</span><span>${row.knockoutPoints}</span><span>${row.aliveTeams.length}</span></div>`).join("");
   }
 }
 
+function projectedPointsFor(row, projections) {
+  return projections?.find((projection) => projection.name === row.name)?.expectedPoints ?? row.totalPoints;
+}
+
 function projectedPlaceMarker(row, projections) {
-  const place = projections?.findIndex((projection) => projection.name === row.name) + 1;
+  const place = projections?.slice(0,3).findIndex((projection) => projection.name === row.name) + 1;
   if (!place) return "";
   const labels = ["Projected first place", "Projected second place", "Projected third place"];
   return ` <span class="projected-place projected-place-${place}" title="${labels[place - 1]}" aria-label="${labels[place - 1]}">${place}</span>`;
@@ -324,7 +328,7 @@ function eliminatedPlayerMarker(row) {
 
 function projectedWinnerMarkup(projections) {
   if (!projections?.length) return "";
-  const [winner, ...runnersUp] = projections;
+  const [winner, ...runnersUp] = projections.slice(0,3);
   return `<div class="best-positioned projected-winner"><small>Projected Pool Winner</small><strong>${winner.name}</strong><div class="person">♛</div><b>${winner.winChance}% chance to win</b><span>${winner.expectedPoints} projected points</span><div class="projection-runners">${runnersUp.map((player,index) => `<div class="projection-runner"><b><i>${index + 2}</i>${player.name}</b><span>${player.expectedPoints} pts • ${player.winChance}% title chance</span></div>`).join("")}</div><a href="${marketProjection.sourceUrl}" target="_blank" rel="noopener noreferrer">Market model • ${marketProjection.asOf}</a></div>`;
 }
 
@@ -372,7 +376,7 @@ function projectPoolWinner(rows) {
     name,
     winChance:(result.wins * 100 / simulations).toFixed(1),
     expectedPoints:Math.round(result.points / simulations)
-  })).sort((a,b) => b.expectedPoints - a.expectedPoints || Number(b.winChance) - Number(a.winChance) || a.name.localeCompare(b.name)).slice(0,3);
+  })).sort((a,b) => b.expectedPoints - a.expectedPoints || Number(b.winChance) - Number(a.winChance) || a.name.localeCompare(b.name));
 }
 
 function simulateFixture(fixture, scores, random) {

@@ -26,7 +26,7 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .summary-grid { display: grid; gap: 10px; }
 .mobile-panel { background: var(--white); border: 1px solid var(--line); overflow: hidden; }
 .mobile-panel > h2, .panel-title { color: var(--blue); font-size: 15px; padding: 12px 14px 7px; text-transform: uppercase; }
-.mobile-leader-head, .mobile-leader-row { align-items: center; display: grid; gap: 2px; grid-template-columns: 44px minmax(76px,1fr) 56px 42px 36px 56px; min-width: 350px; }
+.mobile-leader-head, .mobile-leader-row { align-items: center; display: grid; gap: 2px; grid-template-columns: 44px minmax(76px,1fr) 56px 62px 42px 36px 56px; min-width: 420px; }
 .leaderboard-card { overflow-x: auto; }
 .leaderboard-card > h2 { background: var(--navy); color: var(--white); padding: 8px 12px; }
 .mobile-leader-head { font-size: 9px; font-weight: 900; padding: 5px 10px; }
@@ -42,11 +42,12 @@ h1 { font-size: clamp(24px, 7vw, 38px); font-weight: 900; letter-spacing: 0; lin
 .projected-place-2 { background:#7d8a9a; }
 .projected-place-3 { background:#a96532; }
 .eliminated-player { color: var(--red); display:inline-block; font-size:1.3em; line-height:1; margin-left:4px; vertical-align:-1px; }
-.leaderboard-legend { align-items:center; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; font-size:10px; font-weight:800; gap:8px 12px; min-width:350px; padding:9px 10px; }
+.leaderboard-legend { align-items:center; border-top:1px solid var(--line); display:flex; flex-wrap:wrap; font-size:10px; font-weight:800; gap:8px 12px; min-width:420px; padding:9px 10px; }
 .leaderboard-legend > span { align-items:center; display:inline-flex; gap:4px; }
 .leaderboard-legend .projected-place { margin:0; vertical-align:0; }
 .legend-skull { color:var(--red); font-size:17px; font-style:normal; line-height:1; }
 .mobile-leader-row .total { color: #0b2a82; font-size: 17px; font-weight: 900; }
+.mobile-leader-row .projected-total { color:var(--green); font-size:16px; font-weight:900; }
 .best-card { border-color: var(--gold); }
 .best-card .best-positioned small { display: none; }
 .best-positioned { padding: 10px 12px 16px; text-align: center; }

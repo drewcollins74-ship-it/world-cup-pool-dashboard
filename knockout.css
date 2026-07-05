@@ -65,6 +65,7 @@ td.player { color: #111; font-size: 14px; font-weight: 900; text-align: left; }
 .leaderboard-legend .projected-place { margin: 0; vertical-align: 0; }
 .legend-skull { color: var(--red); font-size: 16px; font-style: normal; line-height: 1; }
 td.total { color: #0b2a82; font-size: 17px; font-weight: 900; }
+td.projected-total { color: var(--green); font-size: 15px; font-weight: 900; }
 td.positive { color: var(--green); font-weight: 900; }
 .about-panel dl { font-size: 11px; line-height: 1.4; margin: 0; padding: 12px 14px; }
 .about-panel dl div { display: grid; gap: 8px; grid-template-columns: 76px 1fr; margin-bottom: 10px; }
