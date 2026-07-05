@@ -1,0 +1,17 @@
+round_of_16_favorites:
+  - match: Canada vs Morocco
+    favorite_to_advance: Morocco
+  - match: Paraguay vs France
+    favorite_to_advance: France
+  - match: Brazil vs Norway
+    favorite_to_advance: Brazil
+  - match: Mexico vs England
+    favorite_to_advance: England
+  - match: Portugal vs Spain
+    favorite_to_advance: Spain
+  - match: USA vs Belgium
+    favorite_to_advance: Belgium
+  - match: Argentina vs Egypt
+    favorite_to_advance: Argentina
+  - match: Switzerland vs Colombia
+    favorite_to_advance: Colombia

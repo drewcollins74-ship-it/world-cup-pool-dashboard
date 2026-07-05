@@ -13,7 +13,8 @@ from urllib.request import Request, urlopen
 ROOT = Path(__file__).resolve().parent
 RESULTS_JSON = ROOT / "data" / "results.json"
 RESULTS_JS = ROOT / "src" / "latest-results.js"
-FAVORITES_YAML = ROOT / "data" / "round_of_32_favorites.yaml"
+ROUND_OF_32_FAVORITES_YAML = ROOT / "data" / "round_of_32_favorites.yaml"
+ROUND_OF_16_FAVORITES_YAML = ROOT / "data" / "round_of_16_favorites.yaml"
 WIKIPEDIA_API = "https://en.wikipedia.org/w/api.php"
 GROUPS = "ABCDEFGHIJKL"
 KNOCKOUT_TITLE = "2026 FIFA World Cup knockout stage"
@@ -80,13 +81,13 @@ NAME_ALIASES = {
 }
 
 
-def load_round_of_32_favorites():
-    if not FAVORITES_YAML.exists():
+def load_round_favorites(path):
+    if not path.exists():
         return []
 
     favorites = []
     current_match = None
-    for line in FAVORITES_YAML.read_text(encoding="utf-8").splitlines():
+    for line in path.read_text(encoding="utf-8").splitlines():
         match_entry = re.match(r"^\s*-\s+match:\s*(.+?)\s*$", line)
         if match_entry:
             current_match = match_entry.group(1)
@@ -107,6 +108,14 @@ def load_round_of_32_favorites():
         current_match = None
 
     return favorites
+
+
+def load_round_of_32_favorites():
+    return load_round_favorites(ROUND_OF_32_FAVORITES_YAML)
+
+
+def load_round_of_16_favorites():
+    return load_round_favorites(ROUND_OF_16_FAVORITES_YAML)
 
 
 def fetch_wikitexts():
@@ -534,6 +543,7 @@ def write_outputs(fixtures, team_status):
         "fixtures": fixtures,
         "teamStatus": team_status,
         "roundOf32Favorites": load_round_of_32_favorites(),
+        "roundOf16Favorites": load_round_of_16_favorites(),
         "api": {
             "results": len(fixtures),
             "errors": None,

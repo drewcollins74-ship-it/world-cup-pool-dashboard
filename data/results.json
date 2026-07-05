@@ -3520,5 +3520,39 @@
   "api": {
     "results": 103,
     "errors": null
-  }
+  },
+  "roundOf16Favorites": [
+    {
+      "match": "Canada vs Morocco",
+      "favoriteToAdvance": "Morocco"
+    },
+    {
+      "match": "Paraguay vs France",
+      "favoriteToAdvance": "France"
+    },
+    {
+      "match": "Brazil vs Norway",
+      "favoriteToAdvance": "Brazil"
+    },
+    {
+      "match": "Mexico vs England",
+      "favoriteToAdvance": "England"
+    },
+    {
+      "match": "Portugal vs Spain",
+      "favoriteToAdvance": "Spain"
+    },
+    {
+      "match": "United States vs Belgium",
+      "favoriteToAdvance": "Belgium"
+    },
+    {
+      "match": "Argentina vs Egypt",
+      "favoriteToAdvance": "Argentina"
+    },
+    {
+      "match": "Switzerland vs Colombia",
+      "favoriteToAdvance": "Colombia"
+    }
+  ]
 }

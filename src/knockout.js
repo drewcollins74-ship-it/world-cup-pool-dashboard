@@ -119,7 +119,9 @@ const knockoutFixtures = fixtures.filter((fixture) => !["group", "unknown"].incl
 const groupState = buildGroupState();
 const ownerByTeam = new Map(participants.flatMap((participant) => participant.teams.map((team) => [team, participant.name])));
 const roundOf32Favorites = Array.isArray(generated.roundOf32Favorites) ? generated.roundOf32Favorites : [];
-const favoriteByMatch = new Map(roundOf32Favorites.map((item) => [matchKey(item.match.split(" vs ")), normalizeTeam(item.favoriteToAdvance)]));
+const roundOf16Favorites = Array.isArray(generated.roundOf16Favorites) ? generated.roundOf16Favorites : [];
+const favoritesByRound = new Map([["r32", roundOf32Favorites], ["r16", roundOf16Favorites]]);
+const favoriteByRoundAndMatch = new Map([...favoritesByRound].map(([roundKey,items]) => [roundKey, new Map(items.map((item) => [matchKey(item.match.split(" vs ")), normalizeTeam(item.favoriteToAdvance)]))]));
 
 const elements = {
   asOfLine:document.querySelector("#asOfLine"),
@@ -150,8 +152,8 @@ function matchKey(teams) {
 }
 
 function favoriteForFixture(fixture) {
-  if (getRoundKey(fixture) !== "r32") return null;
-  return favoriteByMatch.get(matchKey(fixtureTeams(fixture))) || null;
+  const favoritesForRound = favoriteByRoundAndMatch.get(getRoundKey(fixture));
+  return favoritesForRound?.get(matchKey(fixtureTeams(fixture))) || null;
 }
 
 function getRoundKey(fixture) {
@@ -385,15 +387,14 @@ function renderScoring() {
 
 function renderMostLikely() {
   const activeRound = currentPredictionRound();
-  const byPlayer = roundOf32Favorites.map((item) => {
+  const roundFavorites = favoritesByRound.get(activeRound.key) || [];
+  const byPlayer = roundFavorites.map((item) => {
     const favorite = normalizeTeam(item.favoriteToAdvance);
-    const eliminatedBeforeRound = teamLosses(favorite).some((fixture) => knockoutRoundIndex(getRoundKey(fixture)) < activeRound.index);
-    if (eliminatedBeforeRound) return null;
     const activeFixture = knockoutFixtures.find((fixture) => getRoundKey(fixture) === activeRound.key && fixtureTeams(fixture).includes(favorite));
-    const opponent = activeFixture ? fixtureTeams(activeFixture).find((team) => team !== favorite) : "Opponent TBD";
+    const listedTeams = item.match.split(" vs ").map(normalizeTeam);
+    const opponent = activeFixture ? fixtureTeams(activeFixture).find((team) => team !== favorite) : listedTeams.find((team) => team !== favorite) || "Opponent TBD";
     return { favorite, opponent, owner:ownerByTeam.get(favorite) || "Unassigned" };
-  }).filter(Boolean)
-    .sort((a,b) => a.owner.localeCompare(b.owner) || a.favorite.localeCompare(b.favorite));
+  }).sort((a,b) => a.owner.localeCompare(b.owner) || a.favorite.localeCompare(b.favorite));
   elements.mostLikely.innerHTML = byPlayer.length ? byPlayer.map(({ favorite, opponent, owner }) => {
     return `<div class="favorite-pick"><span class="favorite-marker" aria-hidden="true">★</span><div><b>${favorite} <em>(${owner})</em></b><small>${activeRound.label} • vs ${opponent}</small></div></div>`;
   }).join("") : `<div class="empty-message">No original favorites remain in this round.</div>`;
@@ -413,10 +414,6 @@ function currentPredictionRound() {
     if (fixturesForRound.length < round.expected || fixturesForRound.some((fixture) => !isComplete(fixture))) return { ...round, index };
   }
   return { key:"complete", label:"Tournament complete", index:progression.length };
-}
-
-function knockoutRoundIndex(roundKey) {
-  return ["r32","r16","qf","sf","final"].indexOf(roundKey);
 }
 
 function renderMostAlive(rows) {
