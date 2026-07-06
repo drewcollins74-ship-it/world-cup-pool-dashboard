@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-05T22:12:43.895444+00:00",
+  "generatedAt": "2026-07-06T03:08:03.630213+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2482,13 +2482,13 @@ window.__WORLD_CUP_RESULTS__ = {
     },
     {
       "fixture": {
-        "date": "2026-07-06T00:00:00+00:00",
+        "date": "2026-07-06T01:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "England",
         "venue": {
           "name": "Estadio Azteca, Mexico City",
           "city": null
@@ -2509,8 +2509,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 3
       }
     },
     {
@@ -2736,7 +2736,7 @@ window.__WORLD_CUP_RESULTS__ = {
           "name": "Norway"
         },
         "away": {
-          "name": "Winner Match 92"
+          "name": "England"
         }
       },
       "goals": {
