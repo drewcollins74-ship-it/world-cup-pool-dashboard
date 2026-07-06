@@ -273,6 +273,58 @@ def parse_fixture_block(block, round_name):
     }
 
 
+def deduplicate_fixtures(fixtures):
+    unique = {}
+    for fixture in fixtures:
+        teams = fixture["teams"]
+        key = (
+            fixture["fixture"].get("round"),
+            fixture["fixture"].get("date"),
+            *sorted((teams["home"]["name"], teams["away"]["name"])),
+        )
+        existing = unique.get(key)
+        if existing is None or fixture_quality(fixture) > fixture_quality(existing):
+            unique[key] = fixture
+    return list(unique.values())
+
+
+def fixture_quality(fixture):
+    fixture_data = fixture["fixture"]
+    teams = fixture["teams"]
+    goals = fixture.get("goals", {})
+    venue = fixture_data.get("venue", {})
+    score = 100 if fixture_data.get("status", {}).get("short") == "FT" else 0
+    score += 20 if fixture_data.get("winner") else 0
+    score += sum(value is not None for value in (goals.get("home"), goals.get("away"))) * 5
+    score += sum(not re.match(r"^(Winner|Loser) Match", team["name"], flags=re.I) for team in teams.values()) * 2
+    score += sum(bool(venue.get(field)) for field in ("name", "city"))
+    return score
+
+
+def validate_knockout_fixtures(fixtures):
+    expected = {
+        "Round of 32": 16,
+        "Round of 16": 8,
+        "Quarterfinals": 4,
+        "Semifinals": 2,
+        "Third Place": 1,
+        "Final": 1,
+    }
+    counts = {
+        round_name: sum(fixture["fixture"].get("round") == round_name for fixture in fixtures)
+        for round_name in expected
+    }
+    errors = []
+    for round_name in ("Round of 32", "Round of 16"):
+        if counts[round_name] != expected[round_name]:
+            errors.append(f"{round_name}: expected {expected[round_name]}, found {counts[round_name]}")
+    for round_name in ("Quarterfinals", "Semifinals", "Third Place", "Final"):
+        if counts[round_name] not in (0, expected[round_name]):
+            errors.append(f"{round_name}: expected {expected[round_name]}, found {counts[round_name]}")
+    if errors:
+        raise RuntimeError("Invalid knockout fixture data; keeping previous dashboard results. " + "; ".join(errors))
+
+
 def parse_winner(block, team1, team2, home_goals, away_goals):
     if home_goals is None or away_goals is None:
         return None
@@ -606,6 +658,13 @@ def main():
             )
     else:
         print(f"Warning: no Wikipedia content found for {ROUND_OF_32_TITLE}")
+
+    fetched_count = len(fixtures)
+    fixtures = deduplicate_fixtures(fixtures)
+    duplicate_count = fetched_count - len(fixtures)
+    if duplicate_count:
+        print(f"Removed {duplicate_count} duplicate Wikipedia fixtures")
+    validate_knockout_fixtures(fixtures)
 
     team_status.update(derive_team_status(fixtures))
     output = write_outputs(fixtures, team_status)
