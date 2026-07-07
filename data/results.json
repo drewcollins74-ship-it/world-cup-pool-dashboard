@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T17:27:02.604544+00:00",
+  "generatedAt": "2026-07-07T20:13:42.603727+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2583,11 +2583,11 @@
       "fixture": {
         "date": "2026-07-07T16:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Argentina",
         "venue": {
           "name": "Mercedes-Benz Stadium, Atlanta",
           "city": null
@@ -2608,8 +2608,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 2
       }
     },
     {
@@ -2766,7 +2766,7 @@
       },
       "teams": {
         "home": {
-          "name": "Winner Match 95"
+          "name": "Argentina"
         },
         "away": {
           "name": "Winner Match 96"
