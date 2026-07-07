@@ -2,6 +2,11 @@ name: Update World Cup Results
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - "data/World_Cup_favorites.yaml"
   schedule:
     - cron: "15 */3 * * *"
 
