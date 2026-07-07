@@ -51,3 +51,7 @@ round_of_16_favorites:
 quarterfinal_favorites:
   - match: France vs Morocco
     favorite_to_advance: France
+  - match: Norway vs England
+    favorite_to_advance: England
+  - match: Spain vs Belgium
+    favorite_to_advance: Spain
