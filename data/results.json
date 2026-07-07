@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-06T22:37:32.598920+00:00",
+  "generatedAt": "2026-07-07T02:48:39.198870+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2550,11 +2550,11 @@
       "fixture": {
         "date": "2026-07-07T00:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Belgium",
         "venue": {
           "name": "Lumen Field, Seattle",
           "city": null
@@ -2575,8 +2575,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 4
       }
     },
     {
@@ -2703,7 +2703,7 @@
           "name": "Spain"
         },
         "away": {
-          "name": "Winner Match 94"
+          "name": "Belgium"
         }
       },
       "goals": {
