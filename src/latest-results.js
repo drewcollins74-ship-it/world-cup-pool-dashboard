@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-07T22:31:01.636756+00:00",
+  "generatedAt": "2026-07-08T03:44:14.208257+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2616,11 +2616,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-07-07T20:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Round of 16",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Switzerland",
         "venue": {
           "name": "BC Place, Vancouver",
           "city": null
@@ -2641,8 +2641,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 0
       }
     },
     {
@@ -2769,7 +2769,7 @@ window.__WORLD_CUP_RESULTS__ = {
           "name": "Argentina"
         },
         "away": {
-          "name": "Winner Match 96"
+          "name": "Switzerland"
         }
       },
       "goals": {
