@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T19:50:44.109503+00:00",
+  "generatedAt": "2026-07-10T22:15:13.581718+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2682,11 +2682,11 @@
       "fixture": {
         "date": "2026-07-10T19:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Spain",
         "venue": {
           "name": "SoFi Stadium, Inglewood",
           "city": null
@@ -2707,8 +2707,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 2,
+        "away": 1
       }
     },
     {
@@ -2802,7 +2802,7 @@
           "name": "France"
         },
         "away": {
-          "name": "Winner Match 98"
+          "name": "Spain"
         }
       },
       "goals": {
