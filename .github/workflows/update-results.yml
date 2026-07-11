@@ -7,6 +7,9 @@ on:
       - main
     paths:
       - "data/World_Cup_favorites.yaml"
+      - "fetch_wikipedia_results.py"
+      - "fetch_wikipedia_results_fixed.py"
+      - ".github/workflows/update-results.yml"
   schedule:
     - cron: "15 */3 * * *"
 
@@ -27,7 +30,7 @@ jobs:
           python-version: "3.x"
 
       - name: Fetch latest Wikipedia results
-        run: python fetch_wikipedia_results.py
+        run: python fetch_wikipedia_results_fixed.py
 
       - name: Commit updated results
         run: |
