@@ -57,3 +57,7 @@ quarterfinal_favorites:
     favorite_to_advance: Spain
   - match: Argentina vs Switzerland
     favorite_to_advance: Argentina
+
+semifinal_favorites:
+  - match: France vs Spain
+    favorite_to_advance: France
