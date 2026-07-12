@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-12T10:42:03.532147+00:00",
+  "generatedAt": "2026-07-12T12:40:29.884570+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -3574,6 +3574,10 @@ window.__WORLD_CUP_RESULTS__ = {
       {
         "match": "France vs Spain",
         "favoriteToAdvance": "France"
+      },
+      {
+        "match": "England vs Argentina",
+        "favoriteToAdvance": "England"
       }
     ]
   },
