@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T08:31:35.632061+00:00",
+  "generatedAt": "2026-07-12T10:42:03.532147+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2845,6 +2845,39 @@
     },
     {
       "fixture": {
+        "date": "2026-07-18T21:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Third Place",
+        "source": "Wikipedia",
+        "winner": null,
+        "venue": {
+          "name": "Hard Rock Stadium, Miami Gardens",
+          "city": null
+        }
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Third Place"
+      },
+      "teams": {
+        "home": {
+          "name": "Loser Match 101"
+        },
+        "away": {
+          "name": "Loser Match 102"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
         "date": "2026-06-28T19:00:00+00:00",
         "status": {
           "short": "FT"
@@ -3545,7 +3578,7 @@
     ]
   },
   "api": {
-    "results": 102,
+    "results": 103,
     "errors": null
   }
 }
