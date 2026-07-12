@@ -61,3 +61,5 @@ quarterfinal_favorites:
 semifinal_favorites:
   - match: France vs Spain
     favorite_to_advance: France
+  - match: England vs Argentina
+    favorite_to_advance: England
