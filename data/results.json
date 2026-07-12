@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-11T22:07:18.849817+00:00",
+  "generatedAt": "2026-07-12T00:43:24.627423+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2715,11 +2715,11 @@
       "fixture": {
         "date": "2026-07-11T21:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "England",
         "venue": {
           "name": "Hard Rock Stadium, Miami Gardens",
           "city": null
@@ -2740,8 +2740,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 2
       }
     },
     {
@@ -2832,7 +2832,7 @@
       },
       "teams": {
         "home": {
-          "name": "Winner Match 99"
+          "name": "England"
         },
         "away": {
           "name": "Winner Match 100"
