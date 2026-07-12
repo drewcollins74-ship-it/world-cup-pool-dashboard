@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T00:43:24.627423+00:00",
+  "generatedAt": "2026-07-12T03:56:37.496264+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2748,11 +2748,11 @@
       "fixture": {
         "date": "2026-07-12T01:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Quarterfinals",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Argentina",
         "venue": {
           "name": "Arrowhead Stadium, Kansas City",
           "city": null
@@ -2773,8 +2773,8 @@
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 3,
+        "away": 1
       }
     },
     {
@@ -2835,7 +2835,40 @@
           "name": "England"
         },
         "away": {
-          "name": "Winner Match 100"
+          "name": "Argentina"
+        }
+      },
+      "goals": {
+        "home": null,
+        "away": null
+      }
+    },
+    {
+      "fixture": {
+        "date": "2026-07-18T21:00:00+00:00",
+        "status": {
+          "short": "NS"
+        },
+        "round": "Third Place",
+        "source": "Wikipedia",
+        "winner": null,
+        "venue": {
+          "name": "Hard Rock Stadium, Miami Gardens",
+          "city": null
+        }
+      },
+      "league": {
+        "id": "wikipedia",
+        "name": "FIFA World Cup",
+        "season": 2026,
+        "round": "Third Place"
+      },
+      "teams": {
+        "home": {
+          "name": "Loser Match 101"
+        },
+        "away": {
+          "name": "Loser Match 102"
         }
       },
       "goals": {
@@ -3545,7 +3578,7 @@
     ]
   },
   "api": {
-    "results": 102,
+    "results": 103,
     "errors": null
   }
 }
