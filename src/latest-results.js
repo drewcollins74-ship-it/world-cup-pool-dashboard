@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-14T19:42:06.105617+00:00",
+  "generatedAt": "2026-07-14T22:12:04.781205+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2781,11 +2781,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-07-14T19:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Semifinals",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Spain",
         "venue": {
           "name": "AT&T Stadium, Arlington",
           "city": null
@@ -2806,8 +2806,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 0,
+        "away": 2
       }
     },
     {
@@ -2865,7 +2865,7 @@ window.__WORLD_CUP_RESULTS__ = {
       },
       "teams": {
         "home": {
-          "name": "Loser Match 101"
+          "name": "France"
         },
         "away": {
           "name": "Loser Match 102"
