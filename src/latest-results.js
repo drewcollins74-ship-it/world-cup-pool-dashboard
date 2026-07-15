@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-15T19:36:06.574022+00:00",
+  "generatedAt": "2026-07-15T22:11:51.465909+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -2814,11 +2814,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-07-15T19:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Semifinals",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "Argentina",
         "venue": {
           "name": "Mercedes-Benz Stadium, Atlanta",
           "city": null
@@ -2839,8 +2839,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 1,
+        "away": 2
       }
     },
     {
@@ -2868,7 +2868,7 @@ window.__WORLD_CUP_RESULTS__ = {
           "name": "France"
         },
         "away": {
-          "name": "Loser Match 102"
+          "name": "England"
         }
       },
       "goals": {
