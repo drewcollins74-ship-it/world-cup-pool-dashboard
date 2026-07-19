@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-07-18T22:06:44.096740+00:00",
+  "generatedAt": "2026-07-19T03:53:37.164204+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
@@ -733,7 +733,7 @@ window.__WORLD_CUP_RESULTS__ = {
     },
     {
       "fixture": {
-        "date": "2026-06-26T02:00:00+00:00",
+        "date": "2026-06-25T00:00:00+00:00",
         "status": {
           "short": "FT"
         },
@@ -2847,11 +2847,11 @@ window.__WORLD_CUP_RESULTS__ = {
       "fixture": {
         "date": "2026-07-18T21:00:00+00:00",
         "status": {
-          "short": "NS"
+          "short": "FT"
         },
         "round": "Third Place",
         "source": "Wikipedia",
-        "winner": null,
+        "winner": "England",
         "venue": {
           "name": "Hard Rock Stadium, Miami Gardens",
           "city": null
@@ -2872,8 +2872,8 @@ window.__WORLD_CUP_RESULTS__ = {
         }
       },
       "goals": {
-        "home": null,
-        "away": null
+        "home": 4,
+        "away": 6
       }
     },
     {
