@@ -1,5 +1,5 @@
 window.__WORLD_CUP_RESULTS__ = {
-  "generatedAt": "2026-10-08T10:33:35.586152+00:00",
+  "generatedAt": "2026-10-08T18:50:28.000199+00:00",
   "source": "Wikipedia",
   "sourceUrl": "https://en.wikipedia.org/wiki/2026_FIFA_World_Cup",
   "league": "wikipedia",
